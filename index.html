@@ -3,478 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هاستا | Hosta Coffee</title>
+    <title>هاستا | Hosta Coffee Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --dark-bg: #0A0A0A;
-            --card-bg: #151515;
-            --accent-color: #D4AF37;
-            --accent-light: #E6C158;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B0B0;
-            --text-muted: #888888;
-            --border-color: #2A2A2A;
-            --success-color: #10B981;
-            --section-spacing: 80px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            font-family: 'Inter', 'Cairo', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-primary);
+            font-family: 'Cairo', 'Poppins', sans-serif;
+            background-color: #f8f5f0;
+            color: #3e2723;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
-        /* Header - Minimal Dark Design */
+        /* Header */
         header {
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, #6d4c41 0%, #5d4037 100%);
+            color: white;
             padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
         .logo {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--accent-color);
-            letter-spacing: -1px;
+            margin-bottom: 10px;
+            color: #ffcc80;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .logo-sub {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-top: 5px;
-            letter-spacing: 3px;
+        .logo-en {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            color: #d7ccc8;
+            margin-bottom: 15px;
         }
         
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
         }
         
+        /* Language Selector */
         .language-selector {
-            display: flex;
-            background: var(--card-bg);
-            border-radius: 30px;
-            padding: 5px;
-            border: 1px solid var(--border-color);
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
         
         .lang-btn {
-            padding: 8px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
             border: none;
-            background: none;
-            color: var(--text-secondary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
             cursor: pointer;
-            font-weight: 500;
-            border-radius: 25px;
+            font-weight: bold;
+            margin: 0 5px;
             transition: all 0.3s ease;
         }
         
         .lang-btn.active {
-            background: var(--accent-color);
-            color: var(--dark-bg);
+            background-color: #ffb74d;
+            color: #5d4037;
         }
         
-        /* Hero Section - Dribbble Inspired */
-        .hero {
-            padding: 180px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .lang-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
-            z-index: -1;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
-        }
-        
+        /* Service Selector */
         .service-selector {
             display: flex;
             justify-content: center;
+            margin: 25px 0;
             gap: 15px;
-            margin-top: 40px;
         }
         
         .service-btn {
-            padding: 15px 40px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 15px 35px;
+            background-color: #8d6e63;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 10px;
+            min-width: 180px;
+            justify-content: center;
         }
         
         .service-btn.active {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-            color: var(--dark-bg);
+            background-color: #6d4c41;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .service-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: #6d4c41;
         }
         
-        /* Category Navigation */
-        .category-nav {
-            position: sticky;
-            top: 80px;
-            background: var(--dark-bg);
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            z-index: 900;
-            backdrop-filter: blur(10px);
+        /* Service Info */
+        .service-info {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            border-right: 5px solid #4caf50;
         }
         
+        /* Category Tabs */
         .category-tabs {
             display: flex;
-            overflow-x: auto;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
             gap: 10px;
-            padding: 10px 0;
-            scrollbar-width: none;
-        }
-        
-        .category-tabs::-webkit-scrollbar {
-            display: none;
+            overflow-x: auto;
+            padding-bottom: 10px;
         }
         
         .category-btn {
-            padding: 12px 28px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
+            padding: 12px 20px;
+            background-color: #a1887f;
+            color: white;
+            border: none;
             border-radius: 25px;
             cursor: pointer;
-            font-weight: 500;
-            white-space: nowrap;
             transition: all 0.3s ease;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         
         .category-btn.active {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-            color: var(--dark-bg);
+            background-color: #6d4c41;
+            transform: translateY(-3px);
         }
         
         /* Menu Sections */
         .menu-section {
-            padding: var(--section-spacing) 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #5d4037;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #8d6e63;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
         
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-        }
-        
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Menu Grid - Card Design */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
         
-        .menu-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            position: relative;
+        .menu-item {
+            background-color: white;
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            position: relative;
         }
         
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: var(--accent-color);
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .menu-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 30%, rgba(212, 175, 55, 0.05) 30%, rgba(212, 175, 55, 0.05) 70%, transparent 70%);
-            pointer-events: none;
+        .item-image {
+            height: 160px;
+            background: linear-gradient(135deg, #d7ccc8 0%, #bcaaa4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6d4c41;
+            font-size: 2.5rem;
         }
         
-        .card-header {
+        .item-details {
+            padding: 15px;
+        }
+        
+        .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            align-items: center;
+            margin-bottom: 10px;
         }
         
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .card-price {
-            font-size: 1.8rem;
+        .item-name {
+            font-size: 1.3rem;
             font-weight: 700;
-            color: var(--accent-color);
+            color: #5d4037;
+            flex: 1;
+        }
+        
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ff9800;
+            margin-left: 10px;
             white-space: nowrap;
         }
         
-        .card-price::after {
+        .item-price::after {
             content: " ر.ع.";
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-right: 5px;
+            font-size: 0.9rem;
         }
         
-        .card-description {
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-            line-height: 1.7;
-            font-size: 0.95rem;
+        .item-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            min-height: 20px;
         }
         
-        .card-actions {
+        .item-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .quantity-control {
+        .quantity-selector {
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 20px;
-            border-radius: 30px;
+            gap: 10px;
         }
         
-        .qty-btn {
+        .quantity-btn {
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: var(--accent-color);
-            color: var(--dark-bg);
+            background-color: #8d6e63;
+            color: white;
             border: none;
             cursor: pointer;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .qty-btn:hover {
-            transform: scale(1.1);
-            background: var(--accent-light);
+            font-size: 1rem;
         }
         
         .quantity {
-            font-weight: 600;
-            min-width: 30px;
+            font-weight: bold;
+            min-width: 25px;
             text-align: center;
-            color: var(--text-primary);
+            font-size: 1.1rem;
         }
         
-        .add-to-cart-btn {
-            padding: 12px 30px;
-            background: var(--accent-color);
-            color: var(--dark-bg);
+        .add-to-cart {
+            background-color: #6d4c41;
+            color: white;
             border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .add-to-cart-btn:hover {
-            background: var(--accent-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-        }
-        
-        /* Special Category Cards */
-        .category-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            padding: 8px 20px;
             border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
         }
         
-        .category-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
+        .add-to-cart:hover {
+            background-color: #5d4037;
         }
         
-        .category-card-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
+        /* Brew Methods Section */
+        .brew-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 15px;
+            border-left: 5px solid #ffb74d;
         }
         
-        /* Cart Panel */
+        .brew-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .brew-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Cart */
         .cart-container {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
+            bottom: 20px;
+            left: 20px;
             z-index: 1000;
         }
         
-        .cart-toggle {
-            width: 70px;
-            height: 70px;
-            background: var(--accent-color);
-            color: var(--dark-bg);
+        .cart-btn {
+            background-color: #ff9800;
+            color: white;
             border: none;
             border-radius: 50%;
-            cursor: pointer;
+            width: 70px;
+            height: 70px;
             font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .cart-toggle:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
         }
         
         .cart-count {
             position: absolute;
             top: -5px;
             right: -5px;
-            background: #EF4444;
+            background-color: #f44336;
             color: white;
-            width: 28px;
-            height: 28px;
             border-radius: 50%;
+            width: 25px;
+            height: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
             font-weight: bold;
-            border: 3px solid var(--dark-bg);
         }
         
         .cart-panel {
             position: absolute;
-            bottom: 90px;
+            bottom: 80px;
             left: 0;
-            width: 380px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            width: 350px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 20px;
             display: none;
-            animation: slideUp 0.3s ease;
-        }
-        
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
         
         .cart-panel.active {
@@ -485,340 +381,201 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
         }
         
         .cart-title {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            color: #5d4037;
+            font-weight: 700;
         }
         
         .close-cart {
             background: none;
             border: none;
-            color: var(--text-secondary);
             font-size: 1.8rem;
             cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .close-cart:hover {
-            color: var(--accent-color);
+            color: #999;
         }
         
         .cart-items {
             max-height: 300px;
             overflow-y: auto;
             margin-bottom: 20px;
-            padding-right: 10px;
-        }
-        
-        .cart-items::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .cart-items::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        
-        .cart-items::-webkit-scrollbar-thumb {
-            background: var(--accent-color);
-            border-radius: 10px;
         }
         
         .cart-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
         }
         
         .cart-item-name {
             flex: 1;
-            font-weight: 500;
-            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .cart-item-quantity {
-            margin: 0 15px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-weight: 600;
-            color: var(--accent-color);
+            margin: 0 10px;
+            font-weight: bold;
+            background-color: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.9rem;
         }
         
         .cart-item-price {
-            font-weight: 600;
-            color: var(--text-primary);
-            min-width: 80px;
-            text-align: left;
+            font-weight: bold;
+            color: #ff9800;
+            font-size: 0.95rem;
         }
         
         .cart-total {
             display: flex;
             justify-content: space-between;
-            font-size: 1.4rem;
-            font-weight: 700;
-            padding: 20px 0;
-            margin: 20px 0;
-            border-top: 2px solid var(--border-color);
-            border-bottom: 2px solid var(--border-color);
-            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: 800;
+            padding: 15px 0;
+            border-top: 2px solid #8d6e63;
+            border-bottom: 2px solid #8d6e63;
+            margin-bottom: 20px;
         }
         
         .cart-actions {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
         
         .checkout-btn, .clear-cart-btn {
-            padding: 15px;
+            padding: 12px;
             border: none;
-            border-radius: 15px;
-            font-weight: 600;
+            border-radius: 10px;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 1rem;
         }
         
         .checkout-btn {
-            background: var(--accent-color);
-            color: var(--dark-bg);
-        }
-        
-        .checkout-btn:hover {
-            background: var(--accent-light);
-            transform: translateY(-2px);
+            background-color: #4caf50;
+            color: white;
         }
         
         .clear-cart-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-        
-        .clear-cart-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--text-primary);
+            background-color: #f5f5f5;
+            color: #666;
         }
         
         /* Payment Section */
         .payment-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 50px;
-            margin: var(--section-spacing) 0;
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             display: none;
         }
         
         .payment-section.active {
             display: block;
-            animation: fadeIn 0.5s ease;
         }
         
         .payment-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
         }
         
-        .payment-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 30px;
+        .payment-option {
             text-align: center;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
+            background-color: #f9f9f9;
         }
         
-        .payment-card:hover {
-            border-color: var(--accent-color);
+        .payment-option:hover {
+            border-color: #6d4c41;
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .payment-card.active {
-            border-color: var(--accent-color);
-            background: rgba(212, 175, 55, 0.1);
+        .payment-option.active {
+            border-color: #4caf50;
+            background-color: rgba(76, 175, 80, 0.05);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
         }
         
         .payment-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #6d4c41;
         }
         
         .thawani-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #1a237e, #283593);
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 1.5rem;
-            margin: 0 auto 20px;
+            font-size: 1.3rem;
         }
         
-        /* Order Complete */
+        /* Order Complete Section */
         .order-complete {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 60px 40px;
             text-align: center;
-            margin: var(--section-spacing) 0;
+            padding: 30px;
             display: none;
         }
         
         .order-complete.active {
             display: block;
-            animation: fadeIn 0.5s ease;
         }
         
         .success-icon {
-            font-size: 5rem;
-            color: var(--success-color);
-            margin-bottom: 30px;
-            animation: bounce 1s ease infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            font-size: 4rem;
+            color: #4caf50;
+            margin-bottom: 20px;
         }
         
         /* Footer */
         footer {
-            background: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            padding: 60px 0 30px;
-            margin-top: var(--section-spacing);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            color: #666;
             font-size: 0.9rem;
         }
         
-        /* Utility Classes */
-        .divider {
-            height: 1px;
-            background: var(--border-color);
-            margin: 40px 0;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--accent-color);
-            color: var(--dark-bg);
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .hero {
-                padding: 150px 0 60px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .category-tabs {
-                padding: 10px;
-            }
-            
-            .category-btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .cart-panel {
-                width: 320px;
-                left: -50px;
-            }
-            
-            .payment-section, .order-complete {
-                padding: 30px 20px;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-        
         /* RTL/LTR Support */
+        body[dir="rtl"] {
+            text-align: right;
+        }
+        
         body[dir="ltr"] {
             text-align: left;
         }
         
-        body[dir="ltr"] .card-price::after {
+        body[dir="ltr"] .item-price::after {
             content: " OMR";
         }
         
         body[dir="ltr"] .cart-container {
             left: auto;
-            right: 30px;
+            right: 20px;
         }
         
         body[dir="ltr"] .cart-panel {
@@ -826,190 +583,375 @@
             right: 0;
         }
         
-        body[dir="ltr"] .cart-item-price {
-            text-align: right;
-        }
-        
-        /* Notification */
-        .notification {
-            position: fixed;
-            top: 20px;
+        body[dir="ltr"] .language-selector {
+            left: auto;
             right: 20px;
-            background: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-            z-index: 1100;
-            font-weight: 500;
         }
         
-        @keyframes slideIn {
-            from { transform: translateX(100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        /* Special Label */
+        .special-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff5722;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .popular-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4caf50;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        body[dir="ltr"] .special-label {
+            left: auto;
+            right: 10px;
+        }
+        
+        body[dir="ltr"] .popular-label {
+            right: auto;
+            left: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cart-panel {
+                width: 300px;
+                left: -50px;
+            }
+            
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .logo-en {
+                font-size: 1.8rem;
+            }
+            
+            .brew-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            body[dir="ltr"] .cart-panel {
+                left: auto;
+                right: -50px;
+            }
+            
+            .category-tabs {
+                justify-content: flex-start;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+        
+        /* Price formatting for English */
+        body[dir="ltr"] .item-price::after {
+            content: " OMR";
+        }
+        
+        /* Scrollbar Styling */
+        .cart-items::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .cart-items::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .cart-items::-webkit-scrollbar-thumb {
+            background: #8d6e63;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body dir="rtl">
-    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div>
-                <div class="logo">هاستا</div>
-                <div class="logo-sub">HOSTA COFFEE</div>
-            </div>
-            <div class="nav-controls">
-                <div class="language-selector">
-                    <button class="lang-btn active" id="arabicBtn">العربية</button>
-                    <button class="lang-btn" id="englishBtn">English</button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
         <div class="container">
-            <h1 id="heroTitle">نقدم أغنى قهوة في المدينة</h1>
-            <p id="heroSubtitle">استمتع بتجربة القهوة الاستثنائية في هاستا، حيث يلتقي التقليد العُماني الأصيل بأنقى حبوب البن المختارة بعناية.</p>
+            <div class="language-selector">
+                <button class="lang-btn active" id="arabicBtn">العربية</button>
+                <button class="lang-btn" id="englishBtn">English</button>
+            </div>
+            
+            <div class="logo">هاستا</div>
+            <div class="logo-en">Hosta Coffee Shop</div>
+            <p class="tagline" id="tagline">قهوة عُمانية أصيلة مع لمحة عصرية | Authentic Omani coffee with a modern twist</p>
             
             <div class="service-selector">
                 <button class="service-btn active" id="dineInBtn">
-                    <i class="fas fa-utensils"></i> <span id="dineInText">تناول في المكان</span>
+                    <i class="fas fa-utensils"></i> <span id="dineInText">تناوُل بالمكان</span>
                 </button>
                 <button class="service-btn" id="deliveryBtn">
                     <i class="fas fa-motorcycle"></i> <span id="deliveryText">توصيل</span>
                 </button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Category Navigation -->
-    <div class="category-nav">
-        <div class="container">
-            <div class="category-tabs" id="categoryTabs">
-                <!-- Categories will be populated by JavaScript -->
+    <div class="container">
+        <!-- Service Info -->
+        <div id="serviceInfo" class="service-info">
+            <h3 id="serviceTitle">تناوُل بالمكان</h3>
+            <p id="serviceDescription">اطلب من طاولتك وسنحضر طلبك إليك. لا حاجة للانتظار في الطابور!</p>
+        </div>
+
+        <!-- Menu Categories -->
+        <div class="category-tabs">
+            <button class="category-btn active" data-category="espresso">
+                <span class="ar-text">قهوة وإسبريسو</span>
+                <span class="en-text" style="display: none;">Coffee & Espresso</span>
+            </button>
+            <button class="category-btn" data-category="brew">
+                <span class="ar-text">قهوة التخمير</span>
+                <span class="en-text" style="display: none;">Brew Methods</span>
+            </button>
+            <button class="category-btn" data-category="signature">
+                <span class="ar-text">مشروبات التوقيع</span>
+                <span class="en-text" style="display: none;">Signature Drinks</span>
+            </button>
+            <button class="category-btn" data-category="tea">
+                <span class="ar-text">شاي وماتشا</span>
+                <span class="en-text" style="display: none;">Tea & Matcha</span>
+            </button>
+            <button class="category-btn" data-category="pastries">
+                <span class="ar-text">معجنات وحلويات</span>
+                <span class="en-text" style="display: none;">Pastries & Desserts</span>
+            </button>
+            <button class="category-btn" data-category="cakes">
+                <span class="ar-text">كيك وكعك</span>
+                <span class="en-text" style="display: none;">Cakes & Bakery</span>
+            </button>
+            <button class="category-btn" data-category="snacks">
+                <span class="ar-text">وجبات خفيفة</span>
+                <span class="en-text" style="display: none;">Snacks</span>
+            </button>
+            <button class="category-btn" data-category="juices">
+                <span class="ar-text">عصائر ومشروبات</span>
+                <span class="en-text" style="display: none;">Juices & Drinks</span>
+            </button>
+            <button class="category-btn" data-category="sandwiches">
+                <span class="ar-text">ساندويشات وتوست</span>
+                <span class="en-text" style="display: none;">Sandwiches & Toast</span>
+            </button>
+            <button class="category-btn" data-category="healthy">
+                <span class="ar-text">خيارات صحية</span>
+                <span class="en-text" style="display: none;">Healthy Options</span>
+            </button>
+        </div>
+
+        <!-- Coffee Menu -->
+        <div class="menu-section" id="espresso-menu">
+            <h2 class="section-title">
+                <span class="ar-text">قهوة وإسبريسو</span>
+                <span class="en-text" style="display: none;">Coffee & Espresso</span>
+                <i class="fas fa-coffee"></i>
+            </h2>
+            <div class="menu-grid" id="espressoGrid">
+                <!-- Espresso items populated by JavaScript -->
             </div>
         </div>
-    </div>
 
-    <!-- Menu Sections -->
-    <div class="container" id="menuContainer">
-        <!-- Menu sections will be populated by JavaScript -->
-    </div>
-
-    <!-- Payment Section -->
-    <div class="container">
-        <div class="payment-section" id="paymentSection">
-            <div class="section-header">
-                <h2 class="section-title" id="paymentTitle">اختر طريقة الدفع</h2>
-                <p class="section-subtitle" id="paymentSubtitle">اختر طريقة الدفع المناسبة لك لإتمام طلبك</p>
+        <!-- Brew Methods Menu -->
+        <div class="menu-section" id="brew-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">قهوة التخمير</span>
+                <span class="en-text" style="display: none;">Brew Methods</span>
+                <i class="fas fa-filter"></i>
+            </h2>
+            <div class="menu-grid" id="brewGrid">
+                <!-- Brew items populated by JavaScript -->
             </div>
+            
+            <!-- Additional Brew Methods Section -->
+            <div class="brew-section">
+                <h3 style="color: #5d4037; margin-bottom: 15px; text-align: center;">
+                    <span class="ar-text">طرق تخمير القهوة المتخصصة</span>
+                    <span class="en-text" style="display: none;">Specialty Brew Methods</span>
+                </h3>
+                <div class="brew-grid" id="specialtyBrewGrid">
+                    <!-- Specialty brew methods -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Signature Drinks Menu -->
+        <div class="menu-section" id="signature-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">مشروبات التوقيع</span>
+                <span class="en-text" style="display: none;">Signature Drinks</span>
+                <i class="fas fa-star"></i>
+            </h2>
+            <div class="menu-grid" id="signatureGrid">
+                <!-- Signature items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Tea & Matcha Menu -->
+        <div class="menu-section" id="tea-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">شاي وماتشا</span>
+                <span class="en-text" style="display: none;">Tea & Matcha</span>
+                <i class="fas fa-mug-hot"></i>
+            </h2>
+            <div class="menu-grid" id="teaGrid">
+                <!-- Tea items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Pastries Menu -->
+        <div class="menu-section" id="pastries-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">معجنات وحلويات</span>
+                <span class="en-text" style="display: none;">Pastries & Desserts</span>
+                <i class="fas fa-bread-slice"></i>
+            </h2>
+            <div class="menu-grid" id="pastriesGrid">
+                <!-- Pastry items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Cakes Menu -->
+        <div class="menu-section" id="cakes-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">كيك وكعك</span>
+                <span class="en-text" style="display: none;">Cakes & Bakery</span>
+                <i class="fas fa-birthday-cake"></i>
+            </h2>
+            <div class="menu-grid" id="cakesGrid">
+                <!-- Cake items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Snacks Menu -->
+        <div class="menu-section" id="snacks-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">وجبات خفيفة</span>
+                <span class="en-text" style="display: none;">Snacks</span>
+                <i class="fas fa-cookie-bite"></i>
+            </h2>
+            <div class="menu-grid" id="snacksGrid">
+                <!-- Snack items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Juices Menu -->
+        <div class="menu-section" id="juices-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">عصائر ومشروبات</span>
+                <span class="en-text" style="display: none;">Juices & Drinks</span>
+                <i class="fas fa-glass-whiskey"></i>
+            </h2>
+            <div class="menu-grid" id="juicesGrid">
+                <!-- Juice items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Sandwiches Menu -->
+        <div class="menu-section" id="sandwiches-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">ساندويشات وتوست</span>
+                <span class="en-text" style="display: none;">Sandwiches & Toast</span>
+                <i class="fas fa-hamburger"></i>
+            </h2>
+            <div class="menu-grid" id="sandwichesGrid">
+                <!-- Sandwich items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Healthy Options Menu -->
+        <div class="menu-section" id="healthy-menu" style="display: none;">
+            <h2 class="section-title">
+                <span class="ar-text">خيارات صحية</span>
+                <span class="en-text" style="display: none;">Healthy Options</span>
+                <i class="fas fa-apple-alt"></i>
+            </h2>
+            <div class="menu-grid" id="healthyGrid">
+                <!-- Healthy items populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-section" id="paymentSection">
+            <h2 class="section-title">
+                <span class="ar-text">اختر طريقة الدفع</span>
+                <span class="en-text" style="display: none;">Select Payment Method</span>
+                <i class="fas fa-credit-card"></i>
+            </h2>
             <div class="payment-options">
-                <div class="payment-card" data-method="thawani">
+                <div class="payment-option" data-method="thawani">
                     <div class="thawani-icon">ثواني</div>
                     <h3>Thawani Pay</h3>
                     <p class="ar-text">الدفع عبر تطبيق ثواني</p>
                     <p class="en-text" style="display: none;">Pay via Thawani application</p>
                 </div>
-                <div class="payment-card" data-method="card">
+                <div class="payment-option" data-method="card">
                     <div class="payment-icon"><i class="fas fa-credit-card"></i></div>
                     <h3>Credit/Debit Card</h3>
                     <p class="ar-text">الدفع ببطاقة الإئتمان أو الخصم</p>
                     <p class="en-text" style="display: none;">Pay with your card</p>
                 </div>
-                <div class="payment-card" data-method="cash">
+                <div class="payment-option" data-method="cash">
                     <div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div>
                     <h3>Cash</h3>
                     <p class="ar-text">الدفع نقداً عند الاستلام</p>
                     <p class="en-text" style="display: none;">Pay with cash when items arrive</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <button id="completeOrderBtn" class="add-to-cart-btn" style="padding: 18px 60px; font-size: 1.2rem;">
+            <div style="text-align: center; margin-top: 30px;">
+                <button id="completeOrderBtn" style="padding: 15px 50px; background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); color: white; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);">
                     <span class="ar-text">أكمل الطلب</span>
                     <span class="en-text" style="display: none;">Complete Order</span>
                 </button>
             </div>
         </div>
 
-        <!-- Order Complete -->
+        <!-- Order Complete Section -->
         <div class="order-complete" id="orderComplete">
             <div class="success-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h2 id="orderCompleteTitle" style="font-size: 2.5rem; margin-bottom: 20px;">تم استلام طلبك بنجاح!</h2>
-            <p id="orderCompleteMessage" style="font-size: 1.2rem; margin-bottom: 30px; color: var(--text-secondary);">
-                شكراً لاختيارك هاستا. سنبدأ بتحضير طلبك وسنخطرك عندما يكون جاهزاً.
-            </p>
-            <button id="newOrderBtn" class="add-to-cart-btn" style="padding: 15px 40px;">
+            <h2 id="orderCompleteTitle" style="color: #4caf50; margin-bottom: 20px;">تم استلام طلبك بنجاح!</h2>
+            <p id="orderCompleteMessage" style="font-size: 1.1rem; margin-bottom: 30px;">شكراً لاختيارك هاستا. سنبدأ بتحضير طلبك وسنخطرك عندما يكون جاهزاً.</p>
+            <button id="newOrderBtn" style="padding: 12px 30px; background-color: #6d4c41; color: white; border: none; border-radius: 25px; font-size: 1.1rem; cursor: pointer;">
                 <span class="ar-text">طلب جديد</span>
                 <span class="en-text" style="display: none;">New Order</span>
             </button>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>منتجاتنا</h3>
-                    <ul class="footer-links">
-                        <li><a href="#espresso">قهوة وإسبريسو</a></li>
-                        <li><a href="#signature">مشروبات التوقيع</a></li>
-                        <li><a href="#pastries">معجنات وحلويات</a></li>
-                        <li><a href="#cakes">كيك وكعك</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>خدماتنا</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" id="footerDineIn">تناول في المكان</a></li>
-                        <li><a href="#" id="footerDelivery">خدمة التوصيل</a></li>
-                        <li><a href="#" id="footerCatering">تجهيز المناسبات</a></li>
-                        <li><a href="#" id="footerPrivate">أحداث خاصة</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>عن هاستا</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" id="footerAbout">قصتنا</a></li>
-                        <li><a href="#" id="footerStory">رحلة القهوة</a></li>
-                        <li><a href="#" id="footerValues">قيمنا</a></li>
-                        <li><a href="#" id="footerContact">اتصل بنا</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>معلومات</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" id="footerTerms">شروط الاستخدام</a></li>
-                        <li><a href="#" id="footerPrivacy">سياسة الخصوصية</a></li>
-                        <li><a href="#" id="footerCookies">ملفات تعريف الارتباط</a></li>
-                        <li><a href="#" id="footerFAQ">الأسئلة الشائعة</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>تابعونا</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fab fa-instagram"></i> إنستغرام</a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i> تويتر</a></li>
-                        <li><a href="#"><i class="fab fa-facebook"></i> فيسبوك</a></li>
-                        <li><a href="#"><i class="fab fa-tiktok"></i> تيك توك</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p id="footerAddress">مسقط، العذيبة، شارع السلطان قابوس | +968 1234 5678</p>
-                <p style="margin-top: 10px;">&copy; 2023 هاستا كوفي. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
-
     <!-- Shopping Cart -->
     <div class="cart-container">
-        <button class="cart-toggle" id="cartToggle">
+        <button class="cart-btn" id="cartToggle">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count" id="cartCount">0</span>
         </button>
@@ -1022,7 +964,7 @@
                 <button class="close-cart" id="closeCart">&times;</button>
             </div>
             <div class="cart-items" id="cartItems">
-                <!-- Cart items will be populated by JavaScript -->
+                <!-- Cart items populated by JavaScript -->
             </div>
             <div class="cart-total">
                 <span class="ar-text">المجموع:</span>
@@ -1042,16 +984,25 @@
         </div>
     </div>
 
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-map-marker-alt"></i> <span id="address">مسقط، العذيبة، شارع السلطان قابوس | Muscat, Al Athaiba, Sultan Qaboos Street</span></p>
+            <p><i class="fas fa-clock"></i> <span id="hours">مفتوح يومياً من ٧ صباحاً إلى ١١ مساءً | Open daily from 7 AM to 11 PM</span></p>
+            <p><i class="fas fa-phone"></i> <span id="phone">+968 1234 5678</span></p>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">QR نظام الطلب عبر - Hosta Coffee Shop © 2023</p>
+        </div>
+    </footer>
+
     <script>
         // Bilingual Content Data
         const content = {
             ar: {
-                heroTitle: "نقدم أغنى قهوة في المدينة",
-                heroSubtitle: "استمتع بتجربة القهوة الاستثنائية في هاستا، حيث يلتقي التقليد العُماني الأصيل بأنقى حبوب البن المختارة بعناية.",
-                dineIn: "تناول في المكان",
+                tagline: "قهوة عُمانية أصيلة مع لمحة عصرية",
+                dineIn: "تناوُل بالمكان",
                 delivery: "توصيل",
                 dineInDesc: "اطلب من طاولتك وسنحضر طلبك إليك. لا حاجة للانتظار في الطابور!",
                 deliveryDesc: "نقوم بالتوصيل إلى موقعك. رسوم التوصيل: ٠.٥٠٠ ر.ع. (توصيل مجاني للطلبات فوق ٥ ر.ع.)",
+                serviceTitle: "تناوُل بالمكان",
                 categories: {
                     espresso: "قهوة وإسبريسو",
                     brew: "قهوة التخمير",
@@ -1073,22 +1024,32 @@
                 },
                 payment: {
                     title: "اختر طريقة الدفع",
-                    subtitle: "اختر طريقة الدفع المناسبة لك لإتمام طلبك",
+                    thawani: "الدفع عبر تطبيق ثواني",
+                    card: "الدفع ببطاقة الإئتمان أو الخصم",
+                    cash: "الدفع نقداً عند الاستلام",
                     complete: "أكمل الطلب"
                 },
                 orderComplete: {
                     title: "تم استلام طلبك بنجاح!",
                     message: "شكراً لاختيارك هاستا. سنبدأ بتحضير طلبك وسنخطرك عندما يكون جاهزاً.",
                     newOrder: "طلب جديد"
+                },
+                address: "مسقط، العذيبة، شارع السلطان قابوس",
+                hours: "مفتوح يومياً من ٧ صباحاً إلى ١١ مساءً",
+                notification: {
+                    added: "تمت الإضافة إلى السلة",
+                    cleared: "تم إفراغ السلة",
+                    selectPayment: "الرجاء اختيار طريقة الدفع",
+                    cartEmpty: "سلة التسوق فارغة"
                 }
             },
             en: {
-                heroTitle: "We serve the richest coffee in the city!",
-                heroSubtitle: "Experience exceptional coffee at Hosta, where authentic Omani tradition meets carefully selected premium coffee beans.",
+                tagline: "Authentic Omani coffee with a modern twist",
                 dineIn: "Dine In",
                 delivery: "Delivery",
                 dineInDesc: "Order at your table and we'll bring your items to you. No waiting in line!",
                 deliveryDesc: "We deliver to your location. Delivery fee: 0.500 OMR (free for orders over 5 OMR)",
+                serviceTitle: "Dine In Service",
                 categories: {
                     espresso: "Coffee & Espresso",
                     brew: "Brew Methods",
@@ -1110,33 +1071,690 @@
                 },
                 payment: {
                     title: "Select Payment Method",
-                    subtitle: "Choose your preferred payment method to complete your order",
+                    thawani: "Pay via Thawani application",
+                    card: "Pay with your card",
+                    cash: "Pay with cash when items arrive",
                     complete: "Complete Order"
                 },
                 orderComplete: {
                     title: "Order Received Successfully!",
                     message: "Thank you for choosing Hosta. We'll start preparing your order and notify you when it's ready.",
                     newOrder: "New Order"
+                },
+                address: "Muscat, Al Athaiba, Sultan Qaboos Street",
+                hours: "Open daily from 7 AM to 11 PM",
+                notification: {
+                    added: "added to cart",
+                    cleared: "Cart cleared",
+                    selectPayment: "Please select a payment method",
+                    cartEmpty: "Your cart is empty"
                 }
             }
         };
 
-        // Menu Data (Same as previous, simplified for example)
+        // Complete Menu Data from Both Files
         const menuItems = {
+            // Coffee & Espresso (from PDF)
             espresso: [
-                { id: 1, name: { ar: "إسبريسو", en: "Espresso" }, price: 1.100, description: { ar: "قهوة مركزة وقوية من أفضل حبوب البن", en: "Strong and rich single shot of premium coffee" } },
-                { id: 2, name: { ar: "أمريكانو", en: "Americano" }, price: 1.300, description: { ar: "إسبريسو مع ماء ساخن للحصول على قوام أنعم", en: "Espresso with hot water for a smoother texture" } },
-                { id: 3, name: { ar: "كابتشينو", en: "Cappuccino" }, price: 1.500, description: { ar: "إسبريسو مع حليب مبخر ورغوة كثيفة", en: "Espresso with steamed milk and thick foam" } }
+                { 
+                    id: 1, 
+                    name: { ar: "إسبريسو", en: "Espresso" }, 
+                    price: 1.100, 
+                    description: { ar: "قهوة مركزة وقوية من أفضل حبوب البن", en: "Strong and rich single shot of premium coffee" }, 
+                    icon: "fas fa-coffee",
+                    isSpecial: false,
+                    isPopular: true
+                },
+                { 
+                    id: 2, 
+                    name: { ar: "أمريكانو", en: "Americano" }, 
+                    price: 1.300, 
+                    description: { ar: "إسبريسو مع ماء ساخن للحصول على قوام أنعم", en: "Espresso with hot water for a smoother texture" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: false
+                },
+                { 
+                    id: 3, 
+                    name: { ar: "كابتشينو", en: "Cappuccino" }, 
+                    price: 1.500, 
+                    description: { ar: "إسبريسو مع حليب مبخر ورغوة كثيفة", en: "Espresso with steamed milk and thick foam" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: false,
+                    isPopular: true
+                },
+                { 
+                    id: 4, 
+                    name: { ar: "لاتيه", en: "Latte" }, 
+                    price: 1.600, 
+                    description: { ar: "إسبريسو ناعم مع حليب مبخر وقليل من الرغوة", en: "Smooth espresso with steamed milk and light foam" }, 
+                    icon: "fas fa-coffee",
+                    isSpecial: false,
+                    isPopular: true
+                },
+                { 
+                    id: 5, 
+                    name: { ar: "موكا", en: "Mocha" }, 
+                    price: 1.600, 
+                    description: { ar: "مزيج لذيذ من الشوكولاتة والإسبريسو مع الحليب", en: "Delicious blend of chocolate, espresso and milk" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: false
+                },
+                { 
+                    id: 6, 
+                    name: { ar: "كورتادو", en: "Cortado" }, 
+                    price: 1.400, 
+                    description: { ar: "إسبريسو مع كمية صغيرة من الحليب الدافئ", en: "Espresso with a small amount of warm milk" }, 
+                    icon: "fas fa-coffee",
+                    isSpecial: false
+                },
+                { 
+                    id: 7, 
+                    name: { ar: "فلات وايت", en: "Flat White" }, 
+                    price: 1.500, 
+                    description: { ar: "قهوة قوية مع حليب ناعم ورغوة دقيقة", en: "Strong coffee with velvety milk and microfoam" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: false
+                },
+                { 
+                    id: 8, 
+                    name: { ar: "لاتيه إسباني", en: "Spanish Latte" }, 
+                    price: 1.600, 
+                    description: { ar: "لاتيه حلو مع حليب مكثف، على الطريقة الإسبانية", en: "Sweet latte with condensed milk, Spanish style" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: true
+                },
+                { 
+                    id: 9, 
+                    name: { ar: "لاتيه كراميل", en: "Caramel Latte" }, 
+                    price: 1.600, 
+                    description: { ar: "لاتيه مع صوص الكراميل الحلو", en: "Latte with sweet caramel sauce" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: true
+                },
+                { 
+                    id: 10, 
+                    name: { ar: "لاتيه زعفران", en: "Saffron Latte" }, 
+                    price: 1.700, 
+                    description: { ar: "لاتيه مميز مع نكهة الزعفران العُماني", en: "Special latte with Omani saffron flavor" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: true
+                },
+                { 
+                    id: 11, 
+                    name: { ar: "لاتيه فستق", en: "Pistachio Latte" }, 
+                    price: 1.600, 
+                    description: { ar: "لاتيه مع نكهة الفستق الغنية", en: "Latte with rich pistachio flavor" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: true
+                }
             ],
+            
+            // Brew Methods
+            brew: [
+                { 
+                    id: 12, 
+                    name: { ar: "قهوة التخمير", en: "Brewed Coffee" }, 
+                    price: 1.200, 
+                    description: { ar: "قهوة طازجة مخمرة يومياً", en: "Freshly brewed coffee daily" }, 
+                    icon: "fas fa-filter",
+                    isSpecial: false
+                }
+            ],
+            
+            // Specialty Brew Methods (from PDF)
+            brewSpecialty: [
+                { 
+                    id: 13, 
+                    name: { ar: "V60 ساخن", en: "V60 (Hot)" }, 
+                    price: 1.800, 
+                    description: { ar: "قهوة مخمرة بطريقة V60 ساخنة", en: "Coffee brewed using V60 hot method" }
+                },
+                { 
+                    id: 14, 
+                    name: { ar: "V60 بارد", en: "V60 (Cold)" }, 
+                    price: 1.800, 
+                    description: { ar: "قهوة مخمرة بطريقة V60 باردة", en: "Coffee brewed using V60 cold method" }
+                },
+                { 
+                    id: 15, 
+                    name: { ar: "إيروبرس", en: "Aeropress" }, 
+                    price: 1.800, 
+                    description: { ar: "قهوة مخمرة بطريقة الإيروبرس", en: "Coffee brewed using Aeropress method" }
+                },
+                { 
+                    id: 16, 
+                    name: { ar: "قهوة باردة مخمرة", en: "Cold Brew" }, 
+                    price: 1.800, 
+                    description: { ar: "قهوة مخمرة على البارد لمدة 24 ساعة", en: "Coffee cold brewed for 24 hours" }
+                }
+            ],
+            
+            // Signature Drinks (from docx)
             signature: [
-                { id: 4, name: { ar: "قهوة شغف التوقيع", en: "Passion Coffee Signature" }, price: 1.900, description: { ar: "مشروب توقيع حصري بمذاق القهوة مع الشغف", en: "Exclusive signature drink with passion fruit coffee flavor" } },
-                { id: 5, name: { ar: "قهوة مانجو التوقيع", en: "Mango Coffee Signature" }, price: 1.900, description: { ar: "مزيج فريد من القهوة والمانجو", en: "Unique blend of coffee and mango" } }
+                { 
+                    id: 17, 
+                    name: { ar: "قهوة شغف التوقيع", en: "Passion Coffee Signature" }, 
+                    price: 1.900, 
+                    description: { ar: "مشروب توقيع حصري بمذاق القهوة مع الشغف", en: "Exclusive signature drink with passion fruit coffee flavor" }, 
+                    icon: "fas fa-star",
+                    isSpecial: true
+                },
+                { 
+                    id: 18, 
+                    name: { ar: "قهوة مانجو التوقيع", en: "Mango Coffee Signature" }, 
+                    price: 1.900, 
+                    description: { ar: "مزيج فريد من القهوة والمانجو", en: "Unique blend of coffee and mango" }, 
+                    icon: "fas fa-star",
+                    isSpecial: true
+                },
+                { 
+                    id: 19, 
+                    name: { ar: "إسبريسو التوقيع", en: "Espresso Signature" }, 
+                    price: 1.900, 
+                    description: { ar: "إسبريسو خاص بتوقيع هاستا", en: "Special espresso with Hosta signature" }, 
+                    icon: "fas fa-star",
+                    isSpecial: true
+                },
+                { 
+                    id: 20, 
+                    name: { ar: "شاي مثلج التوقيع", en: "Ice Tea Signature" }, 
+                    price: 1.700, 
+                    description: { ar: "شاي مثلج خاص بتوقيع هاستا", en: "Special iced tea with Hosta signature" }, 
+                    icon: "fas fa-star",
+                    isSpecial: true
+                },
+                { 
+                    id: 21, 
+                    name: { ar: "قهوة نعناع التوقيع", en: "Mint Coffee Signature" }, 
+                    price: 1.800, 
+                    description: { ar: "قهوة منعشة مع نعناع طازج", en: "Refreshing coffee with fresh mint" }, 
+                    icon: "fas fa-star",
+                    isSpecial: true
+                }
             ],
+            
+            // Tea & Matcha (from both files)
+            tea: [
+                { 
+                    id: 22, 
+                    name: { ar: "ماتشا", en: "Matcha" }, 
+                    price: 1.900, 
+                    description: { ar: "شاي ماتشا ياباني تقليدي", en: "Traditional Japanese matcha tea" }, 
+                    icon: "fas fa-leaf",
+                    isSpecial: true
+                },
+                { 
+                    id: 23, 
+                    name: { ar: "ماتشا جوز الهند", en: "Coconut Matcha" }, 
+                    price: 2.000, 
+                    description: { ar: "ماتشا مع نكهة جوز الهند", en: "Matcha with coconut flavor" }, 
+                    icon: "fas fa-leaf",
+                    isSpecial: true
+                },
+                { 
+                    id: 24, 
+                    name: { ar: "لاتيه ماتشا", en: "Matcha Latte" }, 
+                    price: 1.900, 
+                    description: { ar: "ماتشا مع حليب مبخر", en: "Matcha with steamed milk" }, 
+                    icon: "fas fa-leaf",
+                    isSpecial: true
+                },
+                { 
+                    id: 25, 
+                    name: { ar: "لاتيه ورد", en: "Rose Latte" }, 
+                    price: 1.600, 
+                    description: { ar: "لاتيه مع نكهة الورد الطبيعي", en: "Latte with natural rose flavor" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: true
+                },
+                { 
+                    id: 26, 
+                    name: { ar: "شاي مثلج", en: "Iced Tea" }, 
+                    price: 1.300, 
+                    description: { ar: "شاي مثلج منعش", en: "Refreshing iced tea" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: false
+                },
+                { 
+                    id: 27, 
+                    name: { ar: "نسكافيه", en: "Nescafe" }, 
+                    price: 0.300, 
+                    description: { ar: "نسكافيه كلاسيكي", en: "Classic Nescafe" }, 
+                    icon: "fas fa-mug-hot",
+                    isSpecial: false
+                }
+            ],
+            
+            // Pastries & Desserts (from docx)
             pastries: [
-                { id: 6, name: { ar: "كرواسون عادي", en: "Plain Croissant" }, price: 0.800, description: { ar: "كرواسون زبدي طازج", en: "Fresh buttery croissant" } },
-                { id: 7, name: { ar: "كرواسون جبن", en: "Cheese Croissant" }, price: 1.000, description: { ar: "كرواسون مع جبنة ذائبة", en: "Croissant with melted cheese" } }
+                { 
+                    id: 28, 
+                    name: { ar: "كرواسون عادي", en: "Plain Croissant" }, 
+                    price: 0.800, 
+                    description: { ar: "كرواسون زبدي طازج", en: "Fresh buttery croissant" }, 
+                    icon: "fas fa-bread-slice",
+                    isSpecial: false
+                },
+                { 
+                    id: 29, 
+                    name: { ar: "كرواسون جبن", en: "Cheese Croissant" }, 
+                    price: 1.000, 
+                    description: { ar: "كرواسون مع جبنة ذائبة", en: "Croissant with melted cheese" }, 
+                    icon: "fas fa-cheese",
+                    isSpecial: false
+                },
+                { 
+                    id: 30, 
+                    name: { ar: "دanish توت أزرق", en: "Blueberry Danish" }, 
+                    price: 0.850, 
+                    description: { ar: "معجنات مع توت أزرق طازج", en: "Pastry with fresh blueberries" }, 
+                    icon: "fas fa-pie-chart",
+                    isSpecial: false
+                },
+                { 
+                    id: 31, 
+                    name: { ar: "دانية شرقية", en: "Oriental Danish" }, 
+                    price: 0.850, 
+                    description: { ar: "معجنات شرقية", en: "Oriental pastry" }, 
+                    icon: "fas fa-pie-chart",
+                    isSpecial: false
+                },
+                { 
+                    id: 32, 
+                    name: { ar: "كعكة القرفة", en: "Cinnamon Roll" }, 
+                    price: 0.850, 
+                    description: { ar: "كعكة القرفة الطازجة", en: "Fresh cinnamon roll" }, 
+                    icon: "fas fa-cookie-bite",
+                    isSpecial: false
+                },
+                { 
+                    id: 33, 
+                    name: { ar: "دونات", en: "Donuts" }, 
+                    price: 0.400, 
+                    description: { ar: "دونات طازجة", en: "Fresh donuts" }, 
+                    icon: "fas fa-donate",
+                    isSpecial: false
+                },
+                { 
+                    id: 34, 
+                    name: { ar: "وافل", en: "Waffles" }, 
+                    price: 0.200, 
+                    description: { ar: "وافل طازج", en: "Fresh waffles" }, 
+                    icon: "fas fa-waffle",
+                    isSpecial: false
+                }
+            ],
+            
+            // Cakes & Bakery (from docx)
+            cakes: [
+                { 
+                    id: 35, 
+                    name: { ar: "كيك شوكولاتة", en: "Chocolate Cake" }, 
+                    price: 1.800, 
+                    description: { ar: "كيك شوكولاتة غني", en: "Rich chocolate cake" }, 
+                    icon: "fas fa-birthday-cake",
+                    isSpecial: true
+                },
+                { 
+                    id: 36, 
+                    name: { ar: "سان سيباستيان", en: "San Sebastian" }, 
+                    price: 1.700, 
+                    description: { ar: "كيك سان سيباستيان الكلاسيكي", en: "Classic San Sebastian cake" }, 
+                    icon: "fas fa-birthday-cake",
+                    isSpecial: true
+                },
+                { 
+                    id: 37, 
+                    name: { ar: "كيك جبنة بالتوت", en: "Blueberry Cheese cake" }, 
+                    price: 1.900, 
+                    description: { ar: "كيك جبنة مع توت أزرق", en: "Cheesecake with blueberries" }, 
+                    icon: "fas fa-cheese",
+                    isSpecial: true
+                },
+                { 
+                    id: 38, 
+                    name: { ar: "تيراميسو", en: "Tiramisu" }, 
+                    price: 1.700, 
+                    description: { ar: "تيراميسو إيطالي تقليدي", en: "Traditional Italian tiramisu" }, 
+                    icon: "fas fa-birthday-cake",
+                    isSpecial: true
+                },
+                { 
+                    id: 39, 
+                    name: { ar: "كيك أحمر مخملي", en: "Red Velvet" }, 
+                    price: 1.900, 
+                    description: { ar: "كيك أحمر مخملي كلاسيكي", en: "Classic red velvet cake" }, 
+                    icon: "fas fa-birthday-cake",
+                    isSpecial: true
+                },
+                { 
+                    id: 40, 
+                    name: { ar: "براونيز", en: "Brownies" }, 
+                    price: 1.800, 
+                    description: { ar: "براونيز شوكولاتة غنية", en: "Rich chocolate brownies" }, 
+                    icon: "fas fa-cookie",
+                    isSpecial: true
+                },
+                { 
+                    id: 41, 
+                    name: { ar: "براونيز صحية", en: "Healthy Brownies" }, 
+                    price: 0.300, 
+                    description: { ar: "براونيز صحية", en: "Healthy brownies" }, 
+                    icon: "fas fa-cookie",
+                    isSpecial: false
+                },
+                { 
+                    id: 42, 
+                    name: { ar: "كيك التمر", en: "Date Cake" }, 
+                    price: 0.300, 
+                    description: { ar: "كيك التمر العُماني", en: "Omani date cake" }, 
+                    icon: "fas fa-birthday-cake",
+                    isSpecial: false
+                },
+                { 
+                    id: 43, 
+                    name: { ar: "شريحة كيك", en: "Slice Cake" }, 
+                    price: 0.300, 
+                    description: { ar: "شريحة كيك طازجة", en: "Fresh cake slice" }, 
+                    icon: "fas fa-birthday-cake",
+                    isSpecial: false
+                }
+            ],
+            
+            // Snacks (from docx)
+            snacks: [
+                { 
+                    id: 44, 
+                    name: { ar: "شوكولاتة لوز", en: "Almond Chocolate" }, 
+                    price: 0.200, 
+                    description: { ar: "شوكولاتة مع لوز", en: "Chocolate with almonds" }, 
+                    icon: "fas fa-cookie",
+                    isSpecial: false
+                },
+                { 
+                    id: 45, 
+                    name: { ar: "معمول", en: "Biscuit with Dates (Maamol)" }, 
+                    price: 0.200, 
+                    description: { ar: "معمول عُماني تقليدي", en: "Traditional Omani date biscuits" }, 
+                    icon: "fas fa-cookie",
+                    isSpecial: true
+                },
+                { 
+                    id: 46, 
+                    name: { ar: "بار بروتين", en: "Protein Bar" }, 
+                    price: 1.000, 
+                    description: { ar: "بار بروتين صحي", en: "Healthy protein bar" }, 
+                    icon: "fas fa-dumbbell",
+                    isSpecial: false
+                },
+                { 
+                    id: 47, 
+                    name: { ar: "شريحة تاريخ وجرانولا", en: "Date Granola bar" }, 
+                    price: 0.500, 
+                    description: { ar: "بار تاريخ وجرانولا", en: "Date and granola bar" }, 
+                    icon: "fas fa-dumbbell",
+                    isSpecial: false
+                },
+                { 
+                    id: 48, 
+                    name: { ar: "رقائق صحية", en: "Healthy Chips" }, 
+                    price: 0.400, 
+                    description: { ar: "رقائق صحية", en: "Healthy chips" }, 
+                    icon: "fas fa-cookie-bite",
+                    isSpecial: false
+                }
+            ],
+            
+            // Juices & Drinks (from docx)
+            juices: [
+                { 
+                    id: 49, 
+                    name: { ar: "عصير برتقال", en: "Orange Juice" }, 
+                    price: 0.750, 
+                    description: { ar: "عصير برتقال طازج", en: "Fresh orange juice" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: false
+                },
+                { 
+                    id: 50, 
+                    name: { ar: "مانجو وماراكويا", en: "Mango Passion Fruit" }, 
+                    price: 0.750, 
+                    description: { ar: "عصير مانجو وماراكويا", en: "Mango and passion fruit juice" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: true
+                },
+                { 
+                    id: 51, 
+                    name: { ar: "برتقال وبنجر", en: "Orange Beetroot" }, 
+                    price: 0.750, 
+                    description: { ar: "عصير برتقال وبنجر صحي", en: "Healthy orange and beetroot juice" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: true
+                },
+                { 
+                    id: 52, 
+                    name: { ar: "رمان", en: "Pomegranate" }, 
+                    price: 0.850, 
+                    description: { ar: "عصير رمان طازج", en: "Fresh pomegranate juice" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: true
+                },
+                { 
+                    id: 53, 
+                    name: { ar: "ماء معدني", en: "Mineral Water" }, 
+                    price: 0.100, 
+                    description: { ar: "ماء معدني", en: "Mineral water" }, 
+                    icon: "fas fa-wine-bottle",
+                    isSpecial: false
+                },
+                { 
+                    id: 54, 
+                    name: { ar: "ماء فوار", en: "Sparkling Water" }, 
+                    price: 0.700, 
+                    description: { ar: "ماء فوار", en: "Sparkling water" }, 
+                    icon: "fas fa-wine-bottle",
+                    isSpecial: false
+                },
+                { 
+                    id: 55, 
+                    name: { ar: "ماء اللافندر", en: "Lavender Water" }, 
+                    price: 0.500, 
+                    description: { ar: "ماء اللافندر المنعش", en: "Refreshing lavender water" }, 
+                    icon: "fas fa-wine-bottle",
+                    isSpecial: true
+                },
+                { 
+                    id: 56, 
+                    name: { ar: "ماء اللبان", en: "Luban Water" }, 
+                    price: 0.500, 
+                    description: { ar: "ماء اللبان العُماني", en: "Omani luban water" }, 
+                    icon: "fas fa-wine-bottle",
+                    isSpecial: true
+                },
+                { 
+                    id: 57, 
+                    name: { ar: "لون", en: "Laban" }, 
+                    price: 0.250, 
+                    description: { ar: "لون طازج", en: "Fresh laban" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: false
+                },
+                { 
+                    id: 58, 
+                    name: { ar: "لون مانجو", en: "Mango Laban" }, 
+                    price: 0.300, 
+                    description: { ar: "لون بنكهة المانجو", en: "Laban with mango flavor" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: true
+                },
+                { 
+                    id: 59, 
+                    name: { ar: "لون فراولة", en: "Strawberry Laban" }, 
+                    price: 0.300, 
+                    description: { ar: "لون بنكهة الفراولة", en: "Laban with strawberry flavor" }, 
+                    icon: "fas fa-glass-whiskey",
+                    isSpecial: true
+                }
+            ],
+            
+            // Sandwiches & Toast (from docx)
+            sandwiches: [
+                { 
+                    id: 60, 
+                    name: { ar: "توست دجاج", en: "Chicken Toast" }, 
+                    price: 0.800, 
+                    description: { ar: "توست مع دجاج", en: "Toast with chicken" }, 
+                    icon: "fas fa-bread-slice",
+                    isSpecial: false
+                },
+                { 
+                    id: 61, 
+                    name: { ar: "توست بيض", en: "Egg Toast" }, 
+                    price: 0.600, 
+                    description: { ar: "توست مع بيض", en: "Toast with egg" }, 
+                    icon: "fas fa-egg",
+                    isSpecial: false
+                },
+                { 
+                    id: 62, 
+                    name: { ar: "توست تركيا", en: "Turkey Toast" }, 
+                    price: 0.950, 
+                    description: { ar: "توست مع تركيا", en: "Toast with turkey" }, 
+                    icon: "fas fa-bread-slice",
+                    isSpecial: false
+                },
+                { 
+                    id: 63, 
+                    name: { ar: "ساندويش حلوم", en: "Halloumi Sandwich" }, 
+                    price: 1.600, 
+                    description: { ar: "ساندويش حلوم", en: "Halloumi sandwich" }, 
+                    icon: "fas fa-hamburger",
+                    isSpecial: true
+                },
+                { 
+                    id: 64, 
+                    name: { ar: "ساندويش مربى", en: "Jam Sandwich" }, 
+                    price: 0.400, 
+                    description: { ar: "ساندويش مربى", en: "Jam sandwich" }, 
+                    icon: "fas fa-hamburger",
+                    isSpecial: false
+                },
+                { 
+                    id: 65, 
+                    name: { ar: "ساندويش لحم", en: "Meat Sandwich" }, 
+                    price: 1.600, 
+                    description: { ar: "ساندويش لحم", en: "Meat sandwich" }, 
+                    icon: "fas fa-hamburger",
+                    isSpecial: false
+                },
+                { 
+                    id: 66, 
+                    name: { ar: "ساندويش دجاج", en: "Chicken Sandwich" }, 
+                    price: 1.600, 
+                    description: { ar: "ساندويش دجاج", en: "Chicken sandwich" }, 
+                    icon: "fas fa-hamburger",
+                    isSpecial: false
+                },
+                { 
+                    id: 67, 
+                    name: { ar: "ساندويش تركيا", en: "Turkey Sandwich" }, 
+                    price: 1.600, 
+                    description: { ar: "ساندويش تركيا", en: "Turkey sandwich" }, 
+                    icon: "fas fa-hamburger",
+                    isSpecial: false
+                }
+            ],
+            
+            // Healthy Options (from docx)
+            healthy: [
+                { 
+                    id: 68, 
+                    name: { ar: "زبادي يوناني", en: "Greek Yogurt" }, 
+                    price: 0.800, 
+                    description: { ar: "زبادي يوناني طازج", en: "Fresh Greek yogurt" }, 
+                    icon: "fas fa-apple-alt",
+                    isSpecial: false
+                },
+                { 
+                    id: 69, 
+                    name: { ar: "جرانولا مع زبادي يوناني", en: "Granola with Greek Yogurt" }, 
+                    price: 1.200, 
+                    description: { ar: "جرانولا مع زبادي يوناني", en: "Granola with Greek yogurt" }, 
+                    icon: "fas fa-apple-alt",
+                    isSpecial: true
+                },
+                { 
+                    id: 70, 
+                    name: { ar: "صحن فواكه", en: "Shea with Fruit Salad" }, 
+                    price: 1.500, 
+                    description: { ar: "صحن فواكه طازجة", en: "Fresh fruit salad bowl" }, 
+                    icon: "fas fa-apple-alt",
+                    isSpecial: true
+                },
+                { 
+                    id: 71, 
+                    name: { ar: "صندوق فواكه مختلطة", en: "Fruit Mix Box" }, 
+                    price: 0.950, 
+                    description: { ar: "صندوق فواكه مختلطة", en: "Mixed fruit box" }, 
+                    icon: "fas fa-apple-alt",
+                    isSpecial: false
+                },
+                { 
+                    id: 72, 
+                    name: { ar: "صندوق أناناس", en: "Pineapple Box" }, 
+                    price: 0.950, 
+                    description: { ar: "صندوق أناناس طازج", en: "Fresh pineapple box" }, 
+                    icon: "fas fa-apple-alt",
+                    isSpecial: false
+                },
+                { 
+                    id: 73, 
+                    name: { ar: "كولاجين", en: "Collagen" }, 
+                    price: 1.900, 
+                    description: { ar: "مشروب الكولاجين", en: "Collagen drink" }, 
+                    icon: "fas fa-heart",
+                    isSpecial: true
+                },
+                { 
+                    id: 74, 
+                    name: { ar: "جرعة زنجبيل", en: "Ginger Shot" }, 
+                    price: 1.200, 
+                    description: { ar: "جرعة زنجبيل صحية", en: "Healthy ginger shot" }, 
+                    icon: "fas fa-heart",
+                    isSpecial: true
+                },
+                { 
+                    id: 75, 
+                    name: { ar: "موفنز", en: "Muffins" }, 
+                    price: 0.800, 
+                    description: { ar: "موفنز طازجة", en: "Fresh muffins" }, 
+                    icon: "fas fa-cookie-bite",
+                    isSpecial: false
+                }
             ]
         };
+
+        // Additional drinks from PDF
+        const additionalDrinks = [
+            { 
+                id: 76, 
+                name: { ar: "موهيتو", en: "Mojito" }, 
+                price: 1.300, 
+                description: { ar: "مشروب منعش بالنعناع والليمون", en: "Refreshing mint and lemon drink" }, 
+                icon: "fas fa-glass-whiskey",
+                isSpecial: true,
+                category: "juices"
+            },
+            { 
+                id: 77, 
+                name: { ar: "شوكولاتة ساخنة", en: "Hot Chocolate" }, 
+                price: 1.500, 
+                description: { ar: "شوكولاتة غنية وساخنة مع كريمة", en: "Rich hot chocolate with cream" }, 
+                icon: "fas fa-mug-hot",
+                isSpecial: false,
+                category: "tea"
+            }
+        ];
 
         // Application State
         let cart = [];
@@ -1147,17 +1765,110 @@
 
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
-            initializeApp();
+            renderAllMenuItems();
+            setupEventListeners();
+            updateCartDisplay();
+            
+            // Set initial language
+            updateLanguage("ar");
         });
 
-        function initializeApp() {
-            setupEventListeners();
-            renderCategoryTabs();
-            renderMenuSections();
-            updateLanguage(currentLanguage);
-            updateCartDisplay();
+        // Render all menu items to the page
+        function renderAllMenuItems() {
+            // Render main categories
+            for (const category in menuItems) {
+                if (category === 'brewSpecialty') continue; // Skip specialty brew for now
+                
+                const menuGrid = document.getElementById(`${category}Grid`);
+                if (!menuGrid) continue;
+                
+                menuGrid.innerHTML = '';
+                
+                if (menuItems[category] && menuItems[category].length > 0) {
+                    menuItems[category].forEach(item => {
+                        createMenuItem(category, item, menuGrid);
+                    });
+                }
+            }
+            
+            // Render specialty brew methods
+            renderSpecialtyBrewMethods();
+            
+            // Add additional drinks to their categories
+            additionalDrinks.forEach(drink => {
+                const menuGrid = document.getElementById(`${drink.category}Grid`);
+                if (menuGrid) {
+                    createMenuItem(drink.category, drink, menuGrid);
+                }
+            });
         }
 
+        // Create a menu item element
+        function createMenuItem(category, item, container) {
+            const menuItem = document.createElement('div');
+            menuItem.className = 'menu-item';
+            
+            // Add special label if item is special
+            const specialLabel = item.isSpecial ? '<div class="special-label">خاص</div>' : '';
+            const popularLabel = item.isPopular ? '<div class="popular-label">الأكثر طلباً</div>' : '';
+            
+            menuItem.innerHTML = `
+                ${specialLabel}
+                ${popularLabel}
+                <div class="item-image">
+                    <i class="${item.icon}"></i>
+                </div>
+                <div class="item-details">
+                    <div class="item-header">
+                        <div class="item-name">${item.name[currentLanguage]}</div>
+                        <div class="item-price">${item.price.toFixed(3)}</div>
+                    </div>
+                    <div class="item-description">${item.description[currentLanguage]}</div>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                            <span class="quantity" id="quantity-${item.id}">0</span>
+                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        </div>
+                        <button class="add-to-cart" data-id="${item.id}">
+                            ${currentLanguage === 'ar' ? 'أضف للسلة' : 'Add to Cart'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(menuItem);
+        }
+
+        // Render specialty brew methods
+        function renderSpecialtyBrewMethods() {
+            const brewGrid = document.getElementById('specialtyBrewGrid');
+            if (!brewGrid || !menuItems.brewSpecialty) return;
+            
+            brewGrid.innerHTML = '';
+            
+            menuItems.brewSpecialty.forEach(item => {
+                const brewItem = document.createElement('div');
+                brewItem.className = 'brew-item';
+                brewItem.innerHTML = `
+                    <h4 style="color: #5d4037; margin-bottom: 10px;">${item.name[currentLanguage]}</h4>
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #ff9800; margin-bottom: 10px;">
+                        ${item.price.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}
+                    </div>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${item.description[currentLanguage]}</p>
+                    <div class="quantity-selector" style="justify-content: center;">
+                        <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                        <span class="quantity" id="quantity-${item.id}">0</span>
+                        <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                    </div>
+                    <button class="add-to-cart" data-id="${item.id}" style="margin-top: 10px; width: 100%;">
+                        ${currentLanguage === 'ar' ? 'أضف للسلة' : 'Add to Cart'}
+                    </button>
+                `;
+                brewGrid.appendChild(brewItem);
+            });
+        }
+
+        // Setup event listeners
         function setupEventListeners() {
             // Language selection
             document.getElementById('arabicBtn').addEventListener('click', () => updateLanguage('ar'));
@@ -1166,6 +1877,14 @@
             // Service selection
             document.getElementById('dineInBtn').addEventListener('click', () => selectService('dineIn'));
             document.getElementById('deliveryBtn').addEventListener('click', () => selectService('delivery'));
+            
+            // Category tabs
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    selectCategory(category);
+                });
+            });
             
             // Cart toggle
             document.getElementById('cartToggle').addEventListener('click', toggleCart);
@@ -1176,8 +1895,8 @@
             document.getElementById('checkoutBtn').addEventListener('click', checkout);
             
             // Payment selection
-            document.querySelectorAll('.payment-card').forEach(card => {
-                card.addEventListener('click', function() {
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.addEventListener('click', function() {
                     selectPaymentMethod(this.getAttribute('data-method'));
                 });
             });
@@ -1190,101 +1909,22 @@
             
             // Delegate events for dynamic elements
             document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('qty-btn')) {
-                    const id = parseInt(e.target.closest('.menu-card').dataset.id);
+                // Quantity buttons
+                if (e.target.classList.contains('quantity-btn')) {
+                    const id = parseInt(e.target.getAttribute('data-id'));
                     const isPlus = e.target.classList.contains('plus');
                     updateQuantity(id, isPlus);
                 }
                 
-                if (e.target.classList.contains('add-to-cart-btn')) {
-                    const id = parseInt(e.target.closest('.menu-card').dataset.id);
+                // Add to cart buttons
+                if (e.target.classList.contains('add-to-cart')) {
+                    const id = parseInt(e.target.getAttribute('data-id'));
                     addToCart(id);
                 }
             });
         }
 
-        function renderCategoryTabs() {
-            const tabsContainer = document.getElementById('categoryTabs');
-            tabsContainer.innerHTML = '';
-            
-            Object.keys(content[currentLanguage].categories).forEach(categoryKey => {
-                if (menuItems[categoryKey] && menuItems[categoryKey].length > 0) {
-                    const btn = document.createElement('button');
-                    btn.className = 'category-btn';
-                    btn.dataset.category = categoryKey;
-                    btn.textContent = content[currentLanguage].categories[categoryKey];
-                    
-                    btn.addEventListener('click', () => {
-                        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        
-                        const section = document.getElementById(`${categoryKey}-section`);
-                        if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    });
-                    
-                    tabsContainer.appendChild(btn);
-                }
-            });
-            
-            // Activate first tab
-            if (tabsContainer.firstChild) {
-                tabsContainer.firstChild.classList.add('active');
-            }
-        }
-
-        function renderMenuSections() {
-            const container = document.getElementById('menuContainer');
-            container.innerHTML = '';
-            
-            Object.keys(menuItems).forEach(categoryKey => {
-                if (menuItems[categoryKey].length > 0) {
-                    const section = document.createElement('section');
-                    section.className = 'menu-section';
-                    section.id = `${categoryKey}-section`;
-                    
-                    section.innerHTML = `
-                        <div class="section-header">
-                            <h2 class="section-title">${content[currentLanguage].categories[categoryKey]}</h2>
-                            <p class="section-subtitle">${currentLanguage === 'ar' ? 'اكتشف مجموعة مختارة من أفضل ما نقدمه' : 'Discover a curated selection of our finest offerings'}</p>
-                        </div>
-                        <div class="menu-grid" id="${categoryKey}-grid"></div>
-                    `;
-                    
-                    container.appendChild(section);
-                    
-                    const grid = document.getElementById(`${categoryKey}-grid`);
-                    menuItems[categoryKey].forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = 'menu-card';
-                        card.dataset.id = item.id;
-                        
-                        card.innerHTML = `
-                            <div class="card-header">
-                                <h3 class="card-title">${item.name[currentLanguage]}</h3>
-                                <div class="card-price">${item.price.toFixed(3)}</div>
-                            </div>
-                            <p class="card-description">${item.description[currentLanguage]}</p>
-                            <div class="card-actions">
-                                <div class="quantity-control">
-                                    <button class="qty-btn minus">-</button>
-                                    <span class="quantity" id="quantity-${item.id}">0</span>
-                                    <button class="qty-btn plus">+</button>
-                                </div>
-                                <button class="add-to-cart-btn">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    ${currentLanguage === 'ar' ? 'أضف للسلة' : 'Add to Cart'}
-                                </button>
-                            </div>
-                        `;
-                        
-                        grid.appendChild(card);
-                    });
-                }
-            });
-        }
-
+        // Update language
         function updateLanguage(lang) {
             currentLanguage = lang;
             
@@ -1295,18 +1935,49 @@
             // Update text direction
             document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
-            // Update hero section
-            document.getElementById('heroTitle').textContent = content[lang].heroTitle;
-            document.getElementById('heroSubtitle').textContent = content[lang].heroSubtitle;
-            
-            // Update service buttons
+            // Update all text content
+            document.getElementById('tagline').textContent = content[lang].tagline;
             document.getElementById('dineInText').textContent = content[lang].dineIn;
             document.getElementById('deliveryText').textContent = content[lang].delivery;
             
+            // Update service info based on current service
+            updateServiceInfo();
+            
+            // Update category tabs
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                const arText = btn.querySelector('.ar-text');
+                const enText = btn.querySelector('.en-text');
+                
+                if (lang === 'ar') {
+                    arText.style.display = 'inline';
+                    enText.style.display = 'none';
+                } else {
+                    arText.style.display = 'none';
+                    enText.style.display = 'inline';
+                }
+            });
+            
+            // Update section titles
+            document.querySelectorAll('.section-title').forEach(title => {
+                const arText = title.querySelector('.ar-text');
+                const enText = title.querySelector('.en-text');
+                
+                if (lang === 'ar') {
+                    arText.style.display = 'inline';
+                    enText.style.display = 'none';
+                } else {
+                    arText.style.display = 'none';
+                    enText.style.display = 'inline';
+                }
+            });
+            
             // Update cart text
             document.querySelectorAll('.cart-title .ar-text, .cart-title .en-text').forEach(text => {
-                text.style.display = text.classList.contains('ar-text') && lang === 'ar' ? 'inline' : 
-                                   text.classList.contains('en-text') && lang === 'en' ? 'inline' : 'none';
+                if (text.classList.contains('ar-text')) {
+                    text.style.display = lang === 'ar' ? 'inline' : 'none';
+                } else {
+                    text.style.display = lang === 'en' ? 'inline' : 'none';
+                }
             });
             
             document.getElementById('checkoutBtn').innerHTML = lang === 'ar' ? 
@@ -1317,26 +1988,32 @@
                 '<span class="ar-text">إفراغ السلة</span><span class="en-text" style="display: none;">Clear Cart</span>' : 
                 '<span class="ar-text" style="display: none;">إفراغ السلة</span><span class="en-text">Clear Cart</span>';
             
-            // Update payment section
-            document.getElementById('paymentTitle').textContent = content[lang].payment.title;
-            document.getElementById('paymentSubtitle').textContent = content[lang].payment.subtitle;
+            // Update payment options text
+            document.querySelectorAll('.payment-option p').forEach(p => {
+                if (p.classList.contains('ar-text')) {
+                    p.style.display = lang === 'ar' ? 'block' : 'none';
+                } else {
+                    p.style.display = lang === 'en' ? 'block' : 'none';
+                }
+            });
+            
+            // Update complete order button
             document.getElementById('completeOrderBtn').innerHTML = lang === 'ar' ? 
                 '<span class="ar-text">أكمل الطلب</span><span class="en-text" style="display: none;">Complete Order</span>' : 
                 '<span class="ar-text" style="display: none;">أكمل الطلب</span><span class="en-text">Complete Order</span>';
             
-            // Update order complete
-            document.getElementById('orderCompleteTitle').textContent = content[lang].orderComplete.title;
-            document.getElementById('orderCompleteMessage').textContent = content[lang].orderComplete.message;
-            document.getElementById('newOrderBtn').innerHTML = lang === 'ar' ? 
-                '<span class="ar-text">طلب جديد</span><span class="en-text" style="display: none;">New Order</span>' : 
-                '<span class="ar-text" style="display: none;">طلب جديد</span><span class="en-text">New Order</span>';
+            // Update footer
+            document.getElementById('address').textContent = content[lang].address;
+            document.getElementById('hours').textContent = content[lang].hours;
             
-            // Re-render category tabs and menu
-            renderCategoryTabs();
-            renderMenuSections();
+            // Re-render all menu items with new language
+            renderAllMenuItems();
+            
+            // Update cart display
             updateCartDisplay();
         }
 
+        // Select service type
         function selectService(service) {
             currentService = service;
             
@@ -1345,18 +2022,44 @@
             document.getElementById('deliveryBtn').classList.toggle('active', service === 'delivery');
             
             // Update service info
-            const serviceTitle = currentLanguage === 'ar' ? 
-                (service === 'dineIn' ? 'تناول في المكان' : 'خدمة التوصيل') :
-                (service === 'dineIn' ? 'Dine In Service' : 'Delivery Service');
-            
-            const serviceDesc = currentLanguage === 'ar' ? 
-                (service === 'dineIn' ? content.ar.dineInDesc : content.ar.deliveryDesc) :
-                (service === 'dineIn' ? content.en.dineInDesc : content.en.deliveryDesc);
+            updateServiceInfo();
             
             // Update cart display for potential delivery fee changes
             updateCartDisplay();
         }
 
+        // Update service info based on current language and service
+        function updateServiceInfo() {
+            const serviceTitle = document.getElementById('serviceTitle');
+            const serviceDescription = document.getElementById('serviceDescription');
+            
+            if (currentService === 'dineIn') {
+                serviceTitle.textContent = content[currentLanguage].dineIn;
+                serviceDescription.textContent = content[currentLanguage].dineInDesc;
+            } else {
+                serviceTitle.textContent = content[currentLanguage].delivery;
+                serviceDescription.textContent = content[currentLanguage].deliveryDesc;
+            }
+        }
+
+        // Select menu category
+        function selectCategory(category) {
+            // Update button states
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+            });
+            
+            // Show selected menu, hide others
+            document.querySelectorAll('.menu-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            const selectedSection = document.getElementById(`${category}-menu`);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+
+        // Update item quantity
         function updateQuantity(id, isPlus) {
             const quantityElement = document.getElementById(`quantity-${id}`);
             let quantity = parseInt(quantityElement.textContent);
@@ -1370,17 +2073,38 @@
             quantityElement.textContent = quantity;
         }
 
+        // Add item to cart
         function addToCart(id) {
             let itemToAdd = null;
             let categoryFound = null;
             
-            // Find item in menu
+            // Search in all menu categories
             for (const category in menuItems) {
-                const found = menuItems[category].find(item => item.id === id);
+                if (category === 'brewSpecialty') {
+                    // Check specialty brew methods
+                    const found = menuItems[category].find(item => item.id === id);
+                    if (found) {
+                        itemToAdd = found;
+                        categoryFound = 'brew';
+                        break;
+                    }
+                } else {
+                    // Check other categories
+                    const found = menuItems[category].find(item => item.id === id);
+                    if (found) {
+                        itemToAdd = found;
+                        categoryFound = category;
+                        break;
+                    }
+                }
+            }
+            
+            // Check in additional drinks
+            if (!itemToAdd) {
+                const found = additionalDrinks.find(item => item.id === id);
                 if (found) {
                     itemToAdd = found;
-                    categoryFound = category;
-                    break;
+                    categoryFound = found.category;
                 }
             }
             
@@ -1394,8 +2118,10 @@
             const existingIndex = cart.findIndex(item => item.id === id);
             
             if (existingIndex >= 0) {
+                // Update quantity
                 cart[existingIndex].quantity += quantity;
             } else {
+                // Add new item
                 cart.push({
                     ...itemToAdd,
                     quantity: quantity,
@@ -1413,9 +2139,10 @@
             document.getElementById('cartPanel').classList.add('active');
             
             // Show notification
-            showNotification(`${quantity} ${itemToAdd.name[currentLanguage]} ${currentLanguage === 'ar' ? 'تمت الإضافة إلى السلة' : 'added to cart'}`);
+            showNotification(`${quantity} ${itemToAdd.name[currentLanguage]} ${content[currentLanguage].notification.added}`);
         }
 
+        // Update cart display
         function updateCartDisplay() {
             // Update cart count
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1427,7 +2154,7 @@
             
             if (cart.length === 0) {
                 const emptyText = currentLanguage === 'ar' ? 'سلة التسوق فارغة' : 'Your cart is empty';
-                cartItemsElement.innerHTML = `<p style="text-align: center; color: var(--text-secondary); padding: 20px;">${emptyText}</p>`;
+                cartItemsElement.innerHTML = `<p style="text-align: center; color: #999; padding: 20px;">${emptyText}</p>`;
                 document.getElementById('cartTotal').textContent = currentLanguage === 'ar' ? '٠.٠٠٠ ر.ع.' : '0.000 OMR';
                 return;
             }
@@ -1461,6 +2188,17 @@
                     <div class="cart-item-price">${deliveryFee.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}</div>
                 `;
                 cartItemsElement.appendChild(deliveryItem);
+                
+                // Add note about free delivery
+                const neededForFree = (5 - (total - deliveryFee)).toFixed(3);
+                const noteText = currentLanguage === 'ar' ? 
+                    `أضف ${neededForFree} ر.ع. أخرى للحصول على توصيل مجاني!` :
+                    `Add ${neededForFree} OMR more for free delivery!`;
+                
+                const note = document.createElement('p');
+                note.style = "font-size: 0.8rem; color: #4caf50; margin-top: 5px; text-align: center;";
+                note.textContent = noteText;
+                cartItemsElement.appendChild(note);
             }
             
             // Update total
@@ -1469,45 +2207,54 @@
                 `${totalText} ر.ع.` : `${totalText} OMR`;
         }
 
+        // Toggle cart panel
         function toggleCart() {
             document.getElementById('cartPanel').classList.toggle('active');
         }
 
+        // Clear cart
         function clearCart() {
             cart = [];
             updateCartDisplay();
-            showNotification(currentLanguage === 'ar' ? 'تم إفراغ السلة' : 'Cart cleared');
+            showNotification(content[currentLanguage].notification.cleared);
         }
 
+        // Checkout process
         function checkout() {
             if (cart.length === 0) {
-                showNotification(currentLanguage === 'ar' ? 'سلة التسوق فارغة' : 'Your cart is empty');
+                showNotification(content[currentLanguage].notification.cartEmpty);
                 return;
             }
             
             // Show payment section
             document.getElementById('paymentSection').classList.add('active');
+            
+            // Scroll to payment section
             document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide cart panel
             document.getElementById('cartPanel').classList.remove('active');
         }
 
+        // Select payment method
         function selectPaymentMethod(method) {
             selectedPaymentMethod = method;
             
             // Update UI
-            document.querySelectorAll('.payment-card').forEach(card => {
-                card.classList.toggle('active', card.getAttribute('data-method') === method);
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.toggle('active', option.getAttribute('data-method') === method);
             });
         }
 
+        // Complete order
         function completeOrder() {
             if (cart.length === 0) {
-                showNotification(currentLanguage === 'ar' ? 'سلة التسوق فارغة' : 'Your cart is empty');
+                showNotification(content[currentLanguage].notification.cartEmpty);
                 return;
             }
             
             if (!selectedPaymentMethod) {
-                showNotification(currentLanguage === 'ar' ? 'الرجاء اختيار طريقة الدفع' : 'Please select a payment method');
+                showNotification(content[currentLanguage].notification.selectPayment);
                 return;
             }
             
@@ -1523,9 +2270,31 @@
             // Show order complete section
             document.getElementById('paymentSection').classList.remove('active');
             document.getElementById('orderComplete').classList.add('active');
+            
+            // Update order complete text
+            document.getElementById('orderCompleteTitle').textContent = content[currentLanguage].orderComplete.title;
+            document.getElementById('orderCompleteMessage').textContent = content[currentLanguage].orderComplete.message;
+            
+            // Scroll to order complete
             document.getElementById('orderComplete').scrollIntoView({ behavior: 'smooth' });
             
-            // Log order for demo
+            // In a real system, this would:
+            // 1. Send order to kitchen/backend
+            // 2. Process payment via Thawani API if selected
+            // 3. Send confirmation to customer
+            
+            // For Thawani payment simulation
+            if (selectedPaymentMethod === 'thawani') {
+                // In real implementation, redirect to Thawani payment gateway
+                // or show Thawani QR code for scanning
+                setTimeout(() => {
+                    showNotification(currentLanguage === 'ar' ? 
+                        "تم تحويلك إلى بوابة دفع ثواني" : 
+                        "Redirecting to Thawani payment gateway");
+                }, 500);
+            }
+            
+            // For demo, log the order
             console.log('Order placed:', {
                 orderNumber: orderNumber,
                 service: currentService,
@@ -1538,37 +2307,71 @@
                 paymentMethod: selectedPaymentMethod,
                 language: currentLanguage
             });
+        }
+
+        // Start new order
+        function startNewOrder() {
+            // Hide order complete section
+            document.getElementById('orderComplete').classList.remove('active');
             
-            // Clear cart after order
+            // Reset cart
             cart = [];
             selectedPaymentMethod = null;
             updateCartDisplay();
             
-            // Reset payment selection
-            document.querySelectorAll('.payment-card').forEach(card => {
-                card.classList.remove('active');
-            });
-        }
-
-        function startNewOrder() {
-            document.getElementById('orderComplete').classList.remove('active');
+            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            document.querySelector('.category-btn.active').click();
+            
+            // Show menu
+            const activeBtn = document.querySelector('.category-btn.active');
+            if (activeBtn) {
+                activeBtn.click();
+            }
         }
 
+        // Show notification
         function showNotification(message) {
+            // Create notification element
             const notification = document.createElement('div');
-            notification.className = 'notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                ${currentLanguage === 'ar' ? 'left: 20px;' : 'right: 20px;'}
+                background-color: #4caf50;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                font-weight: bold;
+                animation: slideIn 0.3s ease;
+                max-width: 300px;
+            `;
             notification.textContent = message;
             document.body.appendChild(notification);
             
+            // Remove after 3 seconds
             setTimeout(() => {
-                notification.style.animation = 'slideIn 0.3s ease reverse';
+                notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => {
                     document.body.removeChild(notification);
                 }, 300);
             }, 3000);
         }
+
+        // Add CSS for notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateY(-100%); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateY(0); opacity: 1; }
+                to { transform: translateY(-100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

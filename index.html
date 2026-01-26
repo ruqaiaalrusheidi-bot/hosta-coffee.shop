@@ -721,7 +721,7 @@
     <div class="container">
         <!-- Service Info -->
         <div id="serviceInfo" class="service-info">
-            <h3 id="serviceTitle">تناتناوُل بالمستشفى</h3>
+            <h3 id="serviceTitle">تناوُل بالمستشفى</h3>
             <p id="serviceDescription">اطلب من المستشفى وسنحضر طلبك إليك. لا حاجة للانتظار!</p>
         </div>
 
@@ -736,20 +736,16 @@
                 <span class="en-text" style="display: none;">Brew Methods</span>
             </button>
             <button class="category-btn" data-category="signature">
-                <span class="ar-text">مشروبات التوقيع</span>
+                <span class="ar-text">مشروبات هوستا الخاصة</span>
                 <span class="en-text" style="display: none;">Signature Drinks</span>
             </button>
             <button class="category-btn" data-category="tea">
                 <span class="ar-text">شاي وماتشا</span>
                 <span class="en-text" style="display: none;">Tea & Matcha</span>
             </button>
-            <button class="category-btn" data-category="pastries">
+            <button class="category-btn" data-category="Sweet & pastries">
                 <span class="ar-text">معجنات وحلويات</span>
                 <span class="en-text" style="display: none;">Pastries & Desserts</span>
-            </button>
-            <button class="category-btn" data-category="cakes">
-                <span class="ar-text">كيك وكعك</span>
-                <span class="en-text" style="display: none;">Cakes & Bakery</span>
             </button>
             <button class="category-btn" data-category="snacks">
                 <span class="ar-text">وجبات خفيفة</span>
@@ -828,7 +824,7 @@
             </div>
         </div>
 
-        <!-- Pastries Menu -->
+        <!-- Sweet & Pastries Menu -->
         <div class="menu-section" id="pastries-menu" style="display: none;">
             <h2 class="section-title">
                 <span class="ar-text">معجنات وحلويات</span>
@@ -837,18 +833,6 @@
             </h2>
             <div class="menu-grid" id="pastriesGrid">
                 <!-- Pastry items populated by JavaScript -->
-            </div>
-        </div>
-
-        <!-- Cakes Menu -->
-        <div class="menu-section" id="cakes-menu" style="display: none;">
-            <h2 class="section-title">
-                <span class="ar-text">كيك وكعك</span>
-                <span class="en-text" style="display: none;">Cakes & Bakery</span>
-                <i class="fas fa-birthday-cake"></i>
-            </h2>
-            <div class="menu-grid" id="cakesGrid">
-                <!-- Cake items populated by JavaScript -->
             </div>
         </div>
 
@@ -907,13 +891,7 @@
                 <span class="en-text" style="display: none;">Select Payment Method</span>
                 <i class="fas fa-credit-card"></i>
             </h2>
-            <div class="payment-options">
-                <div class="payment-option" data-method="thawani">
-                    <div class="thawani-icon">ثواني</div>
-                    <h3>Thawani Pay</h3>
-                    <p class="ar-text">الدفع عبر تطبيق ثواني</p>
-                    <p class="en-text" style="display: none;">Pay via Thawani application</p>
-                </div>
+
                 <div class="payment-option" data-method="card">
                     <div class="payment-icon"><i class="fas fa-credit-card"></i></div>
                     <h3>Credit/Debit Card</h3>
@@ -941,7 +919,7 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <h2 id="orderCompleteTitle" style="color: #4caf50; margin-bottom: 20px;">تم استلام طلبك بنجاح!</h2>
-            <p id="orderCompleteMessage" style="font-size: 1.1rem; margin-bottom: 30px;">شكراً لاختيارك هاستا. سنبدأ بتحضير طلبك وسنخطرك عندما يكون جاهزاً.</p>
+            <p id="orderCompleteMessage" style="font-size: 1.1rem; margin-bottom: 30px;">شكراً لاختيارك هوستا. سنبدأ بتحضير طلبك وسنخطرك عندما يكون جاهزاً.</p>
             <button id="newOrderBtn" style="padding: 12px 30px; background-color: #6d4c41; color: white; border: none; border-radius: 25px; font-size: 1.1rem; cursor: pointer;">
                 <span class="ar-text">طلب جديد</span>
                 <span class="en-text" style="display: none;">New Order</span>
@@ -986,10 +964,10 @@
 
     <footer>
         <div class="container">
-            <p><i class="fas fa-map-marker-alt"></i> <span id="address">مسقط، العذيبة، شارع السلطان قابوس | Muscat, Al Athaiba, Sultan Qaboos Street</span></p>
-            <p><i class="fas fa-clock"></i> <span id="hours">مفتوح يومياً من ٧ صباحاً إلى ١١ مساءً | Open daily from 7 AM to 11 PM</span></p>
+            <p><i class="fas fa-map-marker-alt"></i> <span id="address">مسقط، المعبيلة الجنوبية ؛ داخل مستشفى شفاء | Muscat, South Mabilah, inside Shifa Hospital</span></p>
+            <p><i class="fas fa-clock"></i> <span id="hours">مفتوح يومياً من 8 صباحاً إلى 10 مساءً | Open daily from 8 AM to 10 PM</span></p>
             <p><i class="fas fa-phone"></i> <span id="phone">+968 1234 5678</span></p>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">QR نظام الطلب عبر - Hosta Coffee Shop © 2023</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;"> Hosta Coffee Shop © 2026</p>
         </div>
     </footer>
 
@@ -997,19 +975,18 @@
         // Bilingual Content Data
         const content = {
             ar: {
-                tagline: "قهوة عُمانية أصيلة مع لمحة عصرية",
-                dineIn: "تناوُل بالمكان",
+                tagline: "قهوة مستخلصة بإتقان",
+                dineIn: "تناول بالمكان",
                 delivery: "توصيل",
-                dineInDesc: "اطلب من طاولتك وسنحضر طلبك إليك. لا حاجة للانتظار في الطابور!",
-                deliveryDesc: "نقوم بالتوصيل إلى موقعك. رسوم التوصيل: ٠.٥٠٠ ر.ع. (توصيل مجاني للطلبات فوق ٥ ر.ع.)",
-                serviceTitle: "تناوُل بالمكان",
+                dineInDesc: "اطلب من داخل المستشفى وسنحضر طلبك إليك. لا حاجة للانتظار!",
+                deliveryDesc: "نقوم بالتوصيل إلى موقعك خارج المستشفى. (توصيل مجاني للطلبات فوق 15 ر.ع.)",
+                serviceTitle: "تناول بالمكان",
                 categories: {
                     espresso: "قهوة وإسبريسو",
                     brew: "قهوة التخمير",
-                    signature: "مشروبات التوقيع",
+                    signature: "مشروبات هوستا الخاصة",
                     tea: "شاي وماتشا",
-                    pastries: "معجنات وحلويات",
-                    cakes: "كيك وكعك",
+                    Sweet & pastries: "معجنات وحلويات",
                     snacks: "وجبات خفيفة",
                     juices: "عصائر ومشروبات",
                     sandwiches: "ساندويشات وتوست",
@@ -1024,18 +1001,17 @@
                 },
                 payment: {
                     title: "اختر طريقة الدفع",
-                    thawani: "الدفع عبر تطبيق ثواني",
                     card: "الدفع ببطاقة الإئتمان أو الخصم",
                     cash: "الدفع نقداً عند الاستلام",
                     complete: "أكمل الطلب"
                 },
                 orderComplete: {
                     title: "تم استلام طلبك بنجاح!",
-                    message: "شكراً لاختيارك هاستا. سنبدأ بتحضير طلبك وسنخطرك عندما يكون جاهزاً.",
+                    message: "شكراً لاختيارك هوستا. سنبدأ بتحضير طلبك وسنعلمك عندما يكون جاهزاً.",
                     newOrder: "طلب جديد"
                 },
-                address: "مسقط، العذيبة، شارع السلطان قابوس",
-                hours: "مفتوح يومياً من ٧ صباحاً إلى ١١ مساءً",
+                address: "مسقط، المعبيلة الجنوبية، داخل مستشفى شفاء",
+                hours: "مفتوح يومياً من 8 صباحاً إلى 10 مساءً",
                 notification: {
                     added: "تمت الإضافة إلى السلة",
                     cleared: "تم إفراغ السلة",
@@ -1044,19 +1020,18 @@
                 }
             },
             en: {
-                tagline: "Authentic Omani coffee with a modern twist",
-                dineIn: "Dine In",
+                tagline: "Brewed to Prefection",
+                dineIn: "Dine In Shifa Hospital",
                 delivery: "Delivery",
-                dineInDesc: "Order at your table and we'll bring your items to you. No waiting in line!",
-                deliveryDesc: "We deliver to your location. Delivery fee: 0.500 OMR (free for orders over 5 OMR)",
+                dineInDesc: "Order at any location in Shifa Hospital and we'll bring your items to you. No waiting in line!",
+                deliveryDesc: "We deliver to your location.(free for orders over 15 OMR)",
                 serviceTitle: "Dine In Service",
                 categories: {
                     espresso: "Coffee & Espresso",
                     brew: "Brew Methods",
                     signature: "Signature Drinks",
                     tea: "Tea & Matcha",
-                    pastries: "Pastries & Desserts",
-                    cakes: "Cakes & Bakery",
+                    Sweet & pastries: "Pastries & Desserts",
                     snacks: "Snacks",
                     juices: "Juices & Drinks",
                     sandwiches: "Sandwiches & Toast",
@@ -1071,7 +1046,6 @@
                 },
                 payment: {
                     title: "Select Payment Method",
-                    thawani: "Pay via Thawani application",
                     card: "Pay with your card",
                     cash: "Pay with cash when items arrive",
                     complete: "Complete Order"
@@ -1081,8 +1055,8 @@
                     message: "Thank you for choosing Hosta. We'll start preparing your order and notify you when it's ready.",
                     newOrder: "New Order"
                 },
-                address: "Muscat, Al Athaiba, Sultan Qaboos Street",
-                hours: "Open daily from 7 AM to 11 PM",
+                address: "Muscat, South Maibilah, inside Shifa Hospital",
+                hours: "Open daily from 8 AM to 10 PM",
                 notification: {
                     added: "added to cart",
                     cleared: "Cart cleared",
@@ -1151,7 +1125,7 @@
                     id: 7, 
                     name: { ar: "فلات وايت", en: "Flat White" }, 
                     price: 1.500, 
-                    description: { ar: "قهوة قوية مع حليب ناعم ورغوة دقيقة", en: "Strong coffee with velvety milk and microfoam" }, 
+                    description: { ar: "قهوة قوية مع حليب ناعم ورغوة", en: "Strong coffee with velvety milk and microfoam" }, 
                     icon: "fas fa-mug-hot",
                     isSpecial: false
                 },
@@ -1175,7 +1149,7 @@
                     id: 10, 
                     name: { ar: "لاتيه زعفران", en: "Saffron Latte" }, 
                     price: 1.700, 
-                    description: { ar: "لاتيه مميز مع نكهة الزعفران العُماني", en: "Special latte with Omani saffron flavor" }, 
+                    description: { ar: "لاتيه مميز مع نكهة الزعفران", en: "Special latte with saffron flavor" }, 
                     icon: "fas fa-mug-hot",
                     isSpecial: true
                 },
@@ -1233,15 +1207,15 @@
             signature: [
                 { 
                     id: 17, 
-                    name: { ar: "قهوة شغف التوقيع", en: "Passion Coffee Signature" }, 
+                    name: { ar: "قهوة هوستا الخاصة", en: "Passion Coffee Signature" }, 
                     price: 1.900, 
-                    description: { ar: "مشروب توقيع حصري بمذاق القهوة مع الشغف", en: "Exclusive signature drink with passion fruit coffee flavor" }, 
+                    description: { ar: "مشروب حصري بمذاق القهوة اللذيذ", en: "Exclusive signature drink" }, 
                     icon: "fas fa-star",
                     isSpecial: true
                 },
                 { 
                     id: 18, 
-                    name: { ar: "قهوة مانجو التوقيع", en: "Mango Coffee Signature" }, 
+                    name: { ar: "قهوة المانجو الخاص", en: "Mango Coffee Signature" }, 
                     price: 1.900, 
                     description: { ar: "مزيج فريد من القهوة والمانجو", en: "Unique blend of coffee and mango" }, 
                     icon: "fas fa-star",
@@ -1249,23 +1223,23 @@
                 },
                 { 
                     id: 19, 
-                    name: { ar: "إسبريسو التوقيع", en: "Espresso Signature" }, 
+                    name: { ar: "إسبريسو هوستا الخاص", en: "Espresso Signature" }, 
                     price: 1.900, 
-                    description: { ar: "إسبريسو خاص بتوقيع هاستا", en: "Special espresso with Hosta signature" }, 
+                    description: { ar: "إسبريسو هوستا الخاص", en: "Special espresso with Hosta signature" }, 
                     icon: "fas fa-star",
                     isSpecial: true
                 },
                 { 
                     id: 20, 
-                    name: { ar: "شاي مثلج التوقيع", en: "Ice Tea Signature" }, 
+                    name: { ar: "شاي مثلج الخاص", en: "Ice Tea Signature" }, 
                     price: 1.700, 
-                    description: { ar: "شاي مثلج خاص بتوقيع هاستا", en: "Special iced tea with Hosta signature" }, 
+                    description: { ar: "شاي مثلج خاص ", en: "Special iced tea with Hosta signature" }, 
                     icon: "fas fa-star",
                     isSpecial: true
                 },
                 { 
                     id: 21, 
-                    name: { ar: "قهوة نعناع التوقيع", en: "Mint Coffee Signature" }, 
+                    name: { ar: "قهوة النعناع الخاصة", en: "Mint Coffee Signature" }, 
                     price: 1.800, 
                     description: { ar: "قهوة منعشة مع نعناع طازج", en: "Refreshing coffee with fresh mint" }, 
                     icon: "fas fa-star",
@@ -1331,7 +1305,7 @@
                     id: 28, 
                     name: { ar: "كرواسون عادي", en: "Plain Croissant" }, 
                     price: 0.800, 
-                    description: { ar: "كرواسون زبدي طازج", en: "Fresh buttery croissant" }, 
+                    description: { ar: "كرواسون زبدة طازج", en: "Fresh buttery croissant" }, 
                     icon: "fas fa-bread-slice",
                     isSpecial: false
                 },
@@ -1353,9 +1327,9 @@
                 },
                 { 
                     id: 31, 
-                    name: { ar: "دانية شرقية", en: "Oriental Danish" }, 
+                    name: { ar: "دانيش", en: "Oriental Danish" }, 
                     price: 0.850, 
-                    description: { ar: "معجنات شرقية", en: "Oriental pastry" }, 
+                    description: { ar: "معجنات الدانيش", en: "Oriental pastry" }, 
                     icon: "fas fa-pie-chart",
                     isSpecial: false
                 },
@@ -1439,7 +1413,7 @@
                     id: 41, 
                     name: { ar: "براونيز صحية", en: "Healthy Brownies" }, 
                     price: 0.300, 
-                    description: { ar: "براونيز صحية", en: "Healthy brownies" }, 
+                    description: { ar: " براونيز صحية من التمر والشوفان وزبدة الفول السوداني", en: "Healthy brownies With Dates, oat and beanut better" }, 
                     icon: "fas fa-cookie",
                     isSpecial: false
                 },
@@ -1458,13 +1432,20 @@
                     description: { ar: "شريحة كيك طازجة", en: "Fresh cake slice" }, 
                     icon: "fas fa-birthday-cake",
                     isSpecial: false
-                }
+                },
+                { 
+                      id: 44
+                                    name: { ar: "كعك المافن", en: "Muffins" }, 
+                    price: 0.800, 
+                    description: { ar: "موفن طازجة", en: "Fresh muffins" }, 
+                    icon: "fas fa-cookie-bite",
+                    isSpecial: false
             ],
             
             // Snacks (from docx)
             snacks: [
                 { 
-                    id: 44, 
+                    id: 45, 
                     name: { ar: "شوكولاتة لوز", en: "Almond Chocolate" }, 
                     price: 0.200, 
                     description: { ar: "شوكولاتة مع لوز", en: "Chocolate with almonds" }, 
@@ -1472,7 +1453,7 @@
                     isSpecial: false
                 },
                 { 
-                    id: 45, 
+                    id: 46, 
                     name: { ar: "معمول", en: "Biscuit with Dates (Maamol)" }, 
                     price: 0.200, 
                     description: { ar: "معمول عُماني تقليدي", en: "Traditional Omani date biscuits" }, 
@@ -1480,7 +1461,7 @@
                     isSpecial: true
                 },
                 { 
-                    id: 46, 
+                    id: 47, 
                     name: { ar: "بار بروتين", en: "Protein Bar" }, 
                     price: 1.000, 
                     description: { ar: "بار بروتين صحي", en: "Healthy protein bar" }, 
@@ -1488,21 +1469,15 @@
                     isSpecial: false
                 },
                 { 
-                    id: 47, 
-                    name: { ar: "شريحة تاريخ وجرانولا", en: "Date Granola bar" }, 
+                    id: 48, 
+                    name: { ar: "شريحة التمر وجرانولا", en: "Date Granola bar" }, 
                     price: 0.500, 
-                    description: { ar: "بار تاريخ وجرانولا", en: "Date and granola bar" }, 
+                    description: { ar: "بار التمر وجرانولا", en: "Date and granola bar" }, 
                     icon: "fas fa-dumbbell",
                     isSpecial: false
                 },
                 { 
-                    id: 48, 
-                    name: { ar: "رقائق صحية", en: "Healthy Chips" }, 
-                    price: 0.400, 
-                    description: { ar: "رقائق صحية", en: "Healthy chips" }, 
-                    icon: "fas fa-cookie-bite",
-                    isSpecial: false
-                }
+
             ],
             
             // Juices & Drinks (from docx)
@@ -1517,17 +1492,17 @@
                 },
                 { 
                     id: 50, 
-                    name: { ar: "مانجو وماراكويا", en: "Mango Passion Fruit" }, 
+                    name: { ar: "مانجو وباشن فروتا", en: "Mango Passion Fruit" }, 
                     price: 0.750, 
-                    description: { ar: "عصير مانجو وماراكويا", en: "Mango and passion fruit juice" }, 
+                    description: { ar: "عصير مانجو وباشن فروت", en: "Mango and passion fruit juice" }, 
                     icon: "fas fa-glass-whiskey",
                     isSpecial: true
                 },
                 { 
                     id: 51, 
-                    name: { ar: "برتقال وبنجر", en: "Orange Beetroot" }, 
+                    name: { ar: "برتقال وشمندر", en: "Orange Beetroot" }, 
                     price: 0.750, 
-                    description: { ar: "عصير برتقال وبنجر صحي", en: "Healthy orange and beetroot juice" }, 
+                    description: { ar: "عصير برتقال وشمندر صحي", en: "Healthy orange and beetroot juice" }, 
                     icon: "fas fa-glass-whiskey",
                     isSpecial: true
                 },
@@ -1535,7 +1510,7 @@
                     id: 52, 
                     name: { ar: "رمان", en: "Pomegranate" }, 
                     price: 0.850, 
-                    description: { ar: "عصير رمان طازج", en: "Fresh pomegranate juice" }, 
+                    description: { ar: "رمان طازج", en: "Fresh pomegranate " }, 
                     icon: "fas fa-glass-whiskey",
                     isSpecial: true
                 },
@@ -1573,25 +1548,25 @@
                 },
                 { 
                     id: 57, 
-                    name: { ar: "لون", en: "Laban" }, 
+                    name: { ar: "لبن", en: "Laban" }, 
                     price: 0.250, 
-                    description: { ar: "لون طازج", en: "Fresh laban" }, 
+                    description: { ar: "لبن طازج", en: "Fresh laban" }, 
                     icon: "fas fa-glass-whiskey",
                     isSpecial: false
                 },
                 { 
                     id: 58, 
-                    name: { ar: "لون مانجو", en: "Mango Laban" }, 
+                    name: { ar: "لبن مانجو", en: "Mango Laban" }, 
                     price: 0.300, 
-                    description: { ar: "لون بنكهة المانجو", en: "Laban with mango flavor" }, 
+                    description: { ar: "لبن بنكهة المانجو", en: "Laban with mango flavor" }, 
                     icon: "fas fa-glass-whiskey",
                     isSpecial: true
                 },
                 { 
                     id: 59, 
-                    name: { ar: "لون فراولة", en: "Strawberry Laban" }, 
+                    name: { ar: "لبن فراولة", en: "Strawberry Laban" }, 
                     price: 0.300, 
-                    description: { ar: "لون بنكهة الفراولة", en: "Laban with strawberry flavor" }, 
+                    description: { ar: "لبن بنكهة الفراولة", en: "Laban with strawberry flavor" }, 
                     icon: "fas fa-glass-whiskey",
                     isSpecial: true
                 }
@@ -1603,7 +1578,7 @@
                     id: 60, 
                     name: { ar: "توست دجاج", en: "Chicken Toast" }, 
                     price: 0.800, 
-                    description: { ar: "توست مع دجاج", en: "Toast with chicken" }, 
+                    description: { ar: " توست طازج مع الدجاج", en: "Fresh Toast with chicken" }, 
                     icon: "fas fa-bread-slice",
                     isSpecial: false
                 },
@@ -1611,15 +1586,15 @@
                     id: 61, 
                     name: { ar: "توست بيض", en: "Egg Toast" }, 
                     price: 0.600, 
-                    description: { ar: "توست مع بيض", en: "Toast with egg" }, 
+                    description: { ar: "توست مع بيض", en: "Fresh Toast with egg" }, 
                     icon: "fas fa-egg",
                     isSpecial: false
                 },
                 { 
                     id: 62, 
-                    name: { ar: "توست تركيا", en: "Turkey Toast" }, 
+                    name: { ar: "توست الديك الرومي", en: "Turkey Toast" }, 
                     price: 0.950, 
-                    description: { ar: "توست مع تركيا", en: "Toast with turkey" }, 
+                    description: { ar: "توست طازج مع الديك الرومي", en: "Fresh Toast with turkey" }, 
                     icon: "fas fa-bread-slice",
                     isSpecial: false
                 },
@@ -1627,7 +1602,7 @@
                     id: 63, 
                     name: { ar: "ساندويش حلوم", en: "Halloumi Sandwich" }, 
                     price: 1.600, 
-                    description: { ar: "ساندويش حلوم", en: "Halloumi sandwich" }, 
+                    description: { ar: "ساندويش جبنة الحلومي الطازجة", en: "Fresh Halloumi sandwich" }, 
                     icon: "fas fa-hamburger",
                     isSpecial: true
                 },
@@ -1643,7 +1618,7 @@
                     id: 65, 
                     name: { ar: "ساندويش لحم", en: "Meat Sandwich" }, 
                     price: 1.600, 
-                    description: { ar: "ساندويش لحم", en: "Meat sandwich" }, 
+                    description: { ar: "ساندويش لحم طازج", en: "Fresh Meat sandwich" }, 
                     icon: "fas fa-hamburger",
                     isSpecial: false
                 },
@@ -1651,15 +1626,15 @@
                     id: 66, 
                     name: { ar: "ساندويش دجاج", en: "Chicken Sandwich" }, 
                     price: 1.600, 
-                    description: { ar: "ساندويش دجاج", en: "Chicken sandwich" }, 
+                    description: { ar: " ساندويش دجاج طازج", en: "Fresh Chicken sandwich" }, 
                     icon: "fas fa-hamburger",
                     isSpecial: false
                 },
                 { 
                     id: 67, 
-                    name: { ar: "ساندويش تركيا", en: "Turkey Sandwich" }, 
+                    name: { ar: "ساندويش الديك الرومي", en: "Turkey Sandwich" }, 
                     price: 1.600, 
-                    description: { ar: "ساندويش تركيا", en: "Turkey sandwich" }, 
+                    description: { ar: "ساندويش الديك الرومي", en: "Turkey sandwich" }, 
                     icon: "fas fa-hamburger",
                     isSpecial: false
                 }
@@ -1685,25 +1660,25 @@
                 },
                 { 
                     id: 70, 
-                    name: { ar: "صحن فواكه", en: "Shea with Fruit Salad" }, 
+                    name: { ar: "حبوب شيا مع الفواكه", en: "Shea with Fruit Salad" }, 
                     price: 1.500, 
-                    description: { ar: "صحن فواكه طازجة", en: "Fresh fruit salad bowl" }, 
+                    description: { ar: " فواكه طازجة مع حبوب الشيا والحليب", en: "Fresh fruit salad bowl" }, 
                     icon: "fas fa-apple-alt",
                     isSpecial: true
                 },
                 { 
                     id: 71, 
-                    name: { ar: "صندوق فواكه مختلطة", en: "Fruit Mix Box" }, 
+                    name: { ar: " فواكه مختلطة", en: "Fruit Mix Box" }, 
                     price: 0.950, 
-                    description: { ar: "صندوق فواكه مختلطة", en: "Mixed fruit box" }, 
+                    description: { ar: "صحن فواكه مختلطة", en: "Mixed fruit box" }, 
                     icon: "fas fa-apple-alt",
                     isSpecial: false
                 },
                 { 
                     id: 72, 
-                    name: { ar: "صندوق أناناس", en: "Pineapple Box" }, 
+                    name: { ar: " أناناس", en: "Pineapple Box" }, 
                     price: 0.950, 
-                    description: { ar: "صندوق أناناس طازج", en: "Fresh pineapple box" }, 
+                    description: { ar: " أناناس طازج", en: "Fresh pineapple box" }, 
                     icon: "fas fa-apple-alt",
                     isSpecial: false
                 },
@@ -1722,16 +1697,15 @@
                     description: { ar: "جرعة زنجبيل صحية", en: "Healthy ginger shot" }, 
                     icon: "fas fa-heart",
                     isSpecial: true
-                },
+                 },
                 { 
                     id: 75, 
-                    name: { ar: "موفنز", en: "Muffins" }, 
-                    price: 0.800, 
-                    description: { ar: "موفنز طازجة", en: "Fresh muffins" }, 
+                    name: { ar: "رقائق صحية", en: "Healthy Chips" }, 
+                    price: 0.400, 
+                    description: { ar: "رقائق صحية", en: "Healthy chips" }, 
                     icon: "fas fa-cookie-bite",
                     isSpecial: false
                 }
-            ]
         };
 
         // Additional drinks from PDF
@@ -2177,7 +2151,7 @@
             
             // Add delivery fee if applicable
             if (currentService === 'delivery' && total < 5) {
-                const deliveryFee = 0.500;
+                const deliveryFee = 1.500;
                 total += deliveryFee;
                 
                 const deliveryItem = document.createElement('div');

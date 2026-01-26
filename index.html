@@ -1,227 +1,3062 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hosta Café | Brewed to Perfection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>هوستا | Hosta Coffee - Brewed to Perfection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-brown: #4B3621;
-            --accent-gold: #C5A059;
-            --cream: #FDFBF7;
-            --warm-gray: #f4f1ee;
-            --text-dark: #2C1E12;
+            --color-coffee: #6F4E37;
+            --color-cream: #F5F1E6;
+            --color-gold: #D4A76A;
+            --color-dark: #3E2723;
+            --color-light: #8B7355;
+            --color-accent: #A67B5B;
+            --color-white: #FFFFFF;
+            --color-wood: #8B4513;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--cream); color: var(--text-dark); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        /* Navigation */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 8%; background: white; position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .logo { font-size: 24px; font-weight: bold; letter-spacing: 4px; color: var(--primary-brown); }
-        .nav-links a { text-decoration: none; color: var(--text-dark); margin: 0 15px; font-weight: 500; }
-        .order-btn { background: var(--primary-brown); color: white !important; padding: 10px 25px; border-radius: 50px; }
-
+        
+        body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--color-white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--color-coffee);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--color-coffee);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--color-light);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--color-coffee);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-coffee);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .order-btn {
+            background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-wood) 100%);
+            color: var(--color-white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(111, 78, 55, 0.2);
+        }
+        
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(111, 78, 55, 0.3);
+        }
+        
         /* Hero Section */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover; background-position: center;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+            height: 90vh;
+            background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.5)), 
+                        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
         }
-        .hero h1 { font-size: 4rem; margin-bottom: 10px; }
-
+        
+        .hero-content {
+            max-width: 800px;
+            color: var(--color-white);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent) 100%);
+            color: var(--color-white);
+            box-shadow: 0 6px 20px rgba(212, 167, 106, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 167, 106, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
         /* Featured Categories */
-        .section-title { text-align: center; padding: 60px 0 20px; font-size: 2.5rem; color: var(--primary-brown); }
-        .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; padding: 40px 8%;
+        .categories-section {
+            padding: 100px 0;
+            background-color: var(--color-white);
         }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--color-coffee);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: var(--color-light);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
         .category-card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer;
+            background: var(--color-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(139, 115, 85, 0.1);
         }
-        .category-card:hover { transform: translateY(-10px); }
-        .category-card img { width: 100%; height: 200px; object-fit: cover; }
-        .category-info { padding: 20px; text-align: center; }
-        .category-info button { 
-            background: none; border: 1px solid var(--accent-gold); 
-            padding: 8px 20px; margin-top: 10px; cursor: pointer; 
+        
+        .category-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-
-        /* Daily Deal & Promo */
-        .promo-banner {
-            background: var(--primary-brown); color: white;
-            display: flex; align-items: center; justify-content: space-around;
-            padding: 50px 8%; margin: 40px 0;
+        
+        .category-image {
+            height: 250px;
+            overflow: hidden;
         }
-        .promo-banner img { width: 300px; border-radius: 10px; }
-
-        /* Ordering Modal (Simplified) */
-        #order-modal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); z-index: 2000; overflow-y: auto;
+        
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
         }
-        .modal-content {
-            background: white; width: 90%; max-width: 600px; margin: 50px auto;
-            padding: 30px; border-radius: 15px;
+        
+        .category-card:hover .category-image img {
+            transform: scale(1.1);
         }
-
-        .payment-options { margin-top: 20px; border-top: 1px solid #ddd; pt: 20px; }
-        .btn-pay { width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .btn-cash { background: #e0e0e0; }
-        .btn-thawani { background: #6366f1; color: white; }
-
-        footer { background: #2C1E12; color: #d2b48c; padding: 60px 8%; text-align: center; }
+        
+        .category-content {
+            padding: 30px;
+        }
+        
+        .category-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--color-coffee);
+            margin-bottom: 15px;
+        }
+        
+        .category-content p {
+            color: var(--color-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .category-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-coffee);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover {
+            gap: 15px;
+            color: var(--color-gold);
+        }
+        
+        /* Promotions Section */
+        .promotions-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--color-cream) 0%, #F0E6D6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promotions-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,50 Q45,30 30,30 Q15,30 15,50 Q15,70 30,70 Q45,70 50,50 Z" fill="%236F4E37" opacity="0.03"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .promo-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .promo-badge {
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent) 100%);
+            color: var(--color-white);
+            padding: 8px 20px;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            top: 0;
+            left: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .promo-content {
+            padding: 30px;
+        }
+        
+        .promo-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--color-coffee);
+            margin-bottom: 10px;
+        }
+        
+        .promo-content .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin-bottom: 15px;
+        }
+        
+        /* Daily Deal Section */
+        .daily-deal-section {
+            padding: 100px 0;
+            background-color: var(--color-white);
+        }
+        
+        .daily-deal-container {
+            background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-dark) 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .deal-content {
+            padding: 60px;
+            color: var(--color-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .deal-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .deal-content p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        
+        .deal-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .current-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-gold);
+        }
+        
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .deal-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .deal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Menu Section */
+        .menu-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--color-cream) 0%, #F0E6D6 100%);
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .menu-category-btn {
+            padding: 12px 30px;
+            background-color: transparent;
+            border: 2px solid var(--color-coffee);
+            color: var(--color-coffee);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-category-btn.active,
+        .menu-category-btn:hover {
+            background-color: var(--color-coffee);
+            color: var(--color-white);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .menu-item {
+            background: var(--color-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-item-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .menu-item:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+        
+        .menu-item-content {
+            padding: 25px;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .menu-item-header h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-coffee);
+        }
+        
+        .menu-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-gold);
+        }
+        
+        .menu-item-description {
+            color: var(--color-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .qty-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--color-coffee);
+            color: var(--color-white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .qty-btn:hover {
+            background-color: var(--color-gold);
+            transform: scale(1.1);
+        }
+        
+        .quantity {
+            font-weight: 700;
+            font-size: 1.2rem;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-wood) 100%);
+            color: var(--color-white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
+        }
+        
+        /* Cart */
+        .cart-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .cart-btn {
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent) 100%);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(212, 167, 106, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(212, 167, 106, 0.6);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--color-coffee);
+            color: var(--color-white);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: var(--color-white);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+            transition: right 0.4s ease;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart-panel.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 30px;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--color-coffee);
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--color-light);
+            transition: color 0.3s ease;
+        }
+        
+        .close-cart:hover {
+            color: var(--color-coffee);
+        }
+        
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 30px;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            color: var(--color-coffee);
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--color-gold);
+            font-weight: 700;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .cart-item-quantity {
+            background-color: var(--color-cream);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .cart-total {
+            padding: 25px 30px;
+            border-top: 2px solid var(--color-coffee);
+            border-bottom: 2px solid var(--color-coffee);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .cart-actions {
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .checkout-btn, .clear-cart-btn {
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .checkout-btn {
+            background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-wood) 100%);
+            color: var(--color-white);
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
+        }
+        
+        .clear-cart-btn {
+            background-color: transparent;
+            color: var(--color-light);
+            border: 2px solid var(--color-light);
+        }
+        
+        .clear-cart-btn:hover {
+            background-color: var(--color-cream);
+        }
+        
+        /* Payment Modal */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1002;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .payment-modal.active {
+            display: flex;
+        }
+        
+        .payment-content {
+            background-color: var(--color-white);
+            border-radius: 25px;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .payment-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .payment-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--color-coffee);
+            margin-bottom: 10px;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border: 2px solid rgba(139, 115, 85, 0.2);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-option:hover,
+        .payment-option.selected {
+            border-color: var(--color-coffee);
+            background-color: rgba(111, 78, 55, 0.05);
+        }
+        
+        .payment-icon {
+            font-size: 2rem;
+            color: var(--color-coffee);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-cream);
+            border-radius: 12px;
+        }
+        
+        .payment-option-details h4 {
+            font-size: 1.3rem;
+            color: var(--color-coffee);
+            margin-bottom: 5px;
+        }
+        
+        .payment-option-details p {
+            color: var(--color-light);
+            font-size: 0.95rem;
+        }
+        
+        .payment-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-pay, .btn-cancel {
+            flex: 1;
+            padding: 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-pay {
+            background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-wood) 100%);
+            color: var(--color-white);
+        }
+        
+        .btn-pay:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
+        }
+        
+        .btn-cancel {
+            background-color: transparent;
+            color: var(--color-light);
+            border: 2px solid var(--color-light);
+        }
+        
+        /* Thawani Processing */
+        .thawani-processing {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-cream);
+            z-index: 1003;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .thawani-processing.active {
+            display: flex;
+        }
+        
+        .thawani-content {
+            max-width: 500px;
+            padding: 40px;
+        }
+        
+        .thawani-logo {
+            font-size: 4rem;
+            color: var(--color-coffee);
+            margin-bottom: 30px;
+        }
+        
+        .thawani-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--color-coffee);
+            margin-bottom: 20px;
+        }
+        
+        .processing-spinner {
+            font-size: 3rem;
+            color: var(--color-gold);
+            margin: 30px 0;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 80px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--color-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-gold);
+            padding-left: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-item i {
+            color: var(--color-gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--color-white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--color-gold);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 999;
+        }
+        
+        .lang-btn {
+            background-color: var(--color-white);
+            border: 2px solid var(--color-coffee);
+            color: var(--color-coffee);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background-color: var(--color-coffee);
+            color: var(--color-white);
+        }
+        
+        /* RTL/LTR Support */
+        body[dir="rtl"] {
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+        
+        body[dir="rtl"] .nav-links {
+            margin-right: 20px;
+        }
+        
+        body[dir="ltr"] .nav-links {
+            margin-left: 20px;
+        }
+        
+        body[dir="ltr"] .language-switcher {
+            left: auto;
+            right: 30px;
+        }
+        
+        body[dir="ltr"] .cart-container {
+            right: auto;
+            left: 30px;
+        }
+        
+        body[dir="ltr"] .cart-panel {
+            right: auto;
+            left: -400px;
+        }
+        
+        body[dir="ltr"] .cart-panel.active {
+            left: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h2 {
+                font-size: 3.5rem;
+            }
+            
+            .daily-deal-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .deal-image {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .categories-grid,
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            body[dir="ltr"] .cart-panel {
+                left: -100%;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 </head>
-<body>
-
-    <nav>
-        <div class="logo">HOSTA</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#">Story</a>
-            <a href="#">Contact</a>
-            <a href="javascript:void(0)" class="order-btn" onclick="openOrder()">Order Online</a>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div>
-            <h1>Brewed to Perfection</h1>
-            <p>Artisanal Coffee & Handcrafted Pastries</p>
-        </div>
-    </section>
-
-    <h2 class="section-title">Explore Our Menu</h2>
-    <div class="grid-container" id="menu">
-        <!-- Category: Coffee -->
-        <div class="category-card" onclick="openOrder()">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500" alt="Coffee">
-            <div class="category-info">
-                <h3>Coffee</h3>
-                <p>Classic Espresso & Lattes</p>
-                <button>View Items</button>
-            </div>
-        </div>
-        <!-- Category: Tea -->
-        <div class="category-card" onclick="openOrder()">
-            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500" alt="Tea">
-            <div class="category-info">
-                <h3>Artisanal Tea</h3>
-                <p>Kark, Green, and Iced blends</p>
-                <button>View Items</button>
-            </div>
-        </div>
-        <!-- Category: Pastries -->
-        <div class="category-card" onclick="openOrder()">
-            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500" alt="Pastry">
-            <div class="category-info">
-                <h3>Pastry & Sweets</h3>
-                <p>Fresh Danishes & Cakes</p>
-                <button>View Items</button>
-            </div>
-        </div>
-        <!-- Category: Healthy -->
-        <div class="category-card" onclick="openOrder()">
-            <img src="https://images.unsplash.com/photo-1490474418641-12cdbd994576?w=500" alt="Healthy">
-            <div class="category-info">
-                <h3>Healthy Options</h3>
-                <p>Greek Yogurt & Protein Bars</p>
-                <button>View Items</button>
-            </div>
-        </div>
-        <!-- Category: Snacks -->
-        <div class="category-card" onclick="openOrder()">
-            <img src="https://images.unsplash.com/photo-1599490659223-930b44c027f9?w=500" alt="Snacks">
-            <div class="category-info">
-                <h3>Snacks</h3>
-                <p>Chips, Maamoul & Dates</p>
-                <button>View Items</button>
-            </div>
-        </div>
-        <!-- Category: Signature -->
-        <div class="category-card" onclick="openOrder()">
-            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500" alt="Signature">
-            <div class="category-info">
-                <h3>Signature Drinks</h3>
-                <p>Mango & Passion Coffee</p>
-                <button>View Items</button>
-            </div>
-        </div>
+<body dir="rtl">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" id="arabicBtn">العربية</button>
+        <button class="lang-btn" id="englishBtn">English</button>
     </div>
 
-    <section class="promo-banner">
-        <div class="promo-text">
-            <h2>Daily Deal</h2>
-            <p>Get a Plain Croissant + Americano for only 1.800 OMR</p>
-            <br>
-            <button class="order-btn" style="border:none">Claim Offer</button>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-coffee"></i>
+                </div>
+                <div class="logo-text">
+                    <h1 id="logoTitle">هوستا</h1>
+                    <p id="logoSubtitle">قهوة مصنوعة بإتقان</p>
+                </div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#home" id="navHome">الرئيسية</a>
+                <a href="#menu" id="navMenu">القائمة</a>
+                <a href="#story" id="navStory">قصتنا</a>
+                <a href="#coffee" id="navCoffee">القهوة</a>
+                <a href="#contact" id="navContact">التواصل</a>
+                <a href="#order" class="order-btn" id="navOrder">اطلب الآن</a>
+            </nav>
         </div>
-        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" alt="Daily Deal">
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 id="heroTitle">مصنوعة بإتقان</h2>
+                <p id="heroSubtitle">استمتع بتجربة قهوة استثنائية. حبوب البن المختارة بعناية، محمصة محلياً، ومقدمة بأسلوب فني يجعل كل رشفة جديرة بالتقدير.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn-primary">
+                        <i class="fas fa-mug-hot"></i>
+                        <span id="heroBtnMenu">استعرض القائمة</span>
+                    </a>
+                    <a href="#order" class="btn-secondary">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="heroBtnOrder">اطلب الآن</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Checkout Modal -->
-    <div id="order-modal">
-        <div class="modal-content">
-            <h2 style="margin-bottom: 20px;">Checkout</h2>
-            <div id="cart-summary">
-                <p>Saffron Latte - 1.700 OMR</p>
-                <p>Blueberry Danish - 0.850 OMR</p>
-                <hr>
-                <h3 style="margin-top:10px">Total: 2.550 OMR</h3>
+    <!-- Featured Categories -->
+    <section class="categories-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="categoriesTitle">اكتشف مذاقنا</h2>
+                <p id="categoriesSubtitle">من الحبوب المختارة يدوياً إلى الفن المتميز في التقديم، كل مشروب هو تحفة فنية</p>
             </div>
+            
+            <div class="categories-grid">
+                <!-- Coffee Category -->
+                <div class="category-card" data-category="espresso">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="قهوة">
+                    </div>
+                    <div class="category-content">
+                        <h3 id="catCoffeeTitle">قهوة وإسبريسو</h3>
+                        <p id="catCoffeeDesc">استمتع بمجموعتنا المميزة من قهوة الإسبريسو المصنوعة من أفضل حبوب البن المختارة من مزارع حول العالم.</p>
+                        <a href="#espresso-items" class="category-btn" id="catCoffeeBtn">
+                            <span>استكشاف</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tea Category -->
+                <div class="category-card" data-category="tea">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="شاي">
+                    </div>
+                    <div class="category-content">
+                        <h3 id="catTeaTitle">شاي وماتشا</h3>
+                        <p id="catTeaDesc">شاي عضوي عالي الجودة ومشروبات ماتشا يابانية تقليدية مع لمسة عصرية.</p>
+                        <a href="#tea-items" class="category-btn" id="catTeaBtn">
+                            <span>استكشاف</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Pastry Category -->
+                <div class="category-card" data-category="pastry">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="معجنات">
+                    </div>
+                    <div class="category-content">
+                        <h3 id="catPastryTitle">معجنات وحلويات</h3>
+                        <p id="catPastryDesc">معجنات طازجة محضرة يومياً وحلويات فاخرة تتناسب مع مشروباتك المفضلة.</p>
+                        <a href="#pastry-items" class="category-btn" id="catPastryBtn">
+                            <span>استكشاف</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Healthy Category -->
+                <div class="category-card" data-category="healthy">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="خيارات صحية">
+                    </div>
+                    <div class="category-content">
+                        <h3 id="catHealthyTitle">خيارات صحية</h3>
+                        <p id="catHealthyDesc">وجبات خفيفة صحية ومشروبات مغذية توازن بين المذاق الرائع والقيمة الغذائية.</p>
+                        <a href="#healthy-items" class="category-btn" id="catHealthyBtn">
+                            <span>استكشاف</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Drinks Category -->
+                <div class="category-card" data-category="drinks">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مشروبات أخرى">
+                    </div>
+                    <div class="category-content">
+                        <h3 id="catDrinksTitle">مشروبات أخرى</h3>
+                        <p id="catDrinksDesc">عصائر طازجة ومشروبات باردة منعشة ومياه معطرة لتروي عطشك.</p>
+                        <a href="#drinks-items" class="category-btn" id="catDrinksBtn">
+                            <span>استكشاف</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Snacks Category -->
+                <div class="category-card" data-category="snacks">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="وجبات خفيفة">
+                    </div>
+                    <div class="category-content">
+                        <h3 id="catSnacksTitle">وجبات خفيفة</h3>
+                        <p id="catSnacksDesc">وجبات خفيفة لذيذة مثالية للاستمتاع مع قهوتك خلال استراحتك.</p>
+                        <a href="#snacks-items" class="category-btn" id="catSnacksBtn">
+                            <span>استكشاف</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Promotions Section -->
+    <section class="promotions-section" id="offers">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="promotionsTitle">عروض وتخفيضات</h2>
+                <p id="promotionsSubtitle">استفد من عروضنا الحصرية وتجاربنا الموسمية المميزة</p>
+            </div>
+            
+            <div class="promo-grid">
+                <!-- Promotion 1 -->
+                <div class="promo-card">
+                    <div class="promo-badge" id="promo1Badge">عرض خاص</div>
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1570197788417-0d5f347f0ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لاتيه">
+                    </div>
+                    <div class="promo-content">
+                        <h3 id="promo1Title">لاتيه + كرواسون</h3>
+                        <p id="promo1Desc">استمتع بجميع أصناف اللاتيه مع كرواسون طازج بسعر مميز.</p>
+                        <div class="price" id="promo1Price">2.500 ر.ع.</div>
+                        <a href="#order" class="category-btn" id="promo1Btn">
+                            <span>اطلب الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Promotion 2 -->
+                <div class="promo-card">
+                    <div class="promo-badge" id="promo2Badge">توفير 20%</div>
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ماتشا">
+                    </div>
+                    <div class="promo-content">
+                        <h3 id="promo2Title">ماتشا لايت</h3>
+                        <p id="promo2Desc">مشروب ماتشا خفيف مع حليب اللوز - مثالي للحمية.</p>
+                        <div class="price" id="promo2Price">1.900 ر.ع.</div>
+                        <a href="#order" class="category-btn" id="promo2Btn">
+                            <span>اطلب الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Promotion 3 -->
+                <div class="promo-card">
+                    <div class="promo-badge" id="promo3Badge">عرض عائلي</div>
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="عصائر">
+                    </div>
+                    <div class="promo-content">
+                        <h3 id="promo3Title">مربع العصائر</h3>
+                        <p id="promo3Desc">4 عصائر طازجة متنوعة مع وجبات خفيفة صحية.</p>
+                        <div class="price" id="promo3Price">3.500 ر.ع.</div>
+                        <a href="#order" class="category-btn" id="promo3Btn">
+                            <span>اطلب الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Deal Section -->
+    <section class="daily-deal-section" id="daily-deal">
+        <div class="container">
+            <div class="daily-deal-container">
+                <div class="deal-content">
+                    <h3 id="dealTitle">عرض اليوم</h3>
+                    <p id="dealSubtitle">إسبريسو مزدوج مع كعكة القرفة الطازجة - المزيج المثالي لبداية يومك</p>
+                    <div class="deal-price">
+                        <span class="current-price" id="dealPrice">2.200 ر.ع.</span>
+                        <span class="original-price" id="dealOldPrice">2.800 ر.ع.</span>
+                    </div>
+                    <p id="dealTime">عرض محدود - متوفر حتى الساعة 11 صباحاً</p>
+                    <a href="#order" class="btn-primary" id="dealBtn">
+                        <i class="fas fa-bolt"></i>
+                        <span>احصل على العرض</span>
+                    </a>
+                </div>
+                <div class="deal-image">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="قهوة وكعكة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="full-menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="menuTitle">قائمتنا الكاملة</h2>
+                <p id="menuSubtitle">كل صنف مصنوع بعناية فائقة ومقدم بأسلوب فني</p>
+            </div>
+            
+            <div class="menu-categories">
+                <button class="menu-category-btn active" data-category="all" id="btnAll">الكل</button>
+                <button class="menu-category-btn" data-category="espresso" id="btnEspresso">قهوة وإسبريسو</button>
+                <button class="menu-category-btn" data-category="brew" id="btnBrew">قهوة التخمير</button>
+                <button class="menu-category-btn" data-category="signature" id="btnSignature">مشروبات التوقيع</button>
+                <button class="menu-category-btn" data-category="tea" id="btnTea">شاي وماتشا</button>
+                <button class="menu-category-btn" data-category="pastry" id="btnPastry">معجنات وحلويات</button>
+                <button class="menu-category-btn" data-category="snacks" id="btnSnacks">وجبات خفيفة</button>
+                <button class="menu-category-btn" data-category="juices" id="btnJuices">عصائر ومشروبات</button>
+                <button class="menu-category-btn" data-category="sandwiches" id="btnSandwiches">ساندويشات وتوست</button>
+                <button class="menu-category-btn" data-category="healthy" id="btnHealthy">خيارات صحية</button>
+            </div>
+            
+            <div class="menu-grid" id="menuItems">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <div class="payment-header">
+                <h3 id="paymentTitle">إتمام الطلب</h3>
+                <p id="paymentSubtitle">اختر طريقة الدفع المناسبة</p>
+            </div>
+            
             <div class="payment-options">
-                <h4>Select Payment Method:</h4>
-                <button class="btn-pay btn-cash" onclick="payCash()">Pay Cash on Pickup</button>
-                <button class="btn-pay btn-thawani" onclick="payThawani()">Pay with Credit/Debit (Thawani)</button>
-                <button onclick="closeOrder()" style="background:none; border:none; color:red; cursor:pointer; width:100%; margin-top:10px">Cancel</button>
+                <div class="payment-option" data-method="thawani">
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="payment-option-details">
+                        <h4 id="paymentThawaniTitle">الدفع الإلكتروني</h4>
+                        <p id="paymentThawaniDesc">الدفع الآمن عبر ثواني - بطاقات الائتمان والخصم</p>
+                    </div>
+                </div>
+                <div class="payment-option" data-method="cash">
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="payment-option-details">
+                        <h4 id="paymentCashTitle">الدفع نقداً</h4>
+                        <p id="paymentCashDesc">الدفع عند الاستلام - للتوصيل والمكان</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-actions">
+                <button class="btn-pay" id="confirmPayment">
+                    <i class="fas fa-lock"></i>
+                    <span id="payBtnText">إتمام الدفع</span>
+                </button>
+                <button class="btn-cancel" id="cancelPayment">
+                    <span id="cancelBtnText">إلغاء</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="logo" style="color: white; margin-bottom: 20px;">HOSTA</div>
-        <p>Muscat, Oman</p>
-        <p>Open Daily: 8:00 AM - 11:00 PM</p>
-        <div style="margin-top: 20px;">
-            <a href="#" style="color:white; margin: 0 10px;">Instagram</a>
-            <a href="#" style="color:white; margin: 0 10px;">Twitter</a>
+    <!-- Thawani Processing -->
+    <div class="thawani-processing" id="thawaniProcessing">
+        <div class="thawani-content">
+            <div class="thawani-logo">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2 id="thawaniTitle">جاري معالجة الدفع</h2>
+            <p id="thawaniMessage">يرجى الانتظار، جاري التوجيه إلى بوابة دفع ثواني الآمنة</p>
+            <div class="processing-spinner">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <p id="thawaniNote">سيتم فتح نافذة جديدة لعملية الدفع. إذا لم تفتح تلقائياً، يرجى النقر على الرابط الموجود في صفحتك.</p>
+        </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div class="cart-container">
+        <button class="cart-btn" id="cartToggle">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </div>
+
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3 id="cartTitle">سلة التسوق</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-total">
+            <span id="cartTotalLabel">المجموع:</span>
+            <span id="cartTotalAmount">0.000 ر.ع.</span>
+        </div>
+        <div class="cart-actions">
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fas fa-credit-card"></i>
+                <span id="checkoutBtnText">إتمام الطلب</span>
+            </button>
+            <button class="clear-cart-btn" id="clearCartBtn">
+                <i class="fas fa-trash"></i>
+                <span id="clearCartBtnText">إفراغ السلة</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 id="footerAboutTitle">عن هوستا</h4>
+                    <p id="footerAboutText">قهوة هوستا هي قصة شغف وتفانٍ في صنع قهوة استثنائية. نختار أفضل حبوب البن من حول العالم ونحمصها محلياً لنقدم لكم تجربة قهوة فريدة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 id="footerCoffeeTitle">قهوتنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="#coffee" id="footerCoffee1">الإسبريسو المميز</a></li>
+                        <li><a href="#coffee" id="footerCoffee2">قهوة التخمير البارد</a></li>
+                        <li><a href="#coffee" id="footerCoffee3">اللاتيه الفني</a></li>
+                        <li><a href="#coffee" id="footerCoffee4">المشروبات الموسمية</a></li>
+                        <li><a href="#coffee" id="footerCoffee5">حبوب البن للبيع</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 id="footerContactTitle">تواصل معنا</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="footerAddress">مسقط، المعبيلة الجنوبية، داخل مستشفى شفاء</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="footerHours">مفتوح يومياً 8 صباحاً - 10 مساءً</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span id="footerPhone">+968 1234 5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="footerEmail">info@hostacoffee.om</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p id="footerCopyright">© 2026 هوستا كوفي شوب. جميع الحقوق محفوظة.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        function openOrder() { document.getElementById('order-modal').style.display = 'block'; }
-        function closeOrder() { document.getElementById('order-modal').style.display = 'none'; }
+        // Backend API Configuration
+        const API_CONFIG = {
+            BASE_URL: 'http://localhost:3000', // Change to your actual backend URL
+            ENDPOINTS: {
+                CREATE_THAWANI_SESSION: '/api/create-thawani-session',
+                VERIFY_PAYMENT: '/api/verify-payment',
+                CREATE_ORDER: '/api/create-order'
+            }
+        };
 
-        function payCash() {
-            alert("Order Placed! Please pay at the counter.");
-            closeOrder();
+        // Bilingual Content
+        const content = {
+            ar: {
+                // Header & Navigation
+                logoTitle: "هوستا",
+                logoSubtitle: "قهوة مصنوعة بإتقان",
+                navHome: "الرئيسية",
+                navMenu: "القائمة",
+                navStory: "قصتنا",
+                navCoffee: "القهوة",
+                navContact: "التواصل",
+                navOrder: "اطلب الآن",
+                
+                // Hero Section
+                heroTitle: "مصنوعة بإتقان",
+                heroSubtitle: "استمتع بتجربة قهوة استثنائية. حبوب البن المختارة بعناية، محمصة محلياً، ومقدمة بأسلوب فني يجعل كل رشفة جديرة بالتقدير.",
+                heroBtnMenu: "استعرض القائمة",
+                heroBtnOrder: "اطلب الآن",
+                
+                // Categories Section
+                categoriesTitle: "اكتشف مذاقنا",
+                categoriesSubtitle: "من الحبوب المختارة يدوياً إلى الفن المتميز في التقديم، كل مشروب هو تحفة فنية",
+                catCoffeeTitle: "قهوة وإسبريسو",
+                catCoffeeDesc: "استمتع بمجموعتنا المميزة من قهوة الإسبريسو المصنوعة من أفضل حبوب البن المختارة من مزارع حول العالم.",
+                catCoffeeBtn: "استكشاف",
+                catTeaTitle: "شاي وماتشا",
+                catTeaDesc: "شاي عضوي عالي الجودة ومشروبات ماتشا يابانية تقليدية مع لمسة عصرية.",
+                catTeaBtn: "استكشاف",
+                catPastryTitle: "معجنات وحلويات",
+                catPastryDesc: "معجنات طازجة محضرة يومياً وحلويات فاخرة تتناسب مع مشروباتك المفضلة.",
+                catPastryBtn: "استكشاف",
+                catHealthyTitle: "خيارات صحية",
+                catHealthyDesc: "وجبات خفيفة صحية ومشروبات مغذية توازن بين المذاق الرائع والقيمة الغذائية.",
+                catHealthyBtn: "استكشاف",
+                catDrinksTitle: "مشروبات أخرى",
+                catDrinksDesc: "عصائر طازجة ومشروبات باردة منعشة ومياه معطرة لتروي عطشك.",
+                catDrinksBtn: "استكشاف",
+                catSnacksTitle: "وجبات خفيفة",
+                catSnacksDesc: "وجبات خفيفة لذيذة مثالية للاستمتاع مع قهوتك خلال استراحتك.",
+                catSnacksBtn: "استكشاف",
+                
+                // Menu Category Buttons
+                btnAll: "الكل",
+                btnEspresso: "قهوة وإسبريسو",
+                btnBrew: "قهوة التخمير",
+                btnSignature: "مشروبات التوقيع",
+                btnTea: "شاي وماتشا",
+                btnPastry: "معجنات وحلويات",
+                btnSnacks: "وجبات خفيفة",
+                btnJuices: "عصائر ومشروبات",
+                btnSandwiches: "ساندويشات وتوست",
+                btnHealthy: "خيارات صحية",
+                
+                // Promotions
+                promotionsTitle: "عروض وتخفيضات",
+                promotionsSubtitle: "استفد من عروضنا الحصرية وتجاربنا الموسمية المميزة",
+                promo1Badge: "عرض خاص",
+                promo1Title: "لاتيه + كرواسون",
+                promo1Desc: "استمتع بجميع أصناف اللاتيه مع كرواسون طازج بسعر مميز.",
+                promo1Price: "2.500 ر.ع.",
+                promo1Btn: "اطلب الآن",
+                promo2Badge: "توفير 20%",
+                promo2Title: "ماتشا لايت",
+                promo2Desc: "مشروب ماتشا خفيف مع حليب اللوز - مثالي للحمية.",
+                promo2Price: "1.900 ر.ع.",
+                promo2Btn: "اطلب الآن",
+                promo3Badge: "عرض عائلي",
+                promo3Title: "مربع العصائر",
+                promo3Desc: "4 عصائر طازجة متنوعة مع وجبات خفيفة صحية.",
+                promo3Price: "3.500 ر.ع.",
+                promo3Btn: "اطلب الآن",
+                
+                // Daily Deal
+                dealTitle: "عرض اليوم",
+                dealSubtitle: "إسبريسو مزدوج مع كعكة القرفة الطازجة - المزيج المثالي لبداية يومك",
+                dealPrice: "2.200 ر.ع.",
+                dealOldPrice: "2.800 ر.ع.",
+                dealTime: "عرض محدود - متوفر حتى الساعة 11 صباحاً",
+                dealBtn: "احصل على العرض",
+                
+                // Full Menu
+                menuTitle: "قائمتنا الكاملة",
+                menuSubtitle: "كل صنف مصنوع بعناية فائقة ومقدم بأسلوب فني",
+                
+                // Payment Modal
+                paymentTitle: "إتمام الطلب",
+                paymentSubtitle: "اختر طريقة الدفع المناسبة",
+                paymentThawaniTitle: "الدفع الإلكتروني",
+                paymentThawaniDesc: "الدفع الآمن عبر ثواني - بطاقات الائتمان والخصم",
+                paymentCashTitle: "الدفع نقداً",
+                paymentCashDesc: "الدفع عند الاستلام - للتوصيل والمكان",
+                payBtnText: "إتمام الدفع",
+                cancelBtnText: "إلغاء",
+                
+                // Thawani Processing
+                thawaniTitle: "جاري معالجة الدفع",
+                thawaniMessage: "يرجى الانتظار، جاري التوجيه إلى بوابة دفع ثواني الآمنة",
+                thawaniNote: "سيتم فتح نافذة جديدة لعملية الدفع. إذا لم تفتح تلقائياً، يرجى النقر على الرابط الموجود في صفحتك.",
+                
+                // Cart
+                cartTitle: "سلة التسوق",
+                cartTotalLabel: "المجموع:",
+                checkoutBtnText: "إتمام الطلب",
+                clearCartBtnText: "إفراغ السلة",
+                cartEmpty: "سلة التسوق فارغة",
+                
+                // Footer
+                footerAboutTitle: "عن هوستا",
+                footerAboutText: "قهوة هوستا هي قصة شغف وتفانٍ في صنع قهوة استثنائية. نختار أفضل حبوب البن من حول العالم ونحمصها محلياً لنقدم لكم تجربة قهوة فريدة.",
+                footerCoffeeTitle: "قهوتنا",
+                footerCoffee1: "الإسبريسو المميز",
+                footerCoffee2: "قهوة التخمير البارد",
+                footerCoffee3: "اللاتيه الفني",
+                footerCoffee4: "المشروبات الموسمية",
+                footerCoffee5: "حبوب البن للبيع",
+                footerContactTitle: "تواصل معنا",
+                footerAddress: "مسقط، المعبيلة الجنوبية، داخل مستشفى شفاء",
+                footerHours: "مفتوح يومياً 8 صباحاً - 10 مساءً",
+                footerPhone: "+968 1234 5678",
+                footerEmail: "info@hostacoffee.om",
+                footerCopyright: "© 2026 هوستا كوفي شوب. جميع الحقوق محفوظة.",
+                
+                // Notifications
+                notification: {
+                    addedToCart: "تمت الإضافة إلى السلة",
+                    cartCleared: "تم إفراغ السلة",
+                    selectPayment: "الرجاء اختيار طريقة الدفع",
+                    cartEmpty: "سلة التسوق فارغة",
+                    processingPayment: "جاري معالجة الدفع..."
+                }
+            },
+            en: {
+                // Header & Navigation
+                logoTitle: "Hosta",
+                logoSubtitle: "Coffee Crafted to Perfection",
+                navHome: "Home",
+                navMenu: "Menu",
+                navStory: "Our Story",
+                navCoffee: "Coffee",
+                navContact: "Contact",
+                navOrder: "Order Online",
+                
+                // Hero Section
+                heroTitle: "Brewed to Perfection",
+                heroSubtitle: "Experience exceptional coffee. Carefully selected beans, locally roasted, and presented with artistic flair that makes every sip worth savoring.",
+                heroBtnMenu: "Browse Menu",
+                heroBtnOrder: "Order Now",
+                
+                // Categories Section
+                categoriesTitle: "Discover Our Taste",
+                categoriesSubtitle: "From hand-selected beans to expert presentation, every drink is a work of art",
+                catCoffeeTitle: "Coffee & Espresso",
+                catCoffeeDesc: "Enjoy our premium espresso collection made from the finest coffee beans selected from farms worldwide.",
+                catCoffeeBtn: "Explore",
+                catTeaTitle: "Tea & Matcha",
+                catTeaDesc: "High-quality organic tea and traditional Japanese matcha drinks with a modern twist.",
+                catTeaBtn: "Explore",
+                catPastryTitle: "Pastries & Sweets",
+                catPastryDesc: "Freshly baked pastries and exquisite desserts to complement your favorite beverages.",
+                catPastryBtn: "Explore",
+                catHealthyTitle: "Healthy Options",
+                catHealthyDesc: "Healthy snacks and nutritious drinks that balance great taste with nutritional value.",
+                catHealthyBtn: "Explore",
+                catDrinksTitle: "Other Drinks",
+                catDrinksDesc: "Fresh juices, refreshing cold drinks, and infused waters to quench your thirst.",
+                catDrinksBtn: "Explore",
+                catSnacksTitle: "Snacks",
+                catSnacksDesc: "Delicious snacks perfect to enjoy with your coffee during your break.",
+                catSnacksBtn: "Explore",
+                
+                // Menu Category Buttons
+                btnAll: "All",
+                btnEspresso: "Coffee & Espresso",
+                btnBrew: "Brew Methods",
+                btnSignature: "Signature Drinks",
+                btnTea: "Tea & Matcha",
+                btnPastry: "Pastries & Desserts",
+                btnSnacks: "Snacks",
+                btnJuices: "Juices & Drinks",
+                btnSandwiches: "Sandwiches & Toast",
+                btnHealthy: "Healthy Options",
+                
+                // Promotions
+                promotionsTitle: "Promotions & Offers",
+                promotionsSubtitle: "Take advantage of our exclusive offers and seasonal experiences",
+                promo1Badge: "Special Offer",
+                promo1Title: "Latte + Croissant",
+                promo1Desc: "Enjoy all latte varieties with a fresh croissant at a special price.",
+                promo1Price: "2.500 OMR",
+                promo1Btn: "Order Now",
+                promo2Badge: "Save 20%",
+                promo2Title: "Matcha Lite",
+                promo2Desc: "Light matcha drink with almond milk - perfect for diet.",
+                promo2Price: "1.900 OMR",
+                promo2Btn: "Order Now",
+                promo3Badge: "Family Offer",
+                promo3Title: "Juice Box",
+                promo3Desc: "4 fresh assorted juices with healthy snacks.",
+                promo3Price: "3.500 OMR",
+                promo3Btn: "Order Now",
+                
+                // Daily Deal
+                dealTitle: "Daily Deal",
+                dealSubtitle: "Double espresso with fresh cinnamon roll - the perfect combination to start your day",
+                dealPrice: "2.200 OMR",
+                dealOldPrice: "2.800 OMR",
+                dealTime: "Limited offer - available until 11 AM",
+                dealBtn: "Get the Deal",
+                
+                // Full Menu
+                menuTitle: "Our Full Menu",
+                menuSubtitle: "Every item is carefully crafted and artistically presented",
+                
+                // Payment Modal
+                paymentTitle: "Complete Order",
+                paymentSubtitle: "Choose your preferred payment method",
+                paymentThawaniTitle: "Electronic Payment",
+                paymentThawaniDesc: "Secure payment via Thawani - Credit & Debit Cards",
+                paymentCashTitle: "Cash Payment",
+                paymentCashDesc: "Pay on delivery - For delivery and dine-in",
+                payBtnText: "Complete Payment",
+                cancelBtnText: "Cancel",
+                
+                // Thawani Processing
+                thawaniTitle: "Processing Payment",
+                thawaniMessage: "Please wait, redirecting to Thawani secure payment gateway",
+                thawaniNote: "A new window will open for payment processing. If it doesn't open automatically, please click the link on your page.",
+                
+                // Cart
+                cartTitle: "Shopping Cart",
+                cartTotalLabel: "Total:",
+                checkoutBtnText: "Checkout",
+                clearCartBtnText: "Clear Cart",
+                cartEmpty: "Your cart is empty",
+                
+                // Footer
+                footerAboutTitle: "About Hosta",
+                footerAboutText: "Hosta Coffee is a story of passion and dedication to making exceptional coffee. We select the finest coffee beans from around the world and roast them locally to bring you a unique coffee experience.",
+                footerCoffeeTitle: "Our Coffee",
+                footerCoffee1: "Signature Espresso",
+                footerCoffee2: "Cold Brew Coffee",
+                footerCoffee3: "Artistic Latte",
+                footerCoffee4: "Seasonal Drinks",
+                footerCoffee5: "Coffee Beans for Sale",
+                footerContactTitle: "Contact Us",
+                footerAddress: "Muscat, South Al Maabilah, Inside Shifa Hospital",
+                footerHours: "Open Daily 8 AM - 10 PM",
+                footerPhone: "+968 1234 5678",
+                footerEmail: "info@hostacoffee.om",
+                footerCopyright: "© 2026 Hosta Coffee Shop. All rights reserved.",
+                
+                // Notifications
+                notification: {
+                    addedToCart: "Added to cart",
+                    cartCleared: "Cart cleared",
+                    selectPayment: "Please select a payment method",
+                    cartEmpty: "Your cart is empty",
+                    processingPayment: "Processing payment..."
+                }
+            }
+        };
+
+        // COMPLETE MENU DATA WITH ALL ITEMS
+        const menuItems = [
+            // Coffee & Espresso Items
+            {
+                id: 1,
+                name: { ar: "إسبريسو", en: "Espresso" },
+                price: 1.100,
+                description: { ar: "قهوة مركزة وقوية من أفضل حبوب البن البرازيلية", en: "Strong and rich single shot of premium Brazilian coffee" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 2,
+                name: { ar: "أمريكانو", en: "Americano" },
+                price: 1.300,
+                description: { ar: "إسبريسو مع ماء ساخن للحصول على قوام أنعم وأخف", en: "Espresso with hot water for a smoother and lighter texture" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1551030173-122aabc4489c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 3,
+                name: { ar: "كابتشينو", en: "Cappuccino" },
+                price: 1.500,
+                description: { ar: "إسبريسو مع حليب مبخر ورغوة كثيفة وناعمة", en: "Espresso with steamed milk and thick, velvety foam" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1570197788417-0d5f347f0ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 4,
+                name: { ar: "لاتيه", en: "Latte" },
+                price: 1.600,
+                description: { ar: "إسبريسو ناعم مع حليب مبخّر ورغوة خفيفة", en: "Smooth espresso with steamed milk and light foam" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 5,
+                name: { ar: "موكا", en: "Mocha" },
+                price: 1.600,
+                description: { ar: "مزيج لذيذ من الشوكولاتة والإسبريسو مع الحليب", en: "Delicious blend of chocolate, espresso and milk" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1570514458277-05a79afc8ea2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 6,
+                name: { ar: "كورتادو", en: "Cortado" },
+                price: 1.400,
+                description: { ar: "إسبريسو مع كمية صغيرة من الحليب الدافئ", en: "Espresso with a small amount of warm milk" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1587734195617-3d5c1c17c1a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 7,
+                name: { ar: "فلات وايت", en: "Flat White" },
+                price: 1.500,
+                description: { ar: "قهوة قوية مع حليب ناعم ورغوة", en: "Strong coffee with velvety milk and microfoam" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1563230662-76920c62f6c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 8,
+                name: { ar: "لاتيه إسباني", en: "Spanish Latte" },
+                price: 1.600,
+                description: { ar: "لاتيه حلو مع حليب مكثف، على الطريقة الإسبانية", en: "Sweet latte with condensed milk, Spanish style" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1587080413959-06b859fb1071?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 9,
+                name: { ar: "لاتيه كراميل", en: "Caramel Latte" },
+                price: 1.600,
+                description: { ar: "لاتيه مع صوص الكراميل الحلو والمكسرات", en: "Latte with sweet caramel sauce and nuts" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1570197788417-0d5f347f0ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true,
+                special: true
+            },
+            {
+                id: 10,
+                name: { ar: "لاتيه زعفران", en: "Saffron Latte" },
+                price: 1.700,
+                description: { ar: "لاتيه مميز مع نكهة الزعفران العُماني الفاخر", en: "Special latte with premium Omani saffron flavor" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 11,
+                name: { ar: "لاتيه فستق", en: "Pistachio Latte" },
+                price: 1.600,
+                description: { ar: "لاتيه مع نكهة الفستق الغنية", en: "Latte with rich pistachio flavor" },
+                category: "espresso",
+                image: "https://images.unsplash.com/photo-1570514458277-05a79afc8ea2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            
+            // Brew Methods
+            {
+                id: 12,
+                name: { ar: "قهوة التخمير", en: "Brewed Coffee" },
+                price: 1.200,
+                description: { ar: "قهوة طازجة مخمرة يومياً من حبوب البن العُماني", en: "Freshly brewed coffee daily from Omani coffee beans" },
+                category: "brew",
+                image: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 13,
+                name: { ar: "V60 ساخن", en: "V60 (Hot)" },
+                price: 1.800,
+                description: { ar: "قهوة مخمرة بطريقة V60 ساخنة بدقة يابانية", en: "Coffee brewed using precise Japanese V60 hot method" },
+                category: "brew",
+                image: "https://images.unsplash.com/photo-1587734195617-3d5c1c17c1a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 14,
+                name: { ar: "V60 بارد", en: "V60 (Cold)" },
+                price: 1.800,
+                description: { ar: "قهوة مخمرة بطريقة V60 باردة", en: "Coffee brewed using V60 cold method" },
+                category: "brew",
+                image: "https://images.unsplash.com/photo-1587734195617-3d5c1c17c1a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 15,
+                name: { ar: "إيروبرس", en: "Aeropress" },
+                price: 1.800,
+                description: { ar: "قهوة مخمرة بطريقة الإيروبرس", en: "Coffee brewed using Aeropress method" },
+                category: "brew",
+                image: "https://images.unsplash.com/photo-1587734195617-3d5c1c17c1a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 16,
+                name: { ar: "قهوة باردة مخمرة", en: "Cold Brew" },
+                price: 1.800,
+                description: { ar: "قهوة مخمرة على البارد لمدة 24 ساعة لمذاق نقي", en: "Coffee cold brewed for 24 hours for pure taste" },
+                category: "brew",
+                image: "https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true,
+                popular: true
+            },
+            
+            // Signature Drinks
+            {
+                id: 17,
+                name: { ar: "قهوة هوستا الخاصة", en: "Hosta Signature Coffee" },
+                price: 1.900,
+                description: { ar: "مشروب حصري بمذاق القهوة اللذيذ مع التمر العُماني", en: "Exclusive signature coffee drink with Omani dates" },
+                category: "signature",
+                image: "https://images.unsplash.com/photo-1570197788417-0d5f347f0ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true,
+                popular: true
+            },
+            {
+                id: 18,
+                name: { ar: "قهوة المانجو الخاص", en: "Mango Coffee Signature" },
+                price: 1.900,
+                description: { ar: "مزيج فريد من قهوة الاسبريسو والمانجو الطازج", en: "Unique blend of espresso and fresh mango" },
+                category: "signature",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 19,
+                name: { ar: "إسبريسو هوستا الخاص", en: "Espresso Signature" },
+                price: 1.900,
+                description: { ar: "إسبريسو هوستا الخاص", en: "Special espresso with Hosta signature" },
+                category: "signature",
+                image: "https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 20,
+                name: { ar: "شاي مثلج الخاص", en: "Special Iced Tea" },
+                price: 1.700,
+                description: { ar: "شاي مثلج خاص ", en: "Special iced tea with Hosta signature" },
+                category: "signature",
+                image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 21,
+                name: { ar: "قهوة النعناع الخاصة", en: "Mint Coffee Signature" },
+                price: 1.800,
+                description: { ar: "قهوة منعشة مع نعناع طازج", en: "Refreshing coffee with fresh mint" },
+                category: "signature",
+                image: "https://images.unsplash.com/photo-1570197788417-0d5f347f0ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            
+            // Tea & Matcha
+            {
+                id: 22,
+                name: { ar: "ماتشا ياباني", en: "Japanese Matcha" },
+                price: 1.900,
+                description: { ar: "شاي ماتشا ياباني تقليدي من أعلى الدرجات", en: "Traditional Japanese matcha tea of the highest grade" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true,
+                popular: true
+            },
+            {
+                id: 23,
+                name: { ar: "ماتشا جوز الهند", en: "Coconut Matcha" },
+                price: 2.000,
+                description: { ar: "ماتشا مع نكهة جوز الهند", en: "Matcha with coconut flavor" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 24,
+                name: { ar: "لاتيه ماتشا", en: "Matcha Latte" },
+                price: 1.900,
+                description: { ar: "ماتشا مع حليب مبخر وعسل طبيعي", en: "Matcha with steamed milk and natural honey" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 25,
+                name: { ar: "لاتيه ورد", en: "Rose Latte" },
+                price: 1.600,
+                description: { ar: "لاتيه مع نكهة الورد الطبيعي", en: "Latte with natural rose flavor" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 26,
+                name: { ar: "شاي مثلج", en: "Iced Tea" },
+                price: 1.300,
+                description: { ar: "شاي مثلج منعش", en: "Refreshing iced tea" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 27,
+                name: { ar: "نسكافيه", en: "Nescafe" },
+                price: 0.300,
+                description: { ar: "نسكافيه كلاسيكي", en: "Classic Nescafe" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 76,
+                name: { ar: "شوكولاتة ساخنة", en: "Hot Chocolate" },
+                price: 1.500,
+                description: { ar: "شوكولاتة غنية وساخنة مع كريمة", en: "Rich hot chocolate with cream" },
+                category: "tea",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            
+            // Pastries & Desserts
+            {
+                id: 28,
+                name: { ar: "كرواسون عادي", en: "Plain Croissant" },
+                price: 0.800,
+                description: { ar: "كرواسون زبدة طازج محضر يومياً", en: "Fresh butter croissant prepared daily" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 29,
+                name: { ar: "كرواسون جبن", en: "Cheese Croissant" },
+                price: 1.000,
+                description: { ar: "كرواسون مع جبنة شيدر ذائبة", en: "Croissant with melted cheddar cheese" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 30,
+                name: { ar: "دانيش توت أزرق", en: "Blueberry Danish" },
+                price: 0.850,
+                description: { ar: "معجنات مع توت أزرق طازج", en: "Pastry with fresh blueberries" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 31,
+                name: { ar: "دانيش شرقي", en: "Oriental Danish" },
+                price: 0.850,
+                description: { ar: "معجنات دانيش شرقية", en: "Oriental pastry" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 32,
+                name: { ar: "كعكة القرفة", en: "Cinnamon Roll" },
+                price: 0.850,
+                description: { ar: "كعكة القرفة الطازجة مع صوص الكريم تشيز", en: "Fresh cinnamon roll with cream cheese sauce" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 33,
+                name: { ar: "دونات", en: "Donuts" },
+                price: 0.400,
+                description: { ar: "دونات طازجة", en: "Fresh donuts" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 34,
+                name: { ar: "وافل", en: "Waffles" },
+                price: 0.200,
+                description: { ar: "وافل طازج", en: "Fresh waffles" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1562376552-0d160a2f238d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 44,
+                name: { ar: "كعك المافن", en: "Muffins" },
+                price: 0.800,
+                description: { ar: "موفن طازجة", en: "Fresh muffins" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1576866209830-589e1bfbaa4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 35,
+                name: { ar: "كيك شوكولاتة", en: "Chocolate Cake" },
+                price: 1.800,
+                description: { ar: "كيك شوكولاتة غني", en: "Rich chocolate cake" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 36,
+                name: { ar: "سان سيباستيان", en: "San Sebastian" },
+                price: 1.700,
+                description: { ar: "كيك سان سيباستيان الكلاسيكي", en: "Classic San Sebastian cake" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 37,
+                name: { ar: "كيك جبنة بالتوت", en: "Blueberry Cheese cake" },
+                price: 1.900,
+                description: { ar: "كيك جبنة مع توت أزرق", en: "Cheesecake with blueberries" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 38,
+                name: { ar: "تيراميسو", en: "Tiramisu" },
+                price: 1.700,
+                description: { ar: "تيراميسو إيطالي تقليدي", en: "Traditional Italian tiramisu" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 39,
+                name: { ar: "كيك أحمر مخملي", en: "Red Velvet" },
+                price: 1.900,
+                description: { ar: "كيك أحمر مخملي كلاسيكي", en: "Classic red velvet cake" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1586783505563-7917ecf7f2d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 40,
+                name: { ar: "براونيز", en: "Brownies" },
+                price: 1.800,
+                description: { ar: "براونيز شوكولاتة غنية", en: "Rich chocolate brownies" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1606313564200-75f2d4fa383b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 41,
+                name: { ar: "براونيز صحية", en: "Healthy Brownies" },
+                price: 0.300,
+                description: { ar: "براونيز صحية من التمر والشوفان وزبدة الفول السوداني", en: "Healthy brownies with dates, oats and peanut butter" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1606313564200-75f2d4fa383b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 42,
+                name: { ar: "كيك التمر", en: "Date Cake" },
+                price: 0.300,
+                description: { ar: "كيك التمر العُماني", en: "Omani date cake" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 43,
+                name: { ar: "شريحة كيك", en: "Slice Cake" },
+                price: 0.300,
+                description: { ar: "شريحة كيك طازجة", en: "Fresh cake slice" },
+                category: "pastry",
+                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            
+            // Snacks
+            {
+                id: 45,
+                name: { ar: "شوكولاتة لوز", en: "Almond Chocolate" },
+                price: 0.200,
+                description: { ar: "شوكولاتة مع لوز", en: "Chocolate with almonds" },
+                category: "snacks",
+                image: "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 46,
+                name: { ar: "معمول عُماني", en: "Omani Date Maamoul" },
+                price: 0.200,
+                description: { ar: "معمول عُماني تقليدي محشو بالتمر", en: "Traditional Omani date biscuits filled with dates" },
+                category: "snacks",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true,
+                popular: true
+            },
+            {
+                id: 47,
+                name: { ar: "بار بروتين", en: "Protein Bar" },
+                price: 1.000,
+                description: { ar: "بار بروتين صحي مع المكسرات والشوفان", en: "Healthy protein bar with nuts and oats" },
+                category: "snacks",
+                image: "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 48,
+                name: { ar: "شريحة التمر وجرانولا", en: "Date Granola bar" },
+                price: 0.500,
+                description: { ar: "بار التمر وجرانولا", en: "Date and granola bar" },
+                category: "snacks",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            
+            // Juices & Drinks
+            {
+                id: 49,
+                name: { ar: "عصير برتقال طازج", en: "Fresh Orange Juice" },
+                price: 0.750,
+                description: { ar: "عصير برتقال طازج مع قطع البرتقال", en: "Fresh orange juice with orange pieces" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 50,
+                name: { ar: "مانجو وباشن فروتا", en: "Mango Passion Fruit" },
+                price: 0.750,
+                description: { ar: "عصير مانجو وباشن فروت", en: "Mango and passion fruit juice" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 51,
+                name: { ar: "برتقال وشمندر", en: "Orange Beetroot" },
+                price: 0.750,
+                description: { ar: "عصير برتقال وشمندر صحي", en: "Healthy orange and beetroot juice" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 52,
+                name: { ar: "رمان", en: "Pomegranate" },
+                price: 0.850,
+                description: { ar: "عصير رمان طازج", en: "Fresh pomegranate juice" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 53,
+                name: { ar: "ماء معدني", en: "Mineral Water" },
+                price: 0.100,
+                description: { ar: "ماء معدني", en: "Mineral water" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 54,
+                name: { ar: "ماء فوار", en: "Sparkling Water" },
+                price: 0.700,
+                description: { ar: "ماء فوار", en: "Sparkling water" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 55,
+                name: { ar: "ماء اللافندر", en: "Lavender Water" },
+                price: 0.500,
+                description: { ar: "ماء اللافندر المنعش", en: "Refreshing lavender water" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 56,
+                name: { ar: "ماء اللبان", en: "Luban Water" },
+                price: 0.500,
+                description: { ar: "ماء اللبان العُماني", en: "Omani luban water" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 57,
+                name: { ar: "لبن", en: "Laban" },
+                price: 0.250,
+                description: { ar: "لبن طازج", en: "Fresh laban" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 58,
+                name: { ar: "لبن مانجو", en: "Mango Laban" },
+                price: 0.300,
+                description: { ar: "لبن بنكهة المانجو", en: "Laban with mango flavor" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 59,
+                name: { ar: "لبن فراولة", en: "Strawberry Laban" },
+                price: 0.300,
+                description: { ar: "لبن بنكهة الفراولة", en: "Laban with strawberry flavor" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 77,
+                name: { ar: "موهيتو", en: "Mojito" },
+                price: 1.300,
+                description: { ar: "مشروب منعش بالنعناع والليمون", en: "Refreshing mint and lemon drink" },
+                category: "juices",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            
+            // Sandwiches & Toast
+            {
+                id: 60,
+                name: { ar: "توست دجاج", en: "Chicken Toast" },
+                price: 0.800,
+                description: { ar: "توست طازج مع الدجاج", en: "Fresh toast with chicken" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 61,
+                name: { ar: "توست بيض", en: "Egg Toast" },
+                price: 0.600,
+                description: { ar: "توست مع بيض", en: "Toast with egg" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 62,
+                name: { ar: "توست الديك الرومي", en: "Turkey Toast" },
+                price: 0.950,
+                description: { ar: "توست طازج مع الديك الرومي", en: "Fresh toast with turkey" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 63,
+                name: { ar: "ساندويش حلوم", en: "Halloumi Sandwich" },
+                price: 1.600,
+                description: { ar: "ساندويش جبنة الحلوم المشوية مع الخضار", en: "Grilled halloumi cheese sandwich with vegetables" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 64,
+                name: { ar: "ساندويش مربى", en: "Jam Sandwich" },
+                price: 0.400,
+                description: { ar: "ساندويش مربى", en: "Jam sandwich" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 65,
+                name: { ar: "ساندويش لحم", en: "Meat Sandwich" },
+                price: 1.600,
+                description: { ar: "ساندويش لحم طازج", en: "Fresh meat sandwich" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 66,
+                name: { ar: "ساندويش دجاج", en: "Chicken Sandwich" },
+                price: 1.600,
+                description: { ar: "ساندويش دجاج طازج مع الخضار والصلصة الخاصة", en: "Fresh chicken sandwich with vegetables and special sauce" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 67,
+                name: { ar: "ساندويش الديك الرومي", en: "Turkey Sandwich" },
+                price: 1.600,
+                description: { ar: "ساندويش الديك الرومي", en: "Turkey sandwich" },
+                category: "sandwiches",
+                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            
+            // Healthy Options
+            {
+                id: 68,
+                name: { ar: "زبادي يوناني", en: "Greek Yogurt" },
+                price: 0.800,
+                description: { ar: "زبادي يوناني طازج", en: "Fresh Greek yogurt" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 69,
+                name: { ar: "جرانولا مع زبادي يوناني", en: "Granola with Greek Yogurt" },
+                price: 1.200,
+                description: { ar: "جرانولا مع زبادي يوناني", en: "Granola with Greek yogurt" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 70,
+                name: { ar: "حبوب شيا مع الفواكه", en: "Chia Seeds with Fruit Salad" },
+                price: 1.500,
+                description: { ar: "فواكه طازجة مع حبوب الشيا والحليب", en: "Fresh fruit salad with chia seeds and milk" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1519996529931-28324d5a630e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 71,
+                name: { ar: "فواكه مختلطة", en: "Fruit Mix Box" },
+                price: 0.950,
+                description: { ar: "صحن فواكه مختلطة", en: "Mixed fruit box" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1519996529931-28324d5a630e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                popular: true
+            },
+            {
+                id: 72,
+                name: { ar: "أناناس", en: "Pineapple Box" },
+                price: 0.950,
+                description: { ar: "أناناس طازج", en: "Fresh pineapple box" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 73,
+                name: { ar: "كولاجين", en: "Collagen" },
+                price: 1.900,
+                description: { ar: "مشروب الكولاجين", en: "Collagen drink" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 74,
+                name: { ar: "جرعة زنجبيل", en: "Ginger Shot" },
+                price: 1.200,
+                description: { ar: "جرعة زنجبيل صحية", en: "Healthy ginger shot" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                special: true
+            },
+            {
+                id: 75,
+                name: { ar: "رقائق صحية", en: "Healthy Chips" },
+                price: 0.400,
+                description: { ar: "رقائق صحية", en: "Healthy chips" },
+                category: "healthy",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Application State
+        let cart = [];
+        let currentLanguage = "ar";
+        let selectedPaymentMethod = null;
+        let currentCategory = "all";
+        let orderNumber = 1001;
+
+        // Initialize the Application
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenuItems();
+            setupEventListeners();
+            updateCartDisplay();
+            updateLanguage("ar");
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Render Menu Items
+        function renderMenuItems() {
+            const menuGrid = document.getElementById('menuItems');
+            menuGrid.innerHTML = '';
+            
+            const filteredItems = currentCategory === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === currentCategory);
+            
+            filteredItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'menu-item';
+                menuItem.setAttribute('data-category', item.category);
+                
+                const popularBadge = item.popular ? '<span class="promo-badge" style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent) 100%);">' + (currentLanguage === 'ar' ? 'الأكثر طلباً' : 'Most Popular') + '</span>' : '';
+                const specialBadge = item.special ? '<span class="promo-badge" style="position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-dark) 100%);">' + (currentLanguage === 'ar' ? 'خاص' : 'Special') + '</span>' : '';
+                
+                menuItem.innerHTML = `
+                    ${popularBadge}
+                    ${specialBadge}
+                    <div class="menu-item-image">
+                        <img src="${item.image}" alt="${item.name[currentLanguage]}">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h4>${item.name[currentLanguage]}</h4>
+                            <div class="menu-price">${item.price.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}</div>
+                        </div>
+                        <p class="menu-item-description">${item.description[currentLanguage]}</p>
+                        <div class="menu-item-footer">
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" data-id="${item.id}">-</button>
+                                <span class="quantity" id="quantity-${item.id}">0</span>
+                                <button class="qty-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="${item.id}">
+                                <i class="fas fa-cart-plus"></i>
+                                <span>${currentLanguage === 'ar' ? 'أضف للسلة' : 'Add to Cart'}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                menuGrid.appendChild(menuItem);
+            });
         }
 
-        async function payThawani() {
-            // This would call your Node.js backend
-            const response = await fetch('/api/create-session', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ amount: 2550, client_reference_id: "order_123" })
+        // Update Quantity
+        function updateQuantity(id, increment) {
+            const quantityElement = document.getElementById(`quantity-${id}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+            
+            if (increment) {
+                currentQuantity++;
+            } else if (currentQuantity > 0) {
+                currentQuantity--;
+            }
+            
+            quantityElement.textContent = currentQuantity;
+        }
+
+        // Add to Cart
+        function addToCart(id) {
+            const item = menuItems.find(item => item.id === id);
+            if (!item) return;
+            
+            const quantityElement = document.getElementById(`quantity-${id}`);
+            const quantity = parseInt(quantityElement.textContent);
+            
+            if (quantity === 0) return;
+            
+            // Check if item already exists in cart
+            const existingItemIndex = cart.findIndex(cartItem => cartItem.id === id);
+            
+            if (existingItemIndex > -1) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    ...item,
+                    quantity: quantity
+                });
+            }
+            
+            // Reset quantity display
+            quantityElement.textContent = '0';
+            
+            // Update cart display
+            updateCartDisplay();
+            
+            // Show notification
+            showNotification(`${quantity} ${item.name[currentLanguage]} ${content[currentLanguage].notification.addedToCart}`);
+            
+            // Show cart panel
+            document.getElementById('cartPanel').classList.add('active');
+        }
+
+        // Update Cart Display
+        function updateCartDisplay() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `<p style="text-align: center; color: var(--color-light); padding: 20px;">${content[currentLanguage].cartEmpty}</p>`;
+                document.getElementById('cartTotalAmount').textContent = `0.000 ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}`;
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name[currentLanguage]}</div>
+                        <div class="cart-item-price">${itemTotal.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}</div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <span class="cart-item-quantity">x${item.quantity}</span>
+                        <button class="qty-btn" onclick="removeFromCart(${index})" style="width: 30px; height: 30px; font-size: 0.8rem;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
             });
-            const data = await response.json();
-            if(data.session_id) {
-                // Redirect to Thawani checkout
-                window.location.href = `https://secure-web.cisco.com/1l6w4IQxQ4lGcEq3gzpPA9OjDZe-hMX3uyinlUZcVMvxiiDLsBCj02L0uBOAPEVVLczOd-csFXZ1XQw6aPgrTyI6yTtkMfq33jGqcBFjiWPrZf-9hq18Q5HeMvUu-K7WGZNuqz7QHlF3x4CPTiD1bS5Xgon49-NTC3uQAa3XlJBN15_W38RhR7qJSI5qK5j62aTjIlxbV7q_8gNBa9c7Sp6ATPhiJktsfOIGVZh8OQdXXuZAfBTFY4usWXh38KGsAcO64PRoW966YlU5pAVkwf2ojtEphuZGW5yH1FwKOnxqBonSdzSM5KwgsKJSWpAT8QUL-0L39Il8oUn0cgIcnDOPd7cWTXPci_aRFCNpS8W6SMdVwTIjmKcc3jfLfXZG5/https%3A%2F%2Fcheckout.thawani.om%2Fpay%2F%24{data.session_id}`;
+            
+            document.getElementById('cartTotalAmount').textContent = `${total.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}`;
+        }
+
+        // Remove from Cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        // Clear Cart
+        function clearCart() {
+            cart = [];
+            updateCartDisplay();
+            showNotification(content[currentLanguage].notification.cartCleared);
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification(content[currentLanguage].notification.cartEmpty);
+                return;
+            }
+            
+            // Show payment modal
+            document.getElementById('paymentModal').classList.add('active');
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            selectedPaymentMethod = null;
+        }
+
+        // Process Payment
+        async function processPayment() {
+            if (!selectedPaymentMethod) {
+                showNotification(content[currentLanguage].notification.selectPayment);
+                return;
+            }
+            
+            // Calculate total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // Close payment modal
+            document.getElementById('paymentModal').classList.remove('active');
+            
+            if (selectedPaymentMethod === 'thawani') {
+                // Show Thawani processing
+                document.getElementById('thawaniProcessing').classList.add('active');
+                
+                // In a real implementation, you would:
+                // 1. Send POST request to your backend to create Thawani session
+                // 2. Backend creates session with Thawani API
+                // 3. Redirect user to Thawani payment page
+                
+                // For demo, simulate the process
+                setTimeout(() => {
+                    simulateThawaniPayment(total);
+                }, 2000);
+            } else if (selectedPaymentMethod === 'cash') {
+                // For cash payment, complete order directly
+                completeOrder(total, 'cash');
             }
         }
+
+        // Simulate Thawani Payment (For Demo)
+        async function simulateThawaniPayment(total) {
+            try {
+                // In real implementation:
+                // const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.CREATE_THAWANI_SESSION}`, {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({
+                //         amount: total * 1000, // Convert to baisa
+                //         currency: 'OMR',
+                //         metadata: {
+                //             order_id: `HOSTA${orderNumber}`,
+                //             items: cart.map(item => ({
+                //                 name: item.name[currentLanguage],
+                //                 quantity: item.quantity,
+                //                 price: item.price
+                //             }))
+                //         }
+                //     })
+                // });
+                // 
+                // const data = await response.json();
+                // if (data.success && data.payment_url) {
+                //     // Open Thawani payment in new window
+                //     window.open(data.payment_url, '_blank');
+                //     
+                //     // Start polling for payment status
+                //     pollPaymentStatus(data.session_id);
+                // }
+
+                // For demo, simulate successful payment
+                document.getElementById('thawaniProcessing').classList.remove('active');
+                showNotification(currentLanguage === 'ar' ? 
+                    "تم إنشاء جلسة الدفع بنجاح. جاري التوجيه إلى بوابة ثواني..." : 
+                    "Payment session created successfully. Redirecting to Thawani gateway...");
+                
+                // Simulate payment completion
+                setTimeout(() => {
+                    completeOrder(total, 'thawani');
+                }, 3000);
+                
+            } catch (error) {
+                console.error('Payment error:', error);
+                document.getElementById('thawaniProcessing').classList.remove('active');
+                showNotification(currentLanguage === 'ar' ? 
+                    "حدث خطأ في معالجة الدفع. الرجاء المحاولة مرة أخرى." : 
+                    "Payment processing error. Please try again.");
+            }
+        }
+
+        // Complete Order
+        function completeOrder(total, paymentMethod) {
+            orderNumber++;
+            
+            // In a real implementation, send order to backend:
+            // fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.CREATE_ORDER}`, {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({
+            //         order_id: `HOSTA${orderNumber}`,
+            //         items: cart,
+            //         total: total,
+            //         payment_method: paymentMethod,
+            //         timestamp: new Date().toISOString()
+            //     })
+            // });
+            
+            // Show success message
+            showNotification(currentLanguage === 'ar' ? 
+                `تم استلام طلبك #HOSTA${orderNumber} بنجاح! سيتم تجهيزه قريباً.` :
+                `Order #HOSTA${orderNumber} received successfully! It will be prepared shortly.`);
+            
+            // Clear cart
+            clearCart();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Update Language
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update language buttons
+            document.getElementById('arabicBtn').classList.toggle('active', lang === 'ar');
+            document.getElementById('englishBtn').classList.toggle('active', lang === 'en');
+            
+            // Update text direction
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all text content
+            for (const key in content[lang]) {
+                if (typeof content[lang][key] === 'string') {
+                    const element = document.querySelector(`[id="${key}"]`);
+                    if (element) element.textContent = content[lang][key];
+                }
+            }
+            
+            // Update menu items
+            renderMenuItems();
+            
+            // Update cart
+            updateCartDisplay();
+        }
+
+        // Show Notification
+        function showNotification(message) {
+            // Remove existing notification
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) existingNotification.remove();
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                ${currentLanguage === 'ar' ? 'left: 30px;' : 'right: 30px;'}
+                background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-dark) 100%);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                z-index: 10000;
+                font-weight: 600;
+                animation: slideIn 0.3s ease;
+                max-width: 400px;
+                font-size: 1rem;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Setup Event Listeners
+        function setupEventListeners() {
+            // Language switcher
+            document.getElementById('arabicBtn').addEventListener('click', () => updateLanguage('ar'));
+            document.getElementById('englishBtn').addEventListener('click', () => updateLanguage('en'));
+            
+            // Category buttons
+            document.querySelectorAll('.menu-category-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    document.querySelectorAll('.menu-category-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update category and re-render
+                    currentCategory = this.getAttribute('data-category');
+                    renderMenuItems();
+                });
+            });
+            
+            // Cart toggle
+            document.getElementById('cartToggle').addEventListener('click', () => {
+                document.getElementById('cartPanel').classList.add('active');
+            });
+            
+            document.getElementById('closeCart').addEventListener('click', () => {
+                document.getElementById('cartPanel').classList.remove('active');
+            });
+            
+            // Clear cart
+            document.getElementById('clearCartBtn').addEventListener('click', clearCart);
+            
+            // Checkout
+            document.getElementById('checkoutBtn').addEventListener('click', checkout);
+            
+            // Payment options
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedPaymentMethod = this.getAttribute('data-method');
+                });
+            });
+            
+            // Confirm payment
+            document.getElementById('confirmPayment').addEventListener('click', processPayment);
+            
+            // Cancel payment
+            document.getElementById('cancelPayment').addEventListener('click', () => {
+                document.getElementById('paymentModal').classList.remove('active');
+            });
+            
+            // Delegate events for dynamic elements
+            document.addEventListener('click', function(e) {
+                // Quantity buttons
+                if (e.target.classList.contains('qty-btn')) {
+                    const btn = e.target.closest('.qty-btn');
+                    if (!btn) return;
+                    
+                    const id = parseInt(btn.getAttribute('data-id'));
+                    const isPlus = btn.classList.contains('plus');
+                    
+                    if (btn.closest('.menu-item')) {
+                        updateQuantity(id, isPlus);
+                    }
+                }
+                
+                // Add to cart buttons
+                if (e.target.closest('.add-to-cart-btn')) {
+                    const btn = e.target.closest('.add-to-cart-btn');
+                    const id = parseInt(btn.getAttribute('data-id'));
+                    addToCart(id);
+                }
+                
+                // Category explore buttons
+                if (e.target.closest('.category-btn')) {
+                    e.preventDefault();
+                    const btn = e.target.closest('.category-btn');
+                    const category = btn.closest('.category-card').getAttribute('data-category');
+                    
+                    // Set category and scroll to menu
+                    currentCategory = category;
+                    document.querySelectorAll('.menu-category-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.menu-category-btn[data-category="${category}"]`).classList.add('active');
+                    
+                    renderMenuItems();
+                    document.getElementById('full-menu').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateY(-30px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-30px);
+                    opacity: 0;
+                }
+            }
+            
+            .notification-toast {
+                position: fixed;
+                top: 100px;
+                right: 30px;
+                background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-dark) 100%);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                z-index: 10000;
+                font-weight: 600;
+                animation: slideIn 0.3s ease;
+                max-width: 400px;
+            }
+            
+            body[dir="rtl"] .notification-toast {
+                right: auto;
+                left: 30px;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

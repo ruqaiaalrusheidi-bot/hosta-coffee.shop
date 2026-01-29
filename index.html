@@ -101,16 +101,15 @@
             color: var(--color-white);
         }
         
-        /* Small Banner */
+        /* BROWN BANNER */
         .banner {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(111, 78, 55, 0.9), rgba(111, 78, 55, 0.8));
             height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--color-white);
+            color: var(--color-cream);
             margin-bottom: 40px;
             border-radius: 10px;
         }
@@ -118,11 +117,13 @@
         .banner-content h2 {
             font-size: 2.2rem;
             margin-bottom: 10px;
+            color: var(--color-cream);
         }
         
         .banner-content p {
             font-size: 1.1rem;
             opacity: 0.9;
+            color: var(--color-cream);
         }
         
         /* Menu Navigation */
@@ -130,6 +131,9 @@
             background-color: var(--color-coffee);
             border-radius: 10px;
             margin-bottom: 30px;
+            position: sticky;
+            top: 95px;
+            z-index: 999;
         }
         
         .menu-nav ul {
@@ -160,29 +164,45 @@
             background-color: var(--color-gold);
         }
         
-        /* Menu Items */
+        /* ALL CATEGORIES ON ONE PAGE */
         .menu-section {
-            display: none;
+            margin-bottom: 60px;
         }
         
-        .menu-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-gold);
         }
         
         .section-title {
             font-size: 1.8rem;
             color: var(--color-coffee);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--color-gold);
+            margin-bottom: 0;
+        }
+        
+        .view-all-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-coffee);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .view-all-link:hover {
+            color: var(--color-gold);
+            gap: 12px;
         }
         
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
         }
         
         .menu-item {
@@ -192,6 +212,7 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid rgba(111, 78, 55, 0.1);
+            position: relative;
         }
         
         .menu-item:hover {
@@ -282,10 +303,199 @@
             font-weight: 600;
             transition: var(--transition);
             flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         
         .add-to-cart:hover {
             background-color: var(--color-gold);
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .badge-popular {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+        }
+        
+        .badge-special {
+            background-color: var(--color-coffee);
+            color: var(--color-white);
+            right: auto;
+            left: 15px;
+        }
+        
+        /* DEALS OF THE DAY BANNER */
+        .deals-banner {
+            background: linear-gradient(135deg, var(--color-coffee) 0%, var(--color-dark) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px 0;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .deals-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 167, 106, 0.1) 0%, rgba(212, 167, 106, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .deals-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(212, 167, 106, 0.1) 0%, rgba(212, 167, 106, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .deals-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .deals-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--color-cream);
+        }
+        
+        .deals-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            color: var(--color-cream);
+        }
+        
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .deal-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+        
+        .deal-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .deal-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .deal-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-gold);
+        }
+        
+        .deal-badge {
+            background-color: var(--color-gold);
+            color: var(--color-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .deal-card-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .deal-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-cream);
+        }
+        
+        .original-price {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .deal-button {
+            background-color: var(--color-gold);
+            color: var(--color-dark);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .deal-button:hover {
+            background-color: var(--color-cream);
+            transform: translateY(-2px);
+        }
+        
+        .deal-countdown {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--color-gold);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .countdown-timer {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-cream);
+            margin-top: 5px;
         }
         
         /* Cart */
@@ -504,6 +714,31 @@
             font-size: 0.9rem;
         }
         
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background-color: var(--color-coffee);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 99;
+            text-decoration: none;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--color-gold);
+            transform: translateY(-3px);
+        }
+        
         /* LTR Support */
         body[dir="ltr"] {
             font-family: 'Inter', 'Cairo', sans-serif;
@@ -528,10 +763,31 @@
             left: auto;
         }
         
+        body[dir="ltr"] .back-to-top {
+            left: auto;
+            right: 30px;
+        }
+        
+        body[dir="ltr"] .badge-special {
+            left: auto;
+            right: 15px;
+        }
+        
+        body[dir="ltr"] .badge-popular {
+            right: auto;
+            left: 15px;
+        }
+        
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
         /* Responsive */
@@ -549,7 +805,7 @@
                 font-size: 1.8rem;
             }
             
-            .menu-grid {
+            .menu-grid, .deals-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
@@ -570,10 +826,24 @@
             body[dir="ltr"] .cart-panel {
                 right: -100%;
             }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .deals-banner {
+                padding: 30px 20px;
+            }
+            
+            .deals-header h2 {
+                font-size: 2rem;
+            }
         }
         
         @media (max-width: 480px) {
-            .menu-grid {
+            .menu-grid, .deals-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -583,6 +853,10 @@
             
             .banner-content h2 {
                 font-size: 1.5rem;
+            }
+            
+            .deals-header h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -609,7 +883,7 @@
         </div>
     </header>
 
-    <!-- Small Banner -->
+    <!-- BROWN BANNER -->
     <section class="banner">
         <div class="container">
             <div class="banner-content">
@@ -623,7 +897,7 @@
     <nav class="menu-nav">
         <div class="container">
             <ul>
-                <li><a href="#" class="nav-link active" data-category="all" id="navAll">الكل</a></li>
+                <li><a href="#" class="nav-link" data-category="all" id="navAll">الكل</a></li>
                 <li><a href="#" class="nav-link" data-category="espresso" id="navCoffee">قهوة وإسبريسو</a></li>
                 <li><a href="#" class="nav-link" data-category="brew" id="navBrew">قهوة التخمير</a></li>
                 <li><a href="#" class="nav-link" data-category="signature" id="navSignature">مشروبات التوقيع</a></li>
@@ -636,26 +910,194 @@
         </div>
     </nav>
 
-    <!-- Main Content - Menu -->
+    <!-- Main Content - ALL CATEGORIES ON ONE PAGE -->
     <main class="container">
-        <!-- All Items Section -->
-        <section id="all" class="menu-section active">
-            <h2 class="section-title" id="allTitle">القائمة الكاملة</h2>
-            <div class="menu-grid" id="allItems">
-                <!-- Items will be loaded by JavaScript -->
+        <!-- All Categories Section -->
+        <section id="all-categories">
+            <!-- Coffee & Espresso Section -->
+            <div class="menu-section" id="espresso-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="espressoTitle">قهوة وإسبريسو</h2>
+                    <a href="#espresso-items" class="view-all-link" id="viewEspresso">
+                        <span id="viewEspressoText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="espressoItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Brew Methods Section -->
+            <div class="menu-section" id="brew-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="brewTitle">قهوة التخمير</h2>
+                    <a href="#brew-items" class="view-all-link" id="viewBrew">
+                        <span id="viewBrewText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="brewItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Signature Drinks Section -->
+            <div class="menu-section" id="signature-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="signatureTitle">مشروبات التوقيع</h2>
+                    <a href="#signature-items" class="view-all-link" id="viewSignature">
+                        <span id="viewSignatureText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="signatureItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Tea & Matcha Section -->
+            <div class="menu-section" id="tea-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="teaTitle">شاي وماتشا</h2>
+                    <a href="#tea-items" class="view-all-link" id="viewTea">
+                        <span id="viewTeaText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="teaItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Pastries & Desserts Section -->
+            <div class="menu-section" id="pastry-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="pastryTitle">معجنات وحلويات</h2>
+                    <a href="#pastry-items" class="view-all-link" id="viewPastry">
+                        <span id="viewPastryText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="pastryItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sandwiches & Toast Section -->
+            <div class="menu-section" id="sandwiches-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="sandwichesTitle">ساندويشات وتوست</h2>
+                    <a href="#sandwiches-items" class="view-all-link" id="viewSandwiches">
+                        <span id="viewSandwichesText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="sandwichesItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Juices & Drinks Section -->
+            <div class="menu-section" id="juices-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="juicesTitle">عصائر ومشروبات</h2>
+                    <a href="#juices-items" class="view-all-link" id="viewJuices">
+                        <span id="viewJuicesText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="juicesItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Healthy Options Section -->
+            <div class="menu-section" id="healthy-section">
+                <div class="section-header">
+                    <h2 class="section-title" id="healthyTitle">خيارات صحية</h2>
+                    <a href="#healthy-items" class="view-all-link" id="viewHealthy">
+                        <span id="viewHealthyText">عرض الكل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="menu-grid" id="healthyItems">
+                    <!-- Items will be loaded by JavaScript -->
+                </div>
             </div>
         </section>
 
-        <!-- Coffee & Espresso Section -->
-        <section id="espresso" class="menu-section">
-            <h2 class="section-title" id="espressoTitle">قهوة وإسبريسو</h2>
-            <div class="menu-grid" id="espressoItems">
-                <!-- Items will be loaded by JavaScript -->
+        <!-- DEALS OF THE DAY BANNER -->
+        <section class="deals-banner">
+            <div class="deals-header">
+                <h2 id="dealsTitle">عروض اليوم</h2>
+                <p id="dealsSubtitle">استفد من عروضنا الحصرية المحدودة اليوم!</p>
+            </div>
+            
+            <div class="deals-grid">
+                <!-- Deal 1 -->
+                <div class="deal-card">
+                    <div class="deal-card-header">
+                        <h3 class="deal-card-title" id="deal1Title">لاتيه + كرواسون</h3>
+                        <span class="deal-badge" id="deal1Badge">خصم 25%</span>
+                    </div>
+                    <p class="deal-card-description" id="deal1Desc">استمتع بجميع أصناف اللاتيه مع كرواسون طازج بسعر مميز.</p>
+                    <div class="deal-price">
+                        <span class="current-price" id="deal1Price">2.500 ر.ع.</span>
+                        <span class="original-price" id="deal1OldPrice">3.300 ر.ع.</span>
+                    </div>
+                    <button class="deal-button" id="deal1Btn">
+                        <i class="fas fa-bolt"></i>
+                        <span id="deal1BtnText">احصل على العرض</span>
+                    </button>
+                </div>
+                
+                <!-- Deal 2 -->
+                <div class="deal-card">
+                    <div class="deal-card-header">
+                        <h3 class="deal-card-title" id="deal2Title">ماتشا ياباني</h3>
+                        <span class="deal-badge" id="deal2Badge">خاص</span>
+                    </div>
+                    <p class="deal-card-description" id="deal2Desc">ماتشا ياباني تقليدي من أعلى الدرجات مع كعكة اللوتس.</p>
+                    <div class="deal-price">
+                        <span class="current-price" id="deal2Price">3.200 ر.ع.</span>
+                        <span class="original-price" id="deal2OldPrice">4.100 ر.ع.</span>
+                    </div>
+                    <button class="deal-button" id="deal2Btn">
+                        <i class="fas fa-bolt"></i>
+                        <span id="deal2BtnText">احصل على العرض</span>
+                    </button>
+                </div>
+                
+                <!-- Deal 3 -->
+                <div class="deal-card">
+                    <div class="deal-card-header">
+                        <h3 class="deal-card-title" id="deal3Title">عرض العائلة</h3>
+                        <span class="deal-badge" id="deal3Badge">عرض عائلي</span>
+                    </div>
+                    <p class="deal-card-description" id="deal3Desc">4 مشروبات + 4 معجنات متنوعة - مثالي للعائلة والأصدقاء.</p>
+                    <div class="deal-price">
+                        <span class="current-price" id="deal3Price">8.900 ر.ع.</span>
+                        <span class="original-price" id="deal3OldPrice">12.500 ر.ع.</span>
+                    </div>
+                    <button class="deal-button" id="deal3Btn">
+                        <i class="fas fa-bolt"></i>
+                        <span id="deal3BtnText">احصل على العرض</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="deal-countdown">
+                <div id="countdownText">ينتهي العرض خلال:</div>
+                <div class="countdown-timer" id="countdownTimer">05:59:23</div>
             </div>
         </section>
-
-        <!-- Additional sections will be populated by JavaScript -->
     </main>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Cart -->
     <div class="cart-container">
@@ -724,7 +1166,7 @@
     </footer>
 
     <script>
-        // COMPLETE MENU DATA WITH ALL ITEMS (SAME AS BEFORE)
+        // COMPLETE MENU DATA WITH ALL ITEMS
         const menuItems = [
             // Coffee & Espresso Items
             {
@@ -1369,6 +1811,37 @@
             }
         ];
 
+        // DEALS OF THE DAY DATA
+        const dailyDeals = [
+            {
+                id: 101,
+                title: { ar: "لاتيه + كرواسون", en: "Latte + Croissant" },
+                description: { ar: "استمتع بجميع أصناف اللاتيه مع كرواسون طازج بسعر مميز.", en: "Enjoy all latte varieties with a fresh croissant at a special price." },
+                currentPrice: 2.500,
+                originalPrice: 3.300,
+                badge: { ar: "خصم 25%", en: "25% OFF" },
+                badgeType: "discount"
+            },
+            {
+                id: 102,
+                title: { ar: "ماتشا ياباني", en: "Japanese Matcha" },
+                description: { ar: "ماتشا ياباني تقليدي من أعلى الدرجات مع كعكة اللوتس.", en: "Traditional Japanese matcha of the highest grade with lotus cake." },
+                currentPrice: 3.200,
+                originalPrice: 4.100,
+                badge: { ar: "خاص", en: "Special" },
+                badgeType: "special"
+            },
+            {
+                id: 103,
+                title: { ar: "عرض العائلة", en: "Family Offer" },
+                description: { ar: "4 مشروبات + 4 معجنات متنوعة - مثالي للعائلة والأصدقاء.", en: "4 drinks + 4 assorted pastries - perfect for family and friends." },
+                currentPrice: 8.900,
+                originalPrice: 12.500,
+                badge: { ar: "عرض عائلي", en: "Family Deal" },
+                badgeType: "family"
+            }
+        ];
+
         // Bilingual Content
         const content = {
             ar: {
@@ -1392,7 +1865,6 @@
                 navHealthy: "خيارات صحية",
                 
                 // Section Titles
-                allTitle: "القائمة الكاملة",
                 espressoTitle: "قهوة وإسبريسو",
                 brewTitle: "قهوة التخمير",
                 signatureTitle: "مشروبات التوقيع",
@@ -1401,6 +1873,39 @@
                 sandwichesTitle: "ساندويشات وتوست",
                 juicesTitle: "عصائر ومشروبات",
                 healthyTitle: "خيارات صحية",
+                
+                // View All Links
+                viewEspressoText: "عرض الكل",
+                viewBrewText: "عرض الكل",
+                viewSignatureText: "عرض الكل",
+                viewTeaText: "عرض الكل",
+                viewPastryText: "عرض الكل",
+                viewSandwichesText: "عرض الكل",
+                viewJuicesText: "عرض الكل",
+                viewHealthyText: "عرض الكل",
+                
+                // Deals of the Day
+                dealsTitle: "عروض اليوم",
+                dealsSubtitle: "استفد من عروضنا الحصرية المحدودة اليوم!",
+                deal1Title: "لاتيه + كرواسون",
+                deal1Desc: "استمتع بجميع أصناف اللاتيه مع كرواسون طازج بسعر مميز.",
+                deal1Badge: "خصم 25%",
+                deal1Price: "2.500 ر.ع.",
+                deal1OldPrice: "3.300 ر.ع.",
+                deal1BtnText: "احصل على العرض",
+                deal2Title: "ماتشا ياباني",
+                deal2Desc: "ماتشا ياباني تقليدي من أعلى الدرجات مع كعكة اللوتس.",
+                deal2Badge: "خاص",
+                deal2Price: "3.200 ر.ع.",
+                deal2OldPrice: "4.100 ر.ع.",
+                deal2BtnText: "احصل على العرض",
+                deal3Title: "عرض العائلة",
+                deal3Desc: "4 مشروبات + 4 معجنات متنوعة - مثالي للعائلة والأصدقاء.",
+                deal3Badge: "عرض عائلي",
+                deal3Price: "8.900 ر.ع.",
+                deal3OldPrice: "12.500 ر.ع.",
+                deal3BtnText: "احصل على العرض",
+                countdownText: "ينتهي العرض خلال:",
                 
                 // Cart
                 cartTitle: "سلة التسوق",
@@ -1422,7 +1927,8 @@
                 addedToCart: "تمت الإضافة إلى السلة",
                 cartCleared: "تم إفراغ السلة",
                 orderPlaced: "تم تقديم طلبك بنجاح!",
-                cartEmpty: "سلة التسوق فارغة"
+                cartEmpty: "سلة التسوق فارغة",
+                dealAdded: "تمت إضافة العرض إلى السلة!"
             },
             en: {
                 // Header & Navigation
@@ -1445,7 +1951,6 @@
                 navHealthy: "Healthy Options",
                 
                 // Section Titles
-                allTitle: "Full Menu",
                 espressoTitle: "Coffee & Espresso",
                 brewTitle: "Brew Methods",
                 signatureTitle: "Signature Drinks",
@@ -1454,6 +1959,39 @@
                 sandwichesTitle: "Sandwiches & Toast",
                 juicesTitle: "Juices & Drinks",
                 healthyTitle: "Healthy Options",
+                
+                // View All Links
+                viewEspressoText: "View All",
+                viewBrewText: "View All",
+                viewSignatureText: "View All",
+                viewTeaText: "View All",
+                viewPastryText: "View All",
+                viewSandwichesText: "View All",
+                viewJuicesText: "View All",
+                viewHealthyText: "View All",
+                
+                // Deals of the Day
+                dealsTitle: "Deals of the Day",
+                dealsSubtitle: "Take advantage of our exclusive limited-time offers today!",
+                deal1Title: "Latte + Croissant",
+                deal1Desc: "Enjoy all latte varieties with a fresh croissant at a special price.",
+                deal1Badge: "25% OFF",
+                deal1Price: "2.500 OMR",
+                deal1OldPrice: "3.300 OMR",
+                deal1BtnText: "Get the Deal",
+                deal2Title: "Japanese Matcha",
+                deal2Desc: "Traditional Japanese matcha of the highest grade with lotus cake.",
+                deal2Badge: "Special",
+                deal2Price: "3.200 OMR",
+                deal2OldPrice: "4.100 OMR",
+                deal2BtnText: "Get the Deal",
+                deal3Title: "Family Offer",
+                deal3Desc: "4 drinks + 4 assorted pastries - perfect for family and friends.",
+                deal3Badge: "Family Deal",
+                deal3Price: "8.900 OMR",
+                deal3OldPrice: "12.500 OMR",
+                deal3BtnText: "Get the Deal",
+                countdownText: "Offer ends in:",
                 
                 // Cart
                 cartTitle: "Shopping Cart",
@@ -1475,7 +2013,8 @@
                 addedToCart: "Added to cart",
                 cartCleared: "Cart cleared",
                 orderPlaced: "Your order has been placed successfully!",
-                cartEmpty: "Your cart is empty"
+                cartEmpty: "Your cart is empty",
+                dealAdded: "Deal added to cart!"
             }
         };
 
@@ -1483,63 +2022,145 @@
         let cart = [];
         let currentLanguage = "ar";
         let currentCategory = "all";
+        let countdownInterval;
 
         // Initialize Application
         document.addEventListener('DOMContentLoaded', function() {
-            renderAllMenuItems();
+            renderAllCategories();
+            updateDealsContent();
+            startCountdownTimer();
             setupEventListeners();
             updateCartDisplay();
             updateLanguage("ar");
         });
 
-        // Render All Menu Items
-        function renderAllMenuItems() {
-            const categories = ["all", "espresso", "brew", "signature", "tea", "pastry", "sandwiches", "juices", "healthy"];
+        // Render All Categories on One Page
+        function renderAllCategories() {
+            const categories = [
+                { id: "espresso", titleId: "espressoTitle", itemsId: "espressoItems" },
+                { id: "brew", titleId: "brewTitle", itemsId: "brewItems" },
+                { id: "signature", titleId: "signatureTitle", itemsId: "signatureItems" },
+                { id: "tea", titleId: "teaTitle", itemsId: "teaItems" },
+                { id: "pastry", titleId: "pastryTitle", itemsId: "pastryItems" },
+                { id: "sandwiches", titleId: "sandwichesTitle", itemsId: "sandwichesItems" },
+                { id: "juices", titleId: "juicesTitle", itemsId: "juicesItems" },
+                { id: "healthy", titleId: "healthyTitle", itemsId: "healthyItems" }
+            ];
             
             categories.forEach(category => {
-                const container = document.getElementById(`${category}Items`);
+                const container = document.getElementById(category.itemsId);
                 if (!container) return;
                 
                 container.innerHTML = '';
                 
-                const items = category === 'all' 
-                    ? menuItems 
-                    : menuItems.filter(item => item.category === category);
+                const items = menuItems.filter(item => item.category === category.id);
                 
-                items.forEach(item => {
-                    const menuItem = document.createElement('div');
-                    menuItem.className = 'menu-item';
-                    
-                    const popularBadge = item.popular ? `<span style="position: absolute; top: 15px; left: 15px; background: var(--color-gold); color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">${currentLanguage === 'ar' ? 'الأكثر طلباً' : 'Popular'}</span>` : '';
-                    const specialBadge = item.special ? `<span style="position: absolute; top: 15px; right: 15px; background: var(--color-coffee); color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">${currentLanguage === 'ar' ? 'خاص' : 'Special'}</span>` : '';
-                    
-                    menuItem.innerHTML = `
-                        ${popularBadge}
-                        ${specialBadge}
-                        <img src="${item.image}" alt="${item.name[currentLanguage]}" class="item-image">
-                        <div class="item-details">
-                            <div class="item-header">
-                                <h3 class="item-name">${item.name[currentLanguage]}</h3>
-                                <span class="item-price">${item.price.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}</span>
-                            </div>
-                            <p class="item-desc">${item.description[currentLanguage]}</p>
-                            <div class="item-actions">
-                                <div class="quantity-selector">
-                                    <button class="qty-btn minus" data-id="${item.id}">-</button>
-                                    <span class="quantity" id="quantity-${item.id}">0</span>
-                                    <button class="qty-btn plus" data-id="${item.id}">+</button>
-                                </div>
-                                <button class="add-to-cart" data-id="${item.id}">
-                                    <i class="fas fa-cart-plus"></i>
-                                    ${currentLanguage === 'ar' ? 'أضف' : 'Add'}
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                    
+                // Show only 6 items per category on main page
+                const itemsToShow = items.slice(0, 6);
+                
+                itemsToShow.forEach(item => {
+                    const menuItem = createMenuItem(item);
                     container.appendChild(menuItem);
                 });
+                
+                // If there are more items, show a message
+                if (items.length > 6) {
+                    const moreItems = document.createElement('div');
+                    moreItems.className = 'more-items-message';
+                    moreItems.style.cssText = `
+                        text-align: center;
+                        padding: 20px;
+                        color: var(--color-light);
+                        font-style: italic;
+                    `;
+                    moreItems.textContent = currentLanguage === 'ar' 
+                        ? `+ ${items.length - 6} عناصر أخرى` 
+                        : `+ ${items.length - 6} more items`;
+                    container.appendChild(moreItems);
+                }
             });
+        }
+
+        // Update Deals Content
+        function updateDealsContent() {
+            // Update deals based on language
+            const deals = dailyDeals;
+            
+            deals.forEach((deal, index) => {
+                const dealIndex = index + 1;
+                document.getElementById(`deal${dealIndex}Title`).textContent = deal.title[currentLanguage];
+                document.getElementById(`deal${dealIndex}Desc`).textContent = deal.description[currentLanguage];
+                document.getElementById(`deal${dealIndex}Badge`).textContent = deal.badge[currentLanguage];
+                document.getElementById(`deal${dealIndex}Price`).textContent = `${deal.currentPrice.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}`;
+                document.getElementById(`deal${dealIndex}OldPrice`).textContent = `${deal.originalPrice.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}`;
+            });
+        }
+
+        // Start Countdown Timer
+        function startCountdownTimer() {
+            // Set end time to 11:59 PM today
+            const now = new Date();
+            const endTime = new Date();
+            endTime.setHours(23, 59, 59, 999);
+            
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = endTime - now;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdownTimer').textContent = currentLanguage === 'ar' ? 'انتهى العرض' : 'Offer Ended';
+                    return;
+                }
+                
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                const timerString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                document.getElementById('countdownTimer').textContent = timerString;
+            }
+            
+            // Update immediately
+            updateCountdown();
+            
+            // Update every second
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        // Create Menu Item Element
+        function createMenuItem(item) {
+            const menuItem = document.createElement('div');
+            menuItem.className = 'menu-item';
+            
+            const popularBadge = item.popular ? `<span class="badge badge-popular">${currentLanguage === 'ar' ? 'الأكثر طلباً' : 'Popular'}</span>` : '';
+            const specialBadge = item.special ? `<span class="badge badge-special">${currentLanguage === 'ar' ? 'خاص' : 'Special'}</span>` : '';
+            
+            menuItem.innerHTML = `
+                ${popularBadge}
+                ${specialBadge}
+                <img src="${item.image}" alt="${item.name[currentLanguage]}" class="item-image">
+                <div class="item-details">
+                    <div class="item-header">
+                        <h3 class="item-name">${item.name[currentLanguage]}</h3>
+                        <span class="item-price">${item.price.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}</span>
+                    </div>
+                    <p class="item-desc">${item.description[currentLanguage]}</p>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus" data-id="${item.id}">-</button>
+                            <span class="quantity" id="quantity-${item.id}">0</span>
+                            <button class="qty-btn plus" data-id="${item.id}">+</button>
+                        </div>
+                        <button class="add-to-cart" data-id="${item.id}">
+                            <i class="fas fa-cart-plus"></i>
+                            ${currentLanguage === 'ar' ? 'أضف' : 'Add'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return menuItem;
         }
 
         // Update Language
@@ -1563,7 +2184,10 @@
             }
             
             // Update menu items
-            renderAllMenuItems();
+            renderAllCategories();
+            
+            // Update deals
+            updateDealsContent();
             
             // Update cart
             updateCartDisplay();
@@ -1579,7 +2203,7 @@
                 });
             });
             
-            // Menu navigation
+            // Menu navigation - smooth scroll to sections
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1588,13 +2212,42 @@
                     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Show selected section
+                    // Scroll to section
                     const category = this.getAttribute('data-category');
-                    document.querySelectorAll('.menu-section').forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    document.getElementById(category).classList.add('active');
+                    if (category === 'all') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const section = document.getElementById(`${category}-section`);
+                        if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
                 });
+            });
+            
+            // View all links - scroll to top of section
+            document.querySelectorAll('.view-all-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Deal buttons
+            document.querySelectorAll('.deal-button').forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    addDealToCart(index);
+                });
+            });
+            
+            // Back to top
+            document.getElementById('backToTop').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
             // Cart toggle
@@ -1611,6 +2264,16 @@
             
             // Checkout
             document.getElementById('checkoutBtn').addEventListener('click', checkout);
+            
+            // Show/hide back to top button
+            window.addEventListener('scroll', function() {
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 500) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
             
             // Delegate events for dynamic elements
             document.addEventListener('click', function(e) {
@@ -1630,6 +2293,50 @@
                     addToCart(id);
                 }
             });
+        }
+
+        // Add Deal to Cart
+        function addDealToCart(dealIndex) {
+            const deal = dailyDeals[dealIndex];
+            
+            // Create a special deal item
+            const dealItem = {
+                id: 1000 + dealIndex, // Unique ID for deals
+                name: deal.title,
+                price: deal.currentPrice,
+                description: deal.description,
+                category: "deal",
+                quantity: 1
+            };
+            
+            // Check if deal already exists in cart
+            const existingItemIndex = cart.findIndex(cartItem => cartItem.id === (1000 + dealIndex));
+            
+            if (existingItemIndex > -1) {
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                cart.push({
+                    ...dealItem,
+                    name: { ar: deal.title.ar, en: deal.title.en },
+                    description: { ar: deal.description.ar, en: deal.description.en }
+                });
+            }
+            
+            // Update cart display
+            updateCartDisplay();
+            
+            // Show notification
+            showNotification(content[currentLanguage].dealAdded);
+            
+            // Show cart panel
+            document.getElementById('cartPanel').classList.add('active');
+            
+            // Add animation effect
+            const dealButton = document.querySelectorAll('.deal-button')[dealIndex];
+            dealButton.style.animation = 'pulse 0.5s ease';
+            setTimeout(() => {
+                dealButton.style.animation = '';
+            }, 500);
         }
 
         // Update Quantity
@@ -1702,9 +2409,17 @@
                 
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
+                
+                // Check if item is a deal
+                const isDeal = item.id >= 1000;
+                const dealBadge = isDeal ? `<span style="background: var(--color-gold); color: var(--color-dark); padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; margin-left: 5px;">${currentLanguage === 'ar' ? 'عرض' : 'Deal'}</span>` : '';
+                
                 cartItem.innerHTML = `
                     <div class="cart-item-details">
-                        <div class="cart-item-name">${item.name[currentLanguage]}</div>
+                        <div class="cart-item-name">
+                            ${item.name[currentLanguage]}
+                            ${dealBadge}
+                        </div>
                         <div class="cart-item-price">${itemTotal.toFixed(3)} ${currentLanguage === 'ar' ? 'ر.ع.' : 'OMR'}</div>
                     </div>
                     <div class="cart-item-actions">
@@ -1812,6 +2527,10 @@
                     transform: translateY(-30px);
                     opacity: 0;
                 }
+            }
+            
+            .back-to-top {
+                display: none;
             }
         `;
         document.head.appendChild(style);
